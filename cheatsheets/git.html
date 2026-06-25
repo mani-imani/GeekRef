@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Git — کنترل نسخه | GeekRef</title>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0d1117" name="theme-color"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/shared.css" rel="stylesheet"/>
+<style>
+:root { --accent: #f97316; --accent-rgb: 249,115,22; }
+
+/* search */
+.gr-search-wrap { position: relative; margin-bottom: 20px; }
+.gr-search {
+  width: 100%;
+  padding: 10px 16px 10px 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 14px;
+  outline: none;
+  direction: rtl;
+  transition: border-color .2s, background .25s;
+}
+.gr-search:focus { border-color: var(--accent); }
+.gr-search::placeholder { color: var(--text-dimmer); }
+.gr-search-icon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--text-dimmer); font-size: 16px; pointer-events: none;
+}
+[data-theme="light"] .gr-search { background: var(--surface); }
+
+/* filter tabs */
+.gr-filters { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 20px; }
+.gr-filter {
+  padding: 5px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.gr-filter:hover { border-color: var(--accent); color: var(--text); }
+.gr-filter.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+
+/* git card grid */
+.git-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.git-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 15px;
+  cursor: pointer;
+  transition: border-color .2s, background .15s;
+  position: relative;
+}
+.git-card:hover { border-color: var(--accent-border); background: var(--surface2); }
+.git-card.hidden { display: none; }
+.git-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.git-cmd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  padding: 4px 9px;
+  border-radius: 5px;
+  word-break: break-all;
+  flex: 1;
+  line-height: 1.5;
+  direction: ltr;
+  text-align: left;
+}
+.git-cat {
+  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; letter-spacing: .04em;
+}
+.git-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+.git-empty { display: none; text-align: center; padding: 40px; color: var(--text-dimmer); font-size: 14px; }
+
+/* cat colors */
+.cat-setup  { background: rgba(88,166,255,.12); color: #58a6ff; }
+.cat-local  { background: rgba(63,185,80,.12);  color: #3fb950; }
+.cat-branch { background: rgba(188,140,255,.12); color: #bc8cff; }
+.cat-remote { background: rgba(249,115,22,.12);  color: #f97316; }
+.cat-undo   { background: rgba(255,123,114,.12); color: #ff7b72; }
+</style>
+</head>
+<body>
+<nav class="gr-navbar">
+<div class="gr-navbar-left">
+<a class="gr-navbar-back" href="../index.html">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<div class="gr-breadcrumb">
+<a href="../index.html">GeekRef</a>
+<span class="gr-breadcrumb-sep">/</span>
+<span class="gr-breadcrumb-cur">Git</span>
+</div>
+</div>
+<div class="gr-navbar-mid">
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
+</div>
+</div>
+<div class="gr-navbar-right">
+<span class="gr-badge">🔀 Git</span>
+<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
+</div>
+</nav>
+<div class="gr-hero">
+<div class="gr-hero-eyebrow">Version Control</div>
+<h1><em>Git</em> — دستورات کنترل نسخه</h1>
+<p>از نصب و تنظیم تا branch، merge، remote و undo — با جستجو و فیلتر</p>
+<div class="gr-hero-stats">
+<div class="gr-stat"><span class="gr-stat-num">۵</span><span class="gr-stat-label">دسته‌بندی</span></div>
+<div class="gr-stat"><span class="gr-stat-num">۲۵</span><span class="gr-stat-label">دستور</span></div>
+<div class="gr-stat"><span class="gr-stat-num">🔍</span><span class="gr-stat-label">قابل جستجو</span></div>
+</div>
+</div>
+<div class="gr-container" style="max-width:1160px">
+<div class="gr-layout">
+
+<div class="gr-main-content">
+<div class="gr-search-wrap">
+<input class="gr-search" id="gitSearch" oninput="gitFilter()" placeholder="جستجو در دستورات..." type="text"/>
+<span class="gr-search-icon">🔍</span>
+</div>
+<div class="gr-filters">
+<button class="gr-filter active" onclick="gitCat('all',this)">همه</button>
+<button class="gr-filter" onclick="gitCat('setup',this)">⚙️ نصب و تنظیم</button>
+<button class="gr-filter" onclick="gitCat('local',this)">📁 کار محلی</button>
+<button class="gr-filter" onclick="gitCat('branch',this)">🌿 Branch</button>
+<button class="gr-filter" onclick="gitCat('remote',this)">🌐 Remote</button>
+<button class="gr-filter" onclick="gitCat('undo',this)">↩️ Undo</button>
+</div>
+<div class="git-grid" id="gitGrid">
+<!-- setup -->
+<div class="git-card" data-cat="setup" data-text="sudo apt install git نصب">
+<div class="git-card-top"><code class="git-cmd">sudo apt install git</code><span class="git-cat cat-setup">SETUP</span></div>
+<div class="git-desc">نصب git روی Ubuntu</div>
+</div>
+<div class="git-card" data-cat="setup" data-text="git config --global user.name نام کاربری">
+<div class="git-card-top"><code class="git-cmd">git config --global user.name "نام"</code><span class="git-cat cat-setup">SETUP</span></div>
+<div class="git-desc">تنظیم نام کاربری برای همه پروژه‌ها</div>
+</div>
+<div class="git-card" data-cat="setup" data-text="git config --global user.email ایمیل">
+<div class="git-card-top"><code class="git-cmd">git config --global user.email "ایمیل"</code><span class="git-cat cat-setup">SETUP</span></div>
+<div class="git-desc">تنظیم ایمیل (باید با GitHub یکسان باشد)</div>
+</div>
+<div class="git-card" data-cat="setup" data-text="git config --list نمایش تنظیمات">
+<div class="git-card-top"><code class="git-cmd">git config --list</code><span class="git-cat cat-setup">SETUP</span></div>
+<div class="git-desc">نمایش تمام تنظیمات فعلی</div>
+</div>
+<!-- local -->
+<div class="git-card" data-cat="local" data-text="git init ایجاد مخزن">
+<div class="git-card-top"><code class="git-cmd">git init</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">ایجاد مخزن git در پوشه فعلی</div>
+</div>
+<div class="git-card" data-cat="local" data-text="git status وضعیت فایل‌ها">
+<div class="git-card-top"><code class="git-cmd">git status</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">وضعیت فایل‌ها — تغییر یافته، staged، untracked</div>
+</div>
+<div class="git-card" data-cat="local" data-text="git add افزودن فایل staging">
+<div class="git-card-top"><code class="git-cmd">git add &lt;file&gt;</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">افزودن فایل به staging area برای commit</div>
+</div>
+<div class="git-card" data-cat="local" data-text="git add . همه فایل‌ها">
+<div class="git-card-top"><code class="git-cmd">git add .</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">افزودن همه تغییرات به staging</div>
+</div>
+<div class="git-card" data-cat="local" data-text="git commit ذخیره تغییرات پیام">
+<div class="git-card-top"><code class="git-cmd">git commit -m "پیام"</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">ذخیره تغییرات staged با پیام توصیفی</div>
+</div>
+<div class="git-card" data-cat="local" data-text="git log تاریخچه commit">
+<div class="git-card-top"><code class="git-cmd">git log --oneline</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">مشاهده تاریخچه commit‌ها به صورت فشرده</div>
+</div>
+<div class="git-card" data-cat="local" data-text="git diff تفاوت نسخه فایل">
+<div class="git-card-top"><code class="git-cmd">git diff</code><span class="git-cat cat-local">LOCAL</span></div>
+<div class="git-desc">مشاهده تفاوت بین نسخه‌های فایل</div>
+</div>
+<!-- branch -->
+<div class="git-card" data-cat="branch" data-text="git branch لیست شاخه">
+<div class="git-card-top"><code class="git-cmd">git branch</code><span class="git-cat cat-branch">BRANCH</span></div>
+<div class="git-desc">لیست تمام شاخه‌های محلی</div>
+</div>
+<div class="git-card" data-cat="branch" data-text="git checkout -b ساخت شاخه جدید">
+<div class="git-card-top"><code class="git-cmd">git checkout -b &lt;name&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
+<div class="git-desc">ساخت شاخه جدید و رفتن به آن</div>
+</div>
+<div class="git-card" data-cat="branch" data-text="git switch جابجایی شاخه">
+<div class="git-card-top"><code class="git-cmd">git switch &lt;branch&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
+<div class="git-desc">رفتن به شاخه دیگر (روش مدرن‌تر)</div>
+</div>
+<div class="git-card" data-cat="branch" data-text="git merge ادغام شاخه">
+<div class="git-card-top"><code class="git-cmd">git merge &lt;branch&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
+<div class="git-desc">ادغام یک شاخه در شاخه فعلی</div>
+</div>
+<div class="git-card" data-cat="branch" data-text="git stash ذخیره موقت تغییرات">
+<div class="git-card-top"><code class="git-cmd">git stash</code><span class="git-cat cat-branch">BRANCH</span></div>
+<div class="git-desc">ذخیره موقت تغییرات ناتمام</div>
+</div>
+<div class="git-card" data-cat="branch" data-text="git branch -d حذف شاخه">
+<div class="git-card-top"><code class="git-cmd">git branch -d &lt;name&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
+<div class="git-desc">حذف شاخه پس از merge</div>
+</div>
+<!-- remote -->
+<div class="git-card" data-cat="remote" data-text="git clone کپی مخزن دانلود">
+<div class="git-card-top"><code class="git-cmd">git clone &lt;url&gt;</code><span class="git-cat cat-remote">REMOTE</span></div>
+<div class="git-desc">کپی مخزن از GitHub یا سرور ریموت</div>
+</div>
+<div class="git-card" data-cat="remote" data-text="git remote add origin اتصال">
+<div class="git-card-top"><code class="git-cmd">git remote add origin &lt;url&gt;</code><span class="git-cat cat-remote">REMOTE</span></div>
+<div class="git-desc">اتصال مخزن محلی به ریموت</div>
+</div>
+<div class="git-card" data-cat="remote" data-text="git push ارسال commit آپلود">
+<div class="git-card-top"><code class="git-cmd">git push origin &lt;branch&gt;</code><span class="git-cat cat-remote">REMOTE</span></div>
+<div class="git-desc">ارسال commit‌های محلی به ریموت</div>
+</div>
+<div class="git-card" data-cat="remote" data-text="git pull دریافت ادغام">
+<div class="git-card-top"><code class="git-cmd">git pull</code><span class="git-cat cat-remote">REMOTE</span></div>
+<div class="git-desc">دریافت و ادغام تغییرات از ریموت</div>
+</div>
+<div class="git-card" data-cat="remote" data-text="git fetch دریافت بدون ادغام">
+<div class="git-card-top"><code class="git-cmd">git fetch</code><span class="git-cat cat-remote">REMOTE</span></div>
+<div class="git-desc">دریافت تغییرات ریموت بدون ادغام</div>
+</div>
+<!-- undo -->
+<div class="git-card" data-cat="undo" data-text="git restore بازگشت فایل">
+<div class="git-card-top"><code class="git-cmd">git restore &lt;file&gt;</code><span class="git-cat cat-undo">UNDO</span></div>
+<div class="git-desc">بازگشت فایل به حالت آخرین commit</div>
+</div>
+<div class="git-card" data-cat="undo" data-text="git reset --soft برگشت commit حفظ تغییرات">
+<div class="git-card-top"><code class="git-cmd">git reset --soft HEAD~1</code><span class="git-cat cat-undo">UNDO</span></div>
+<div class="git-desc">برگشت از آخرین commit با حفظ تغییرات</div>
+</div>
+<div class="git-card" data-cat="undo" data-text="git reset --hard برگشت کامل حذف">
+<div class="git-card-top"><code class="git-cmd">git reset --hard HEAD~1</code><span class="git-cat cat-undo">UNDO</span></div>
+<div class="git-desc">برگشت کامل — تغییرات حذف می‌شوند</div>
+</div>
+<div class="git-card" data-cat="undo" data-text="git revert commit معکوس ایمن">
+<div class="git-card-top"><code class="git-cmd">git revert &lt;hash&gt;</code><span class="git-cat cat-undo">UNDO</span></div>
+<div class="git-desc">ایجاد commit معکوس — ایمن‌ترین روش</div>
+</div>
+<div class="git-card" data-cat="undo" data-text="git commit --amend ویرایش آخرین">
+<div class="git-card-top"><code class="git-cmd">git commit --amend</code><span class="git-cat cat-undo">UNDO</span></div>
+<div class="git-desc">ویرایش آخرین commit — پیام یا محتوا</div>
+</div>
+</div>
+<div class="git-empty" id="gitEmpty">نتیجه‌ای یافت نشد 🔍</div>
+</div><aside class="gr-sidebar">
+<div class="gr-sidebar-title">// دسته‌بندی</div>
+<div class="gr-sidebar-items">
+<a class="gr-sidebar-item" href="#" onclick="gitCat('all',this);return false;"><span class="gr-sidebar-num">all</span>همه دستورات</a>
+<a class="gr-sidebar-item" href="#" onclick="gitCat('setup',this);return false;"><span class="gr-sidebar-num">⚙️</span>نصب و تنظیم</a>
+<a class="gr-sidebar-item" href="#" onclick="gitCat('local',this);return false;"><span class="gr-sidebar-num">📁</span>کار محلی</a>
+<a class="gr-sidebar-item" href="#" onclick="gitCat('branch',this);return false;"><span class="gr-sidebar-num">🌿</span>Branch</a>
+<a class="gr-sidebar-item" href="#" onclick="gitCat('remote',this);return false;"><span class="gr-sidebar-num">🌐</span>Remote</a>
+<a class="gr-sidebar-item" href="#" onclick="gitCat('undo',this);return false;"><span class="gr-sidebar-num">↩️</span>Undo</a>
+</div>
+</aside>
+</div><!-- /gr-main-content -->
+</div><!-- /gr-layout -->
+<!-- /gr-container -->
+<footer class="gr-footer-rich">
+<div class="gr-footer-grid">
+<div class="gr-footer-brand">
+<div class="gr-footer-logo">
+<span>👾</span>
+<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
+</div>
+<div class="gr-footer-tagline">
+<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
+</div>
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span>online · 280+ commands</span>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// cheatsheets</div>
+<div class="gr-footer-links">
+<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
+<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
+<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
+<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
+<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
+<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// connect</div>
+<div class="gr-footer-links">
+<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
+<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
+<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
+<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
+</div>
+</div>
+</div>
+<div class="gr-footer-bottom">
+<div class="gr-footer-copy">
+<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+    </div>
+<div class="gr-footer-stats">
+<span class="gr-footer-stat"><strong>280+</strong> commands</span>
+<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
+<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
+</div>
+</div>
+</footer>
+<script src="../css/gr.js"></script>
+<script>
+var activeCat = 'all';
+
+function gitCat(cat, btn) {
+  activeCat = cat;
+  document.querySelectorAll('.gr-filter').forEach(function(b) { b.classList.remove('active'); });
+  if (btn.classList.contains('gr-filter')) btn.classList.add('active');
+  // sync sidebar
+  document.querySelectorAll('.gr-sidebar-item').forEach(function(b) { b.classList.remove('active'); });
+  var sideMap = {'all':'همه','setup':'نصب','local':'محلی','branch':'Branch','remote':'Remote','undo':'Undo'};
+  document.querySelectorAll('.gr-sidebar-item').forEach(function(b) {
+    if (b.textContent.trim().includes(sideMap[cat] || cat)) b.classList.add('active');
+    if (cat === 'all' && b.textContent.includes('همه')) b.classList.add('active');
+  });
+  gitFilter();
+}
+
+function gitFilter() {
+  var q = document.getElementById('gitSearch').value.toLowerCase().trim();
+  var cards = document.querySelectorAll('.git-card');
+  var visible = 0;
+  cards.forEach(function(card) {
+    var catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
+    var textMatch = !q || (card.dataset.text + ' ' + card.textContent).toLowerCase().includes(q);
+    if (catMatch && textMatch) {
+      card.classList.remove('hidden');
+      visible++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  document.getElementById('gitEmpty').style.display = visible === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

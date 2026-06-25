@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Setup — محیط توسعه | GeekRef</title>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0d1117" name="theme-color"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/shared.css" rel="stylesheet"/>
+<style>
+:root { --accent: #39d98a; --accent-rgb: 57,217,138; }
+</style>
+</head>
+<body>
+<nav class="gr-navbar">
+<div class="gr-navbar-left">
+<a class="gr-navbar-back" href="../index.html">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<div class="gr-breadcrumb">
+<a href="../index.html">GeekRef</a>
+<span class="gr-breadcrumb-sep">/</span>
+<span class="gr-breadcrumb-cur">Python Setup</span>
+</div>
+</div>
+<div class="gr-navbar-mid">
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
+</div>
+</div>
+<div class="gr-navbar-right">
+<span class="gr-badge">⚙️ Python Setup</span>
+<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
+</div>
+</nav>
+<div class="gr-hero">
+<div class="gr-hero-eyebrow">Python · pyenv · venv · pip</div>
+<h1><em>Python Setup</em> — محیط توسعه</h1>
+<p>راه‌اندازی کامل محیط Python — از pyenv و venv تا ساخت پروژه گام به گام</p>
+<div class="gr-hero-stats">
+<div class="gr-stat"><span class="gr-stat-num">۷</span><span class="gr-stat-label">بخش</span></div>
+<div class="gr-stat"><span class="gr-stat-num">۲۷+</span><span class="gr-stat-label">دستور</span></div>
+<div class="gr-stat"><span class="gr-stat-num">✅</span><span class="gr-stat-label">گام به گام</span></div>
+</div>
+</div>
+<div class="gr-container" style="max-width:1160px">
+<div class="gr-layout">
+
+<div class="gr-main-content">
+
+<div class="gr-section" id="pyenv">
+<div class="gr-section-header">
+<div class="gr-section-icon">🔀</div>
+<div class="gr-section-title">مدیریت نسخه با pyenv</div>
+<span class="gr-section-num">1</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv install --list | grep -E &quot;^\s+3\.(12|13)&quot;',this)">
+<code>pyenv install --list | grep -E "^\s+3\.(12|13)"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv install 3.12.7',this)">
+<code>pyenv install 3.12.7</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv uninstall 3.12.7',this)">
+<code>pyenv uninstall 3.12.7</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="virtualenv">
+<div class="gr-section-header">
+<div class="gr-section-icon">🌐</div>
+<div class="gr-section-title">محیط مجازی (Virtual Environment)</div>
+<span class="gr-section-num">2</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv virtualenv 3.12.7 my-project-env',this)">
+<code>pyenv virtualenv 3.12.7 my-project-env</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cd ~/Projects/python/my-project',this)">
+<code>cd ~/Projects/python/my-project</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv local my-project-env',this)">
+<code>pyenv local my-project-env</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="pip">
+<div class="gr-section-header">
+<div class="gr-section-icon">📦</div>
+<div class="gr-section-title">مدیریت پکیج با pip</div>
+<span class="gr-section-num">3</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip freeze &gt; requirements.txt',this)">
+<code>pip freeze &gt; requirements.txt</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip install -r requirements.txt',this)">
+<code>pip install -r requirements.txt</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip install --upgrade pip',this)">
+<code>pip install --upgrade pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="project">
+<div class="gr-section-header">
+<div class="gr-section-icon">🏗️</div>
+<div class="gr-section-title">ساخت پروژه جدید — گام به گام</div>
+<span class="gr-section-num">4</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('mkdir ~/Projects/python/my-new-project',this)">
+<code>mkdir ~/Projects/python/my-new-project</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cd ~/Projects/python/my-new-project',this)">
+<code>cd ~/Projects/python/my-new-project</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv virtualenv 3.12.7 my-new-project-env',this)">
+<code>pyenv virtualenv 3.12.7 my-new-project-env</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv local my-new-project-env',this)">
+<code>pyenv local my-new-project-env</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip install --upgrade pip',this)">
+<code>pip install --upgrade pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('git init',this)">
+<code>git init</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('code .',this)">
+<code>code .</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="vscode">
+<div class="gr-section-header">
+<div class="gr-section-icon">💻</div>
+<div class="gr-section-title">VS Code — شورتکات‌های ضروری</div>
+<span class="gr-section-num">5</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ruff check .',this)">
+<code>ruff check .</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ruff check --fix .',this)">
+<code>ruff check --fix .</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('black .',this)">
+<code>black .</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="git">
+<div class="gr-section-header">
+<div class="gr-section-icon">🔀</div>
+<div class="gr-section-title">Git — کنترل نسخه</div>
+<span class="gr-section-num">6</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('__pycache__/
+*.pyc
+*.pyo
+.env
+.venv
+*.egg-info/
+dist/
+build/
+.DS_Store',this)">
+<code>__pycache__/
+*.pyc
+*.pyo
+.env
+.venv
+*.egg-info/
+dist/
+build/
+.DS_Store</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('touch .gitignore',this)">
+<code>touch .gitignore</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="django">
+<div class="gr-section-header">
+<div class="gr-section-icon">🌿</div>
+<div class="gr-section-title">Django — وقتی آماده شدی</div>
+<span class="gr-section-num">7</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('mkdir ~/Projects/django/my-app',this)">
+<code>mkdir ~/Projects/django/my-app</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cd ~/Projects/django/my-app',this)">
+<code>cd ~/Projects/django/my-app</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv virtualenv 3.12.7 my-app-env',this)">
+<code>pyenv virtualenv 3.12.7 my-app-env</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv local my-app-env',this)">
+<code>pyenv local my-app-env</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip install --upgrade pip',this)">
+<code>pip install --upgrade pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip install django',this)">
+<code>pip install django</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('django-admin startproject myproject .',this)">
+<code>django-admin startproject myproject .</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python manage.py migrate',this)">
+<code>python manage.py migrate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python manage.py runserver',this)">
+<code>python manage.py runserver</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="tips">
+<div class="gr-section-header">
+<div class="gr-section-icon">💡</div>
+<div class="gr-section-title">نکات مهم</div>
+<span class="gr-section-num">8</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('which python',this)">
+<code>which python</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python --version',this)">
+<code>python --version</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv which python',this)">
+<code>pyenv which python</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cd ~/.pyenv &amp;&amp; git pull',this)">
+<code>cd ~/.pyenv &amp;&amp; git pull</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cd ~/.pyenv/plugins/pyenv-virtualenv &amp;&amp; git pull',this)">
+<code>cd ~/.pyenv/plugins/pyenv-virtualenv &amp;&amp; git pull</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('source ~/.bashrc',this)">
+<code>source ~/.bashrc</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc"></div>
+</div>
+</div>
+</div>
+</div><aside class="gr-sidebar">
+<div class="gr-sidebar-title">// محتوا</div>
+<div class="gr-sidebar-items">
+<a class="gr-sidebar-item" href="#pyenv"><span class="gr-sidebar-num">1</span>مدیریت نسخه با pyenv</a>
+<a class="gr-sidebar-item" href="#virtualenv"><span class="gr-sidebar-num">2</span>محیط مجازی (Virtual Environment)</a>
+<a class="gr-sidebar-item" href="#pip"><span class="gr-sidebar-num">3</span>مدیریت پکیج با pip</a>
+<a class="gr-sidebar-item" href="#project"><span class="gr-sidebar-num">4</span>ساخت پروژه جدید — گام به گام</a>
+<a class="gr-sidebar-item" href="#vscode"><span class="gr-sidebar-num">5</span>VS Code — شورتکات‌های ضروری</a>
+<a class="gr-sidebar-item" href="#git"><span class="gr-sidebar-num">6</span>Git — کنترل نسخه</a>
+<a class="gr-sidebar-item" href="#django"><span class="gr-sidebar-num">7</span>Django — وقتی آماده شدی</a>
+<a class="gr-sidebar-item" href="#tips"><span class="gr-sidebar-num">8</span>نکات مهم</a>
+</div>
+</aside>
+</div><!-- /gr-main-content -->
+</div><!-- /gr-layout -->
+<!-- /gr-container -->
+<footer class="gr-footer-rich">
+<div class="gr-footer-grid">
+<div class="gr-footer-brand">
+<div class="gr-footer-logo">
+<span>👾</span>
+<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
+</div>
+<div class="gr-footer-tagline">
+<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
+</div>
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span>online · 280+ commands</span>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// cheatsheets</div>
+<div class="gr-footer-links">
+<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
+<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
+<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
+<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
+<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
+<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// connect</div>
+<div class="gr-footer-links">
+<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
+<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
+<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
+<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
+</div>
+</div>
+</div>
+<div class="gr-footer-bottom">
+<div class="gr-footer-copy">
+<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+    </div>
+<div class="gr-footer-stats">
+<span class="gr-footer-stat"><strong>280+</strong> commands</span>
+<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
+<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
+</div>
+</div>
+</footer>
+<script src="../css/gr.js"></script>
+</body>
+</html>

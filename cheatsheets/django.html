@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Django — راهنمای جامع | GeekRef</title>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0d1117" name="theme-color"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/shared.css" rel="stylesheet"/>
+<style>
+:root {
+  --accent:     #3fb950;
+  --accent-rgb: 63,185,80;
+}
+</style>
+</head>
+<body>
+<nav class="gr-navbar">
+<div class="gr-navbar-left">
+<a class="gr-navbar-back" href="../index.html">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<div class="gr-breadcrumb">
+<a href="../index.html">GeekRef</a>
+<span class="gr-breadcrumb-sep">/</span>
+<span class="gr-breadcrumb-cur">Django</span>
+</div>
+</div>
+<div class="gr-navbar-mid">
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
+</div>
+</div>
+<div class="gr-navbar-right">
+<span class="gr-badge">🌿 Django</span>
+<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
+</div>
+</nav>
+<div class="gr-hero">
+<div class="gr-hero-eyebrow">🐍 Python · Django</div>
+<h1 class=""><em>Django</em> — راهنمای جامع دستورات</h1>
+<p>همه دستورات ضروری Django در Ubuntu — از نصب تا Production</p>
+<div class="gr-hero-stats">
+<div class="gr-stat"><span class="gr-stat-num">۱۲</span><span class="gr-stat-label">بخش</span></div>
+<div class="gr-stat"><span class="gr-stat-num">+۶۰</span><span class="gr-stat-label">دستور</span></div>
+<div class="gr-stat"><span class="gr-stat-num">۱۰۰٪</span><span class="gr-stat-label">فارسی</span></div>
+</div>
+</div>
+<div class="gr-container" style="max-width:1160px">
+<div class="gr-layout">
+
+<div class="gr-main-content">
+
+<!-- 1 -->
+<div class="gr-section" id="s1">
+<div class="gr-section-header">
+<div class="gr-section-icon">🔧</div>
+<div class="gr-section-title">نصب و راه‌اندازی محیط مجازی</div>
+<span class="gr-section-num">۱</span>
+</div>
+<p class="gr-section-desc">قبل از هر کاری Python، pip و venv را نصب کرده و یک محیط مجازی بسازید تا وابستگی‌های پروژه از هم جدا بمانند.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># نصب Python، pip و venv</span>
+<span class="fn">sudo apt</span> update &amp;&amp; <span class="fn">sudo apt</span> install <span class="fl">python3 python3-pip python3-venv</span> <span class="fl">-y</span>
+
+<span class="lc"># ساخت محیط مجازی</span>
+<span class="fn">python3</span> <span class="fl">-m venv</span> <span class="pm">venv</span>
+
+<span class="lc"># فعال‌سازی</span>
+<span class="fn">source</span> venv/bin/activate
+
+<span class="lc"># نصب Django</span>
+<span class="fn">pip install</span> <span class="pm">django</span>
+
+<span class="lc"># بررسی نسخه</span>
+<span class="fn">django-admin</span> <span class="fl">--version</span>
+
+<span class="lc"># غیرفعال کردن</span>
+<span class="fn">deactivate</span></pre>
+</div>
+<div class="gr-tip"><span class="gr-tip-icon">💡</span><div>همیشه قبل از کار، محیط مجازی را فعال کنید. وقتی فعال است، <strong>(venv)</strong> در ابتدای ترمینال نمایش داده می‌شود.</div></div>
+</div>
+<!-- 2 -->
+<div class="gr-section" id="s2">
+<div class="gr-section-header">
+<div class="gr-section-icon">🏗️</div>
+<div class="gr-section-title">ساخت پروژه و اپلیکیشن</div>
+<span class="gr-section-num">۲</span>
+</div>
+<p class="gr-section-desc">با <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:12px">django-admin</code> پروژه اصلی ساخته می‌شود و با <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:12px">startapp</code> اپ‌های داخل آن.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># ساخت پروژه جدید</span>
+<span class="fn">django-admin startproject</span> <span class="pm">myproject</span>
+
+<span class="lc"># ورود به پوشه پروژه</span>
+<span class="fn">cd</span> myproject
+
+<span class="lc"># ساخت اپلیکیشن جدید</span>
+<span class="fn">python manage.py startapp</span> <span class="pm">myapp</span>
+
+<span class="lc"># مشاهده ساختار فایل‌ها</span>
+<span class="fn">find</span> . <span class="fl">-type</span> f <span class="fl">-name</span> <span class="st">"*.py"</span> | <span class="fn">head</span> <span class="fl">-20</span></pre>
+</div>
+<div class="gr-tip"><span class="gr-tip-icon">📁</span><div>بعد از ساخت اپ، آن را به <strong>INSTALLED_APPS</strong> در <strong>settings.py</strong> اضافه کنید.</div></div>
+</div>
+<!-- 3 -->
+<div class="gr-section" id="s3">
+<div class="gr-section-header">
+<div class="gr-section-icon">🗄️</div>
+<div class="gr-section-title">مدیریت دیتابیس — Migrations</div>
+<span class="gr-section-num">۳</span>
+</div>
+<p class="gr-section-desc">Migration‌ها تغییرات مدل‌های Python را به جدول‌های دیتابیس تبدیل می‌کنند. هر بار که مدل تغییر می‌کند باید migration بسازید.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># ساخت فایل‌های migration</span>
+<span class="fn">python manage.py makemigrations</span>
+
+<span class="lc"># migration برای یک اپ خاص</span>
+<span class="fn">python manage.py makemigrations</span> <span class="pm">myapp</span>
+
+<span class="lc"># اعمال همه migration‌ها</span>
+<span class="fn">python manage.py migrate</span>
+
+<span class="lc"># نمایش وضعیت migration‌ها</span>
+<span class="fn">python manage.py showmigrations</span>
+
+<span class="lc"># بازگشت به migration خاص</span>
+<span class="fn">python manage.py migrate</span> <span class="pm">myapp 0001</span>
+
+<span class="lc"># نمایش SQL یک migration</span>
+<span class="fn">python manage.py sqlmigrate</span> <span class="pm">myapp 0001</span>
+
+<span class="lc"># بررسی مشکلات مدل‌ها</span>
+<span class="fn">python manage.py check</span></pre>
+</div>
+</div>
+<!-- 4 -->
+<div class="gr-section" id="s4">
+<div class="gr-section-header">
+<div class="gr-section-icon">🚀</div>
+<div class="gr-section-title">اجرای سرور توسعه</div>
+<span class="gr-section-num">۴</span>
+</div>
+<p class="gr-section-desc">سرور داخلی Django فقط برای توسعه و تست محلی است — هرگز در محیط production از آن استفاده نکنید.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># اجرا روی پورت پیش‌فرض 8000</span>
+<span class="fn">python manage.py runserver</span>
+
+<span class="lc"># اجرا روی پورت دلخواه</span>
+<span class="fn">python manage.py runserver</span> <span class="pm">8080</span>
+
+<span class="lc"># دسترسی از شبکه</span>
+<span class="fn">python manage.py runserver</span> <span class="pm">0.0.0.0:8000</span>
+
+<span class="lc"># بدون reload خودکار</span>
+<span class="fn">python manage.py runserver</span> <span class="fl">--noreload</span></pre>
+</div>
+<div class="gr-tip gr-warn"><span class="gr-tip-icon">⚠️</span><div><strong>هشدار:</strong> این سرور تک‌نخی و بدون امنیت است. برای production از <strong>Gunicorn</strong> یا <strong>uWSGI</strong> استفاده کنید.</div></div>
+</div>
+<!-- 5 -->
+<div class="gr-section" id="s5">
+<div class="gr-section-header">
+<div class="gr-section-icon">👤</div>
+<div class="gr-section-title">مدیریت کاربران و پنل ادمین</div>
+<span class="gr-section-num">۵</span>
+</div>
+<p class="gr-section-desc">Django یک پنل ادمین آماده و قدرتمند دارد. برای ورود باید ابتدا superuser بسازید.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># ساخت superuser (ادمین)</span>
+<span class="fn">python manage.py createsuperuser</span>
+
+<span class="lc"># تغییر رمز عبور کاربر</span>
+<span class="fn">python manage.py changepassword</span> <span class="pm">username</span>
+
+<span class="lc"># آدرس پنل ادمین</span>
+<span class="st">http://127.0.0.1:8000/admin</span></pre>
+</div>
+</div>
+<!-- 6 -->
+<div class="gr-section" id="s6">
+<div class="gr-section-header">
+<div class="gr-section-icon">🐚</div>
+<div class="gr-section-title">Django Shell و دیباگ</div>
+<span class="gr-section-num">۶</span>
+</div>
+<p class="gr-section-desc">با shell می‌توانید مستقیم با ORM، مدل‌ها و تنظیمات Django تعامل داشته باشید — عالی برای تست سریع.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH / PYTHON</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># باز کردن Django shell</span>
+<span class="fn">python manage.py shell</span>
+
+<span class="lc"># shell با IPython</span>
+<span class="fn">pip install</span> <span class="pm">ipython</span>
+<span class="fn">python manage.py shell</span> <span class="fl">-i ipython</span>
+
+<span class="lc"># مثال داخل shell</span>
+<span class="kw">from</span> myapp.models <span class="kw">import</span> MyModel
+MyModel.<span class="fn">objects</span>.all()
+MyModel.<span class="fn">objects</span>.filter(<span class="pm">name=</span><span class="st">"test"</span>)
+MyModel.<span class="fn">objects</span>.create(<span class="pm">name=</span><span class="st">"new"</span>)
+
+<span class="lc"># بررسی کامل پروژه</span>
+<span class="fn">python manage.py check</span>
+<span class="fn">python manage.py check</span> <span class="fl">--deploy</span></pre>
+</div>
+</div>
+<!-- 7 -->
+<div class="gr-section" id="s7">
+<div class="gr-section-header">
+<div class="gr-section-icon">📁</div>
+<div class="gr-section-title">فایل‌های استاتیک</div>
+<span class="gr-section-num">۷</span>
+</div>
+<p class="gr-section-desc">در production باید همه فایل‌های CSS، JS و تصویر را در یک پوشه جمع‌آوری کنید.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH / PYTHON</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># جمع‌آوری فایل‌های استاتیک</span>
+<span class="fn">python manage.py collectstatic</span>
+<span class="fn">python manage.py collectstatic</span> <span class="fl">--noinput</span>
+<span class="fn">python manage.py collectstatic</span> <span class="fl">--clear</span>
+
+<span class="lc"># تنظیمات در settings.py</span>
+STATIC_URL  = <span class="st">"/static/"</span>
+STATIC_ROOT = BASE_DIR / <span class="st">"staticfiles"</span>
+MEDIA_URL   = <span class="st">"/media/"</span>
+MEDIA_ROOT  = BASE_DIR / <span class="st">"media"</span></pre>
+</div>
+</div>
+<!-- 8 -->
+<div class="gr-section" id="s8">
+<div class="gr-section-header">
+<div class="gr-section-icon">🧪</div>
+<div class="gr-section-title">تست‌نویسی</div>
+<span class="gr-section-num">۸</span>
+</div>
+<p class="gr-section-desc">Django ابزار تست داخلی دارد. تست‌ها را در <code style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:12px">tests.py</code> هر اپ بنویسید.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># اجرای همه تست‌ها</span>
+<span class="fn">python manage.py test</span>
+
+<span class="lc"># تست یک اپ خاص</span>
+<span class="fn">python manage.py test</span> <span class="pm">myapp</span>
+
+<span class="lc"># تست یک کلاس خاص</span>
+<span class="fn">python manage.py test</span> <span class="pm">myapp.tests.MyTestCase</span>
+
+<span class="lc"># با جزئیات بیشتر</span>
+<span class="fn">python manage.py test</span> <span class="fl">--verbosity=2</span>
+
+<span class="lc"># نگه‌داشتن دیتابیس بعد از تست</span>
+<span class="fn">python manage.py test</span> <span class="fl">--keepdb</span></pre>
+</div>
+</div>
+<!-- 9 -->
+<div class="gr-section" id="s9">
+<div class="gr-section-header">
+<div class="gr-section-icon">💾</div>
+<div class="gr-section-title">مدیریت داده‌ها — Fixtures</div>
+<span class="gr-section-num">۹</span>
+</div>
+<p class="gr-section-desc">برای پشتیبان‌گیری، انتقال داده بین محیط‌ها یا پر کردن دیتابیس با داده اولیه استفاده می‌شود.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># خروجی از همه داده‌ها</span>
+<span class="fn">python manage.py dumpdata</span> &gt; <span class="st">db.json</span>
+
+<span class="lc"># خروجی از یک اپ خاص</span>
+<span class="fn">python manage.py dumpdata</span> <span class="pm">myapp</span> <span class="fl">--indent 2</span> &gt; <span class="st">myapp.json</span>
+
+<span class="lc"># وارد کردن داده</span>
+<span class="fn">python manage.py loaddata</span> <span class="st">db.json</span>
+
+<span class="lc"># پاک کردن session‌های منقضی</span>
+<span class="fn">python manage.py clearsessions</span></pre>
+</div>
+</div>
+<!-- 10 -->
+<div class="gr-section" id="s10">
+<div class="gr-section-header">
+<div class="gr-section-icon">📦</div>
+<div class="gr-section-title">پکیج‌های ضروری Django</div>
+<span class="gr-section-num">۱۰</span>
+</div>
+<p class="gr-section-desc">پرکاربردترین پکیج‌های اکوسیستم Django:</p>
+<div class="gr-pkg-grid">
+<div class="gr-pkg"><span class="gr-pkg-name">djangorestframework</span><span class="gr-pkg-desc">ساخت REST API قدرتمند</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">django-cors-headers</span><span class="gr-pkg-desc">مدیریت CORS برای API</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">Pillow</span><span class="gr-pkg-desc">پردازش و آپلود تصویر</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">psycopg2-binary</span><span class="gr-pkg-desc">اتصال به PostgreSQL</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">celery + redis</span><span class="gr-pkg-desc">کارهای پس‌زمینه و صف</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">gunicorn</span><span class="gr-pkg-desc">سرور WSGI برای production</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">python-decouple</span><span class="gr-pkg-desc">مدیریت متغیرهای .env</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">whitenoise</span><span class="gr-pkg-desc">سرو فایل‌های استاتیک</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">django-extensions</span><span class="gr-pkg-desc">ابزارهای اضافی توسعه</span></div>
+<div class="gr-pkg"><span class="gr-pkg-name">django-filter</span><span class="gr-pkg-desc">فیلتر کردن در API</span></div>
+</div>
+<div class="gr-code" style="margin-top:14px">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># ذخیره وابستگی‌ها</span>
+<span class="fn">pip freeze</span> &gt; <span class="st">requirements.txt</span>
+
+<span class="lc"># نصب از روی requirements</span>
+<span class="fn">pip install</span> <span class="fl">-r</span> <span class="st">requirements.txt</span></pre>
+</div>
+</div>
+<!-- 11 -->
+<div class="gr-section" id="s11">
+<div class="gr-section-header">
+<div class="gr-section-icon">⚙️</div>
+<div class="gr-section-title">تنظیمات اساسی — settings.py</div>
+<span class="gr-section-num">۱۱</span>
+</div>
+<p class="gr-section-desc">مهم‌ترین تنظیماتی که در هر پروژه Django باید بدانید:</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">PYTHON — settings.py</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># اضافه کردن اپ‌ها</span>
+INSTALLED_APPS = [
+    <span class="st">'myapp'</span>,
+    <span class="st">'rest_framework'</span>,
+    <span class="st">'corsheaders'</span>,
+]
+
+<span class="lc"># دیتابیس PostgreSQL</span>
+DATABASES = {
+    <span class="st">"default"</span>: {
+        <span class="st">"ENGINE"</span>: <span class="st">"django.db.backends.postgresql"</span>,
+        <span class="st">"NAME"</span>: <span class="st">"mydb"</span>,
+        <span class="st">"USER"</span>: <span class="st">"myuser"</span>,
+        <span class="st">"PASSWORD"</span>: <span class="st">"mypass"</span>,
+        <span class="st">"HOST"</span>: <span class="st">"localhost"</span>,
+        <span class="st">"PORT"</span>: <span class="st">"5432"</span>,
+    }
+}
+
+<span class="lc"># زبان و منطقه زمانی</span>
+LANGUAGE_CODE = <span class="st">"fa-ir"</span>
+TIME_ZONE     = <span class="st">"Asia/Tehran"</span>
+USE_I18N      = <span class="kw">True</span>
+USE_TZ        = <span class="kw">True</span>
+
+<span class="lc"># ALLOWED_HOSTS در production</span>
+ALLOWED_HOSTS = [<span class="st">"yourdomain.com"</span>, <span class="st">"www.yourdomain.com"</span>]</pre>
+</div>
+</div>
+<!-- 12 -->
+<div class="gr-section" id="s12">
+<div class="gr-section-header">
+<div class="gr-section-icon">🌐</div>
+<div class="gr-section-title">استقرار در Production با Gunicorn</div>
+<span class="gr-section-num">۱۲</span>
+</div>
+<p class="gr-section-desc">برای اجرای Django در محیط واقعی از Gunicorn به عنوان سرور WSGI استفاده کنید.</p>
+<div class="gr-code">
+<div class="gr-code-header">
+<span class="gr-dot gr-dot-r"></span><span class="gr-dot gr-dot-y"></span><span class="gr-dot gr-dot-g"></span>
+<span class="gr-code-lang">BASH</span>
+<button class="gr-copy-btn" onclick="grCopyCode(this)">کپی</button>
+</div>
+<pre><span class="lc"># نصب gunicorn</span>
+<span class="fn">pip install</span> <span class="pm">gunicorn</span>
+
+<span class="lc"># اجرای پایه</span>
+<span class="fn">gunicorn</span> myproject.wsgi:application <span class="fl">--bind</span> <span class="pm">0.0.0.0:8000</span>
+
+<span class="lc"># با worker بیشتر (توصیه: 2×CPU+1)</span>
+<span class="fn">gunicorn</span> myproject.wsgi:application <span class="fl">--workers</span> <span class="pm">3</span> <span class="fl">--bind</span> <span class="pm">0.0.0.0:8000</span>
+
+<span class="lc"># اجرا به عنوان daemon</span>
+<span class="fn">gunicorn</span> myproject.wsgi:application <span class="fl">--daemon --workers</span> <span class="pm">3</span> <span class="fl">--bind</span> <span class="pm">0.0.0.0:8000</span>
+
+<span class="lc"># checklist قبل از production</span>
+<span class="fn">python manage.py check</span> <span class="fl">--deploy</span>
+<span class="fn">python manage.py migrate</span>
+<span class="fn">python manage.py collectstatic</span> <span class="fl">--noinput</span></pre>
+</div>
+<div class="gr-tip gr-warn"><span class="gr-tip-icon">⚠️</span><div>در production حتماً <strong>DEBUG = False</strong> و <strong>SECRET_KEY</strong> را در متغیر محیطی قرار دهید. هرگز secret key را در کد commit نکنید.</div></div>
+</div>
+</div><aside class="gr-sidebar">
+<div class="gr-sidebar-title">// محتوا</div>
+<div class="gr-sidebar-items">
+<a class="gr-sidebar-item" href="#s1"><span class="gr-sidebar-num">۱</span>نصب و راه‌اندازی محیط مجازی</a>
+<a class="gr-sidebar-item" href="#s2"><span class="gr-sidebar-num">۲</span>ساخت پروژه و اپلیکیشن</a>
+<a class="gr-sidebar-item" href="#s3"><span class="gr-sidebar-num">۳</span>مدیریت دیتابیس — Migrations</a>
+<a class="gr-sidebar-item" href="#s4"><span class="gr-sidebar-num">۴</span>اجرای سرور توسعه</a>
+<a class="gr-sidebar-item" href="#s5"><span class="gr-sidebar-num">۵</span>مدیریت کاربران و پنل ادمین</a>
+<a class="gr-sidebar-item" href="#s6"><span class="gr-sidebar-num">۶</span>Django Shell و دیباگ</a>
+<a class="gr-sidebar-item" href="#s7"><span class="gr-sidebar-num">۷</span>فایل‌های استاتیک</a>
+<a class="gr-sidebar-item" href="#s8"><span class="gr-sidebar-num">۸</span>تست‌نویسی</a>
+<a class="gr-sidebar-item" href="#s9"><span class="gr-sidebar-num">۹</span>مدیریت داده‌ها — Fixtures</a>
+<a class="gr-sidebar-item" href="#s10"><span class="gr-sidebar-num">۱۰</span>پکیج‌های ضروری Django</a>
+<a class="gr-sidebar-item" href="#s11"><span class="gr-sidebar-num">۱۱</span>تنظیمات اساسی — settings.py</a>
+<a class="gr-sidebar-item" href="#s12"><span class="gr-sidebar-num">۱۲</span>استقرار در Production با Gunicorn</a>
+</div>
+</aside>
+</div><!-- /gr-main-content -->
+</div><!-- /gr-layout -->
+<!-- /gr-container -->
+<footer class="gr-footer-rich">
+<div class="gr-footer-grid">
+<div class="gr-footer-brand">
+<div class="gr-footer-logo">
+<span>👾</span>
+<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
+</div>
+<div class="gr-footer-tagline">
+<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
+</div>
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span>online · 280+ commands</span>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// cheatsheets</div>
+<div class="gr-footer-links">
+<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
+<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
+<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
+<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
+<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
+<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// connect</div>
+<div class="gr-footer-links">
+<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
+<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
+<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
+<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
+</div>
+</div>
+</div>
+<div class="gr-footer-bottom">
+<div class="gr-footer-copy">
+<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+    </div>
+<div class="gr-footer-stats">
+<span class="gr-footer-stat"><strong>280+</strong> commands</span>
+<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
+<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
+</div>
+</div>
+</footer>
+<script src="../css/gr.js"></script>
+</body>
+</html>

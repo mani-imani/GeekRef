@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python — دستورات در Ubuntu | GeekRef</title>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0d1117" name="theme-color"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/shared.css" rel="stylesheet"/>
+<style>
+:root { --accent: #f78166; --accent-rgb: 247,129,102; }
+</style>
+</head>
+<body>
+<nav class="gr-navbar">
+<div class="gr-navbar-left">
+<a class="gr-navbar-back" href="../index.html">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<div class="gr-breadcrumb">
+<a href="../index.html">GeekRef</a>
+<span class="gr-breadcrumb-sep">/</span>
+<span class="gr-breadcrumb-cur">Python</span>
+</div>
+</div>
+<div class="gr-navbar-mid">
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
+</div>
+</div>
+<div class="gr-navbar-right">
+<span class="gr-badge">🐍 Python</span>
+<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
+</div>
+</nav>
+<div class="gr-hero">
+<div class="gr-hero-eyebrow">Python · Ubuntu · CLI</div>
+<h1><em>Python</em> — دستورات در Ubuntu</h1>
+<p>نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته</p>
+<div class="gr-hero-stats">
+<div class="gr-stat"><span class="gr-stat-num">10</span><span class="gr-stat-label">بخش</span></div>
+<div class="gr-stat"><span class="gr-stat-num">56+</span><span class="gr-stat-label">دستور</span></div>
+<div class="gr-stat"><span class="gr-stat-num">۱۰۰٪</span><span class="gr-stat-label">فارسی</span></div>
+</div>
+</div>
+<div class="gr-container" style="max-width:1160px">
+<div class="gr-layout">
+
+<div class="gr-main-content">
+
+<div class="gr-section" id="s1">
+<div class="gr-section-header">
+<div class="gr-section-icon">🐍</div>
+<div class="gr-section-title">۱. نصب Python</div>
+<span class="gr-section-num">1</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 --version',this)">
+<code>python3 --version</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">بررسی Python از پیش نصب‌شده</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo apt update',this)">
+<code>sudo apt update</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب Python 3 (پیش‌فرض)</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python3.11',this)">
+<code>sudo apt install python3.11</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب نسخه خاص Python</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo add-apt-repository ppa:deadsnakes/ppa',this)">
+<code>sudo add-apt-repository ppa:deadsnakes/ppa</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب از PPA (آخرین نسخه‌ها)</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python3-dev',this)">
+<code>sudo apt install python3-dev</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب ابزارهای توسعه</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python-is-python3',this)">
+<code>sudo apt install python-is-python3</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تنظیم python3 به عنوان python</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s2">
+<div class="gr-section-header">
+<div class="gr-section-icon">▶️</div>
+<div class="gr-section-title">۲. اجرای Python</div>
+<span class="gr-section-num">2</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3',this)">
+<code>python3</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ورود به حالت تعاملی (REPL)</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 myscript.py',this)">
+<code>python3 myscript.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای فایل .py</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -c &quot;print(\'Hello World\')&quot;',this)">
+<code>python3 -c "print('Hello World')"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای کد مستقیم با -c</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m http.server 8080',this)">
+<code>python3 -m http.server 8080</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرا به عنوان ماژول با -m</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('chmod +x myscript.py',this)">
+<code>chmod +x myscript.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای فایل با دسترسی اجرایی</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('echo &quot;hello&quot; | python3 -c &quot;import sys; print(sys.stdin.read().upper())&quot;',this)">
+<code>echo "hello" | python3 -c "import sys; print(sys.stdin.read().upper())"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">خواندن از stdin (لوله)</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s3">
+<div class="gr-section-header">
+<div class="gr-section-icon">📦</div>
+<div class="gr-section-title">۳. مدیریت بسته‌ها با pip</div>
+<span class="gr-section-num">3</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python3-pip',this)">
+<code>sudo apt install python3-pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب pip</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m pip install --upgrade pip',this)">
+<code>python3 -m pip install --upgrade pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">به‌روزرسانی pip</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install requests',this)">
+<code>pip3 install requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب بسته</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install -r requirements.txt',this)">
+<code>pip3 install -r requirements.txt</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب از requirements.txt</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install git+https://github.com/user/repo.git',this)">
+<code>pip3 install git+https://github.com/user/repo.git</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب از GitHub / منابع دیگر</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 list',this)">
+<code>pip3 list</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">لیست بسته‌های نصب‌شده</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 show requests',this)">
+<code>pip3 show requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اطلاعات یک بسته</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 index versions requests',this)">
+<code>pip3 index versions requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجوی بسته</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 uninstall requests',this)">
+<code>pip3 uninstall requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف بسته</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s4">
+<div class="gr-section-header">
+<div class="gr-section-icon">🌐</div>
+<div class="gr-section-title">۴. محیط مجازی (Virtual Environment)</div>
+<span class="gr-section-num">4</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m venv myenv',this)">
+<code>python3 -m venv myenv</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ساخت محیط مجازی با venv</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('source myenv/bin/activate',this)">
+<code>source myenv/bin/activate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فعال‌سازی و غیرفعال‌سازی</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('source .venv/bin/activate',this)">
+<code>source .venv/bin/activate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">کار با pip در محیط مجازی</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install virtualenv',this)">
+<code>pip3 install virtualenv</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">virtualenv — ابزار قدیمی‌تر</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo apt install pipx',this)">
+<code>sudo apt install pipx</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">pipx — نصب ابزارها به صورت ایزوله</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('(myenv) deactivate',this)">
+<code>(myenv) deactivate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف محیط مجازی</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s5">
+<div class="gr-section-header">
+<div class="gr-section-icon">ℹ️</div>
+<div class="gr-section-title">۵. اطلاعات و نسخه‌ها</div>
+<span class="gr-section-num">5</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 --version',this)">
+<code>python3 --version</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نسخه Python</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('which python3',this)">
+<code>which python3</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مسیر نصب Python</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -c &quot;import sys; print(sys.path)&quot;',this)">
+<code>python3 -c "import sys; print(sys.path)"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مسیر ماژول‌ها</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ls /usr/bin/python*',this)">
+<code>ls /usr/bin/python*</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">همه نسخه‌های Python</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1',this)">
+<code>sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تنظیم نسخه پیش‌فرض</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -c &quot;import platform; print(platform.platform())&quot;',this)">
+<code>python3 -c "import platform; print(platform.platform())"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اطلاعات پلتفرم</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s6">
+<div class="gr-section-header">
+<div class="gr-section-icon">📁</div>
+<div class="gr-section-title">۶. مدیریت فایل‌های Python</div>
+<span class="gr-section-num">6</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m py_compile script.py',this)">
+<code>python3 -m py_compile script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">کامپایل به bytecode</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('find . -name &quot;__pycache__&quot; -exec rm -rf {} +',this)">
+<code>find . -name "__pycache__" -exec rm -rf {} +</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">پاک کردن فایل‌های cache</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m py_compile script.py &amp;&amp; echo &quot;OK&quot;',this)">
+<code>python3 -m py_compile script.py &amp;&amp; echo "OK"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">بررسی syntax فایل</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install black',this)">
+<code>pip3 install black</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فرمت‌بندی کد با black</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s7">
+<div class="gr-section-header">
+<div class="gr-section-icon">🐛</div>
+<div class="gr-section-title">۷. دیباگ و تست</div>
+<span class="gr-section-num">7</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m pdb script.py',this)">
+<code>python3 -m pdb script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">دیباگ با pdb</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m cProfile script.py',this)">
+<code>python3 -m cProfile script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">profiling و اندازه‌گیری سرعت</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m unittest',this)">
+<code>python3 -m unittest</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تست با unittest</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install pytest',this)">
+<code>pip3 install pytest</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تست با pytest</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -W all script.py',this)">
+<code>python3 -W all script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">بررسی memory و لاگ</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install pylint',this)">
+<code>pip3 install pylint</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">linting با pylint / ruff</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s8">
+<div class="gr-section-header">
+<div class="gr-section-icon">⚡</div>
+<div class="gr-section-title">۸. pyenv — مدیریت نسخه‌ها</div>
+<span class="gr-section-num">8</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('curl https://pyenv.run | bash',this)">
+<code>curl https://pyenv.run | bash</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب pyenv</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv install --list',this)">
+<code>pyenv install --list</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب Python با pyenv</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pyenv global 3.12.0',this)">
+<code>pyenv global 3.12.0</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جابجایی بین نسخه‌ها</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s9">
+<div class="gr-section-header">
+<div class="gr-section-icon">🔧</div>
+<div class="gr-section-title">۹. کار با اسکریپت‌ها و ماژول‌ها</div>
+<span class="gr-section-num">9</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m http.server',this)">
+<code>python3 -m http.server</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">سرور HTTP ساده</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m json.tool data.json',this)">
+<code>python3 -m json.tool data.json</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فرمت JSON</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m pydoc os',this)">
+<code>python3 -m pydoc os</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مستندات در ترمینال</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m zipapp myapp -m &quot;main:main&quot;',this)">
+<code>python3 -m zipapp myapp -m "main:main"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فشرده‌سازی zipapp</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m base64 file.txt',this)">
+<code>python3 -m base64 file.txt</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">base64 encoding/decoding</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('python3 -m calendar',this)">
+<code>python3 -m calendar</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">calendar و تاریخ</div>
+</div>
+</div>
+</div>
+<div class="gr-section" id="s10">
+<div class="gr-section-header">
+<div class="gr-section-icon">📋</div>
+<div class="gr-section-title">۱۰. ابزارهای پیشرفته</div>
+<span class="gr-section-num">10</span>
+</div>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install poetry',this)">
+<code>pip3 install poetry</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">Poetry — مدیریت پروژه مدرن</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install ipython',this)">
+<code>pip3 install ipython</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">IPython — REPL پیشرفته</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pip3 install jupyter',this)">
+<code>pip3 install jupyter</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">Jupyter Notebook</div>
+</div>
+<div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('curl -LsSf https://astral.sh/uv/install.sh | sh',this)">
+<code>curl -LsSf https://astral.sh/uv/install.sh | sh</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">uv — سریع‌ترین ابزار مدرن</div>
+</div>
+</div>
+</div>
+</div><aside class="gr-sidebar">
+<div class="gr-sidebar-title">// محتوا</div>
+<div class="gr-sidebar-items">
+<a class="gr-sidebar-item" href="#s1"><span class="gr-sidebar-num">1</span>۱. نصب Python</a>
+<a class="gr-sidebar-item" href="#s2"><span class="gr-sidebar-num">2</span>۲. اجرای Python</a>
+<a class="gr-sidebar-item" href="#s3"><span class="gr-sidebar-num">3</span>۳. مدیریت بسته‌ها با pip</a>
+<a class="gr-sidebar-item" href="#s4"><span class="gr-sidebar-num">4</span>۴. محیط مجازی (Virtual Environment)</a>
+<a class="gr-sidebar-item" href="#s5"><span class="gr-sidebar-num">5</span>۵. اطلاعات و نسخه‌ها</a>
+<a class="gr-sidebar-item" href="#s6"><span class="gr-sidebar-num">6</span>۶. مدیریت فایل‌های Python</a>
+<a class="gr-sidebar-item" href="#s7"><span class="gr-sidebar-num">7</span>۷. دیباگ و تست</a>
+<a class="gr-sidebar-item" href="#s8"><span class="gr-sidebar-num">8</span>۸. pyenv — مدیریت نسخه‌ها</a>
+<a class="gr-sidebar-item" href="#s9"><span class="gr-sidebar-num">9</span>۹. کار با اسکریپت‌ها و ماژول‌ها</a>
+<a class="gr-sidebar-item" href="#s10"><span class="gr-sidebar-num">10</span>۱۰. ابزارهای پیشرفته</a>
+</div>
+</aside>
+</div><!-- /gr-main-content -->
+</div><!-- /gr-layout -->
+<!-- /gr-container -->
+<footer class="gr-footer-rich">
+<div class="gr-footer-grid">
+<div class="gr-footer-brand">
+<div class="gr-footer-logo">
+<span>👾</span>
+<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
+</div>
+<div class="gr-footer-tagline">
+<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
+</div>
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span>online · 280+ commands</span>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// cheatsheets</div>
+<div class="gr-footer-links">
+<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
+<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
+<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
+<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
+<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
+<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// connect</div>
+<div class="gr-footer-links">
+<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
+<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
+<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
+<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
+</div>
+</div>
+</div>
+<div class="gr-footer-bottom">
+<div class="gr-footer-copy">
+<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+    </div>
+<div class="gr-footer-stats">
+<span class="gr-footer-stat"><strong>280+</strong> commands</span>
+<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
+<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
+</div>
+</div>
+</footer>
+<script src="../css/gr.js"></script>
+</body>
+</html>

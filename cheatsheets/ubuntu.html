@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ubuntu — دستورات لینوکس | GeekRef</title>
+<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="#0d1117" name="theme-color"/>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/shared.css" rel="stylesheet"/>
+<style>
+:root { --accent: #f97316; --accent-rgb: 249,115,22; }
+</style>
+</head>
+<body>
+<nav class="gr-navbar">
+<div class="gr-navbar-left">
+<a class="gr-navbar-back" href="../index.html">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<div class="gr-breadcrumb">
+<a href="../index.html">GeekRef</a>
+<span class="gr-breadcrumb-sep">/</span>
+<span class="gr-breadcrumb-cur">Ubuntu</span>
+</div>
+</div>
+<div class="gr-navbar-mid">
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
+</div>
+</div>
+<div class="gr-navbar-right">
+<span class="gr-badge">🐧 Ubuntu</span>
+<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
+</div>
+</nav>
+<div class="gr-hero">
+<div class="gr-hero-eyebrow">Linux · Bash · Ubuntu</div>
+<h1><em>Ubuntu</em> — دستورات لینوکس</h1>
+<p>مدیریت فایل، شبکه، پردازش‌ها، پکیج‌ها و سیستم — راهنمای جامع فارسی</p>
+<div class="gr-hero-stats">
+<div class="gr-stat"><span class="gr-stat-num">14</span><span class="gr-stat-label">بخش</span></div>
+<div class="gr-stat"><span class="gr-stat-num">94+</span><span class="gr-stat-label">دستور</span></div>
+<div class="gr-stat"><span class="gr-stat-num">۱۰۰٪</span><span class="gr-stat-label">فارسی</span></div>
+</div>
+</div>
+<div class="gr-container" style="max-width:1160px">
+<div class="gr-layout">
+
+<div class="gr-main-content">
+
+<div class="gr-section" id="nav">
+<div class="gr-section-header">
+<div class="gr-section-icon">📂</div>
+<div class="gr-section-title">ناوبری و مکان‌یابی</div>
+<span class="gr-section-num">1</span>
+</div>
+<p class="gr-section-desc">حرکت در بین دایرکتوری‌ها و پیدا کردن مسیر</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('pwd', this)">
+<code>pwd</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش مسیر کامل دایرکتوری فعلی — Print Working Directory</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ls', this)">
+<code>ls</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش لیست فایل‌ها و دایرکتوری‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cd [path]', this)">
+<code>cd [path]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تغییر دایرکتوری فعلی</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('find [path] [options]', this)">
+<code>find [path] [options]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجوی فایل در سیستم</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('locate [name]', this)">
+<code>locate [name]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجوی سریع فایل از دیتابیس ایندکس — برای آپدیت دیتابیس: sudo updatedb</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('which / whereis', this)">
+<code>which / whereis</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">پیدا کردن مسیر یک دستور یا برنامه</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('tree', this)">
+<code>tree</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش درختی ساختار پوشه‌ها — نصب: sudo apt install tree</div>
+</div></div>
+</div>
+<div class="gr-section" id="file">
+<div class="gr-section-header">
+<div class="gr-section-icon">📄</div>
+<div class="gr-section-title">مدیریت فایل و دایرکتوری</div>
+<span class="gr-section-num">2</span>
+</div>
+<p class="gr-section-desc">ایجاد، کپی، جابجایی، حذف فایل‌ها</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('touch [file]', this)">
+<code>touch [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ایجاد فایل خالی یا آپدیت زمان تغییر</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('mkdir [dir]', this)">
+<code>mkdir [dir]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ایجاد دایرکتوری جدید</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cp [src] [dest]', this)">
+<code>cp [src] [dest]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">کپی فایل یا دایرکتوری</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('mv [src] [dest]', this)">
+<code>mv [src] [dest]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جابجایی یا تغییر نام فایل</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('rm [file]', this)">
+<code>rm [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف فایل یا دایرکتوری</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('rmdir [dir]', this)">
+<code>rmdir [dir]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف دایرکتوری خالی</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ln -s [target] [link]', this)">
+<code>ln -s [target] [link]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ایجاد لینک سمبلیک (Symbolic Link) — مثل shortcut ویندوز</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cat / less / more / head / tail', this)">
+<code>cat / less / more / head / tail</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش محتوای فایل</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('rsync [options] src dest', this)">
+<code>rsync [options] src dest</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">همگام‌سازی هوشمند فایل‌ها (بهتر از cp)</div>
+</div></div>
+</div>
+<div class="gr-section" id="perm">
+<div class="gr-section-header">
+<div class="gr-section-icon">🔐</div>
+<div class="gr-section-title">مجوزها و مالکیت</div>
+<span class="gr-section-num">3</span>
+</div>
+<p class="gr-section-desc">chmod، chown و مدیریت دسترسی</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('chmod [mode] [file]', this)">
+<code>chmod [mode] [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تغییر مجوزهای فایل</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('chown [user]:[group] [file]', this)">
+<code>chown [user]:[group] [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تغییر مالک فایل یا دایرکتوری</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('chgrp [group] [file]', this)">
+<code>chgrp [group] [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تغییر گروه فایل</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('umask', this)">
+<code>umask</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تنظیم مجوز پیش‌فرض فایل‌های جدید</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sudo [command]', this)">
+<code>sudo [command]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای دستور با سطح دسترسی root</div>
+</div></div>
+</div>
+<div class="gr-section" id="proc">
+<div class="gr-section-header">
+<div class="gr-section-icon">⚙️</div>
+<div class="gr-section-title">مدیریت پردازش‌ها</div>
+<span class="gr-section-num">4</span>
+</div>
+<p class="gr-section-desc">مشاهده، کنترل و خاتمه دادن به پردازش‌ها</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ps [options]', this)">
+<code>ps [options]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش لیست پردازش‌های در حال اجرا</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('top / htop', this)">
+<code>top / htop</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش زنده پردازش‌ها و مصرف منابع — htop نیاز به نصب دارد: sudo apt install htop</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('kill [signal] [PID]', this)">
+<code>kill [signal] [PID]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ارسال سیگنال به پردازش</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('jobs / bg / fg / nohup', this)">
+<code>jobs / bg / fg / nohup</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدیریت کارهای پس‌زمینه</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('nice / renice', this)">
+<code>nice / renice</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تنظیم اولویت پردازش (-20 تا 19)</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('systemctl [cmd] [service]', this)">
+<code>systemctl [cmd] [service]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدیریت سرویس‌های سیستم (systemd)</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('journalctl', this)">
+<code>journalctl</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">خواندن لاگ‌های systemd</div>
+</div></div>
+</div>
+<div class="gr-section" id="net">
+<div class="gr-section-header">
+<div class="gr-section-icon">🌐</div>
+<div class="gr-section-title">شبکه</div>
+<span class="gr-section-num">5</span>
+</div>
+<p class="gr-section-desc">بررسی اتصال، دانلود و عیب‌یابی شبکه</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ip addr / ifconfig', this)">
+<code>ip addr / ifconfig</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش اطلاعات کارت‌های شبکه</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ping [host]', this)">
+<code>ping [host]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">بررسی اتصال به هاست</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('curl [url]', this)">
+<code>curl [url]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ارسال درخواست HTTP و دانلود</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('wget [url]', this)">
+<code>wget [url]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">دانلود فایل از اینترنت</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('netstat / ss', this)">
+<code>netstat / ss</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش اتصالات شبکه و پورت‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('nmap [host]', this)">
+<code>nmap [host]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اسکن پورت‌ها و سرویس‌ها — نصب: sudo apt install nmap</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('traceroute / mtr', this)">
+<code>traceroute / mtr</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ردیابی مسیر بسته‌ها به مقصد</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('dig / nslookup / host', this)">
+<code>dig / nslookup / host</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجوی DNS</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ufw [command]', this)">
+<code>ufw [command]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فایروال Ubuntu</div>
+</div></div>
+</div>
+<div class="gr-section" id="pkg">
+<div class="gr-section-header">
+<div class="gr-section-icon">📦</div>
+<div class="gr-section-title">مدیریت پکیج‌ها</div>
+<span class="gr-section-num">6</span>
+</div>
+<p class="gr-section-desc">نصب، حذف و آپدیت نرم‌افزارها</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('apt update', this)">
+<code>apt update</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">آپدیت لیست پکیج‌های موجود (همیشه اول این)</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('apt upgrade', this)">
+<code>apt upgrade</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">آپگرید همه پکیج‌های نصب‌شده</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('apt install [package]', this)">
+<code>apt install [package]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نصب پکیج</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('apt remove / purge', this)">
+<code>apt remove / purge</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف پکیج — purge فایل‌های config را هم حذف می‌کند</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('apt autoremove', this)">
+<code>apt autoremove</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف پکیج‌های غیرضروری</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('apt search / show', this)">
+<code>apt search / show</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجو و نمایش اطلاعات پکیج</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('dpkg [options]', this)">
+<code>dpkg [options]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدیریت پکیج‌های .deb</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('snap [command]', this)">
+<code>snap [command]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدیریت پکیج‌های Snap</div>
+</div></div>
+</div>
+<div class="gr-section" id="disk">
+<div class="gr-section-header">
+<div class="gr-section-icon">💿</div>
+<div class="gr-section-title">دیسک و فضای ذخیره‌سازی</div>
+<span class="gr-section-num">7</span>
+</div>
+<p class="gr-section-desc">بررسی فضا، mount و مدیریت پارتیشن</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('df -h', this)">
+<code>df -h</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش فضای دیسک تمام partition‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('du [options] [path]', this)">
+<code>du [options] [path]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اندازه دایرکتوری‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('lsblk', this)">
+<code>lsblk</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش لیست block devices و دیسک‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('mount / umount', this)">
+<code>mount / umount</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">mount و unmount کردن دیسک</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('fdisk / parted', this)">
+<code>fdisk / parted</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدیریت partition‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('mkfs.[type] /dev/sdX', this)">
+<code>mkfs.[type] /dev/sdX</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فرمت کردن partition</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('iostat / iotop', this)">
+<code>iostat / iotop</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مانیتورینگ I/O دیسک</div>
+</div></div>
+</div>
+<div class="gr-section" id="user">
+<div class="gr-section-header">
+<div class="gr-section-icon">👤</div>
+<div class="gr-section-title">مدیریت کاربران و گروه‌ها</div>
+<span class="gr-section-num">8</span>
+</div>
+<p class="gr-section-desc">ایجاد، تغییر و حذف کاربران</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('useradd / adduser', this)">
+<code>useradd / adduser</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ایجاد کاربر جدید — adduser تعاملی‌تر و friendlier است</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('passwd [user]', this)">
+<code>passwd [user]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تنظیم یا تغییر رمز عبور</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('usermod [options] [user]', this)">
+<code>usermod [options] [user]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ویرایش اطلاعات کاربر</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('userdel / deluser', this)">
+<code>userdel / deluser</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">حذف کاربر</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('groupadd / groupdel / groups', this)">
+<code>groupadd / groupdel / groups</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدیریت گروه‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('su - [user]', this)">
+<code>su - [user]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تغییر کاربر فعلی</div>
+</div></div>
+</div>
+<div class="gr-section" id="sys">
+<div class="gr-section-header">
+<div class="gr-section-icon">🖥️</div>
+<div class="gr-section-title">اطلاعات و مدیریت سیستم</div>
+<span class="gr-section-num">9</span>
+</div>
+<p class="gr-section-desc">مانیتورینگ، reboot و اطلاعات سخت‌افزار</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('uname -a', this)">
+<code>uname -a</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اطلاعات کامل سیستم و کرنل</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('lscpu / lshw / lspci', this)">
+<code>lscpu / lshw / lspci</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اطلاعات سخت‌افزار</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('free -h', this)">
+<code>free -h</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش مصرف RAM و Swap</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('uptime', this)">
+<code>uptime</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مدت روشن بودن سیستم و بار پردازنده</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('date / timedatectl', this)">
+<code>date / timedatectl</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تاریخ، ساعت و timezone</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('shutdown / reboot / halt', this)">
+<code>shutdown / reboot / halt</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">خاموش و راه‌اندازی مجدد</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('env / printenv / export', this)">
+<code>env / printenv / export</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">متغیرهای محیطی</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('history', this)">
+<code>history</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تاریخچه دستورات وارد شده</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('alias', this)">
+<code>alias</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ایجاد نام مستعار برای دستورات</div>
+</div></div>
+</div>
+<div class="gr-section" id="text">
+<div class="gr-section-header">
+<div class="gr-section-icon">📝</div>
+<div class="gr-section-title">پردازش متن</div>
+<span class="gr-section-num">10</span>
+</div>
+<p class="gr-section-desc">grep، sed، awk و ابزارهای متن</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('grep [pattern] [file]', this)">
+<code>grep [pattern] [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجوی متن در فایل‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sed \'s/old/new/g\' file', this)">
+<code>sed 's/old/new/g' file</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">جستجو و جایگزینی در متن</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('awk \'{print $2}\' file', this)">
+<code>awk '{print $2}' file</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">پردازش متن بر اساس ستون</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('sort / uniq / wc', this)">
+<code>sort / uniq / wc</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مرتب‌سازی، حذف تکرار، شمارش</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cut / tr / paste', this)">
+<code>cut / tr / paste</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">بریدن ستون، جایگزینی کاراکتر</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('diff / patch', this)">
+<code>diff / patch</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">مقایسه فایل‌ها</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('echo / printf / tee', this)">
+<code>echo / printf / tee</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">چاپ متن و redirect</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('xargs', this)">
+<code>xargs</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">تبدیل stdin به آرگومان</div>
+</div></div>
+</div>
+<div class="gr-section" id="arch">
+<div class="gr-section-header">
+<div class="gr-section-icon">🗜️</div>
+<div class="gr-section-title">آرشیو و فشرده‌سازی</div>
+<span class="gr-section-num">11</span>
+</div>
+<p class="gr-section-desc">tar، zip، gzip و سایر فرمت‌ها</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('tar [options] [file]', this)">
+<code>tar [options] [file]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">آرشیو و فشرده‌سازی</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('zip / unzip', this)">
+<code>zip / unzip</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فشرده‌سازی فرمت zip</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('gzip / gunzip / bzip2', this)">
+<code>gzip / gunzip / bzip2</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">فشرده‌سازی یک فایل</div>
+</div></div>
+</div>
+<div class="gr-section" id="ssh">
+<div class="gr-section-header">
+<div class="gr-section-icon">🔒</div>
+<div class="gr-section-title">SSH و اتصال از راه دور</div>
+<span class="gr-section-num">12</span>
+</div>
+<p class="gr-section-desc">اتصال، انتقال فایل و تونل SSH</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ssh [user@host]', this)">
+<code>ssh [user@host]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اتصال به سرور از راه دور</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ssh-keygen', this)">
+<code>ssh-keygen</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ایجاد کلید SSH</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('ssh-copy-id user@host', this)">
+<code>ssh-copy-id user@host</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">کپی کلید عمومی به سرور</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('scp [src] [dest]', this)">
+<code>scp [src] [dest]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">انتقال امن فایل از طریق SSH</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('~/.ssh/config', this)">
+<code>~/.ssh/config</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">پیکربندی پروفایل‌های SSH</div>
+</div></div>
+</div>
+<div class="gr-section" id="cron">
+<div class="gr-section-header">
+<div class="gr-section-icon">⏰</div>
+<div class="gr-section-title">زمان‌بندی کارها (Cron)</div>
+<span class="gr-section-num">13</span>
+</div>
+<p class="gr-section-desc">اجرای خودکار دستورات در زمان‌های مشخص</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('crontab -e', this)">
+<code>crontab -e</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ویرایش crontab کاربر فعلی</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('crontab -l / -r', this)">
+<code>crontab -l / -r</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">نمایش یا حذف crontab</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('at [time]', this)">
+<code>at [time]</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای یک‌بار در زمان مشخص</div>
+</div></div>
+</div>
+<div class="gr-section" id="shortcut">
+<div class="gr-section-header">
+<div class="gr-section-icon">⌨️</div>
+<div class="gr-section-title">میانبرهای ترمینال و Redirect</div>
+<span class="gr-section-num">14</span>
+</div>
+<p class="gr-section-desc">کلیدهای ضروری و عملگرهای bash</p>
+<div class="gr-table"><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd1 &amp;&amp; cmd2', this)">
+<code>cmd1 &amp;&amp; cmd2</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای cmd2 فقط اگر cmd1 موفق باشد</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd1 || cmd2', this)">
+<code>cmd1 || cmd2</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای cmd2 فقط اگر cmd1 ناموفق باشد</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd1 | cmd2', this)">
+<code>cmd1 | cmd2</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">انتقال خروجی cmd1 به ورودی cmd2</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd &gt; file', this)">
+<code>cmd &gt; file</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">redirect خروجی به فایل (بازنویسی)</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd &gt;&gt; file', this)">
+<code>cmd &gt;&gt; file</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">redirect خروجی به فایل (الحاق)</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd 2&gt;&amp;1', this)">
+<code>cmd 2&gt;&amp;1</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">ترکیب خروجی error با خروجی عادی</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('$(command)', this)">
+<code>$(command)</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">Command substitution: استفاده از خروجی دستور</div>
+</div><div class="gr-row">
+<div class="gr-cmd" onclick="grCopyCmd('cmd1; cmd2; cmd3', this)">
+<code>cmd1; cmd2; cmd3</code>
+<svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+<span class="gr-copied-tag">کپی شد ✓</span>
+</div>
+<div class="gr-cmd-desc">اجرای دستورات پشت سر هم (بدون توجه به موفقیت)</div>
+</div></div>
+</div>
+</div><aside class="gr-sidebar">
+<div class="gr-sidebar-title">// محتوا</div>
+<div class="gr-sidebar-items">
+<a class="gr-sidebar-item" href="#nav"><span class="gr-sidebar-num">1</span>ناوبری و مکان‌یابی</a>
+<a class="gr-sidebar-item" href="#file"><span class="gr-sidebar-num">2</span>مدیریت فایل و دایرکتوری</a>
+<a class="gr-sidebar-item" href="#perm"><span class="gr-sidebar-num">3</span>مجوزها و مالکیت</a>
+<a class="gr-sidebar-item" href="#proc"><span class="gr-sidebar-num">4</span>مدیریت پردازش‌ها</a>
+<a class="gr-sidebar-item" href="#net"><span class="gr-sidebar-num">5</span>شبکه</a>
+<a class="gr-sidebar-item" href="#pkg"><span class="gr-sidebar-num">6</span>مدیریت پکیج‌ها</a>
+<a class="gr-sidebar-item" href="#disk"><span class="gr-sidebar-num">7</span>دیسک و فضای ذخیره‌سازی</a>
+<a class="gr-sidebar-item" href="#user"><span class="gr-sidebar-num">8</span>مدیریت کاربران و گروه‌ها</a>
+<a class="gr-sidebar-item" href="#sys"><span class="gr-sidebar-num">9</span>اطلاعات و مدیریت سیستم</a>
+<a class="gr-sidebar-item" href="#text"><span class="gr-sidebar-num">10</span>پردازش متن</a>
+<a class="gr-sidebar-item" href="#arch"><span class="gr-sidebar-num">11</span>آرشیو و فشرده‌سازی</a>
+<a class="gr-sidebar-item" href="#ssh"><span class="gr-sidebar-num">12</span>SSH و اتصال از راه دور</a>
+<a class="gr-sidebar-item" href="#cron"><span class="gr-sidebar-num">13</span>زمان‌بندی کارها (Cron)</a>
+<a class="gr-sidebar-item" href="#shortcut"><span class="gr-sidebar-num">14</span>میانبرهای ترمینال و Redirect</a>
+</div>
+</aside>
+</div><!-- /gr-main-content -->
+</div><!-- /gr-layout -->
+<!-- /gr-container -->
+<footer class="gr-footer-rich">
+<div class="gr-footer-grid">
+<div class="gr-footer-brand">
+<div class="gr-footer-logo">
+<span>👾</span>
+<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
+</div>
+<div class="gr-footer-tagline">
+<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
+<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
+</div>
+<div class="gr-status">
+<span class="gr-status-dot"></span>
+<span>online · 280+ commands</span>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// cheatsheets</div>
+<div class="gr-footer-links">
+<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
+<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
+<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
+<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
+<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
+<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
+</div>
+</div>
+<div>
+<div class="gr-footer-links-title">// connect</div>
+<div class="gr-footer-links">
+<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
+<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
+<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
+<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
+</div>
+</div>
+</div>
+<div class="gr-footer-bottom">
+<div class="gr-footer-copy">
+<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+    </div>
+<div class="gr-footer-stats">
+<span class="gr-footer-stat"><strong>280+</strong> commands</span>
+<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
+<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
+</div>
+</div>
+</footer>
+<script src="../css/gr.js"></script>
+</body>
+</html>
