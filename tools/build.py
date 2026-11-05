@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GeekRef build · v2.1.0
+GeekRef build · v2.2.0
 Single source of truth: data/sheets/*.json  ->  index.html, cheatsheets/*.html,
 assets/search-index.json, sw.js (offline file list), manifest.webmanifest.
 
@@ -16,7 +16,7 @@ Persian ی/ک, common missing ZWNJ fixed. Tiny markup: **bold** and `code`.
 import glob, hashlib, html as H, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VERSION = '2.1.0'
+VERSION = '2.2.0'
 SITE = 'https://mani-imani.github.io/GeekRef/'
 REPO = 'https://github.com/mani-imani/GeekRef'
 ZW = '‌'
@@ -304,6 +304,7 @@ def footer(depth, sheets):
     <a class="gm-sign" href="https://github.com/mani-imani">از گیک‌مانی<i class="gm-cursor"></i></a>
     <div class="gr-footer-small">
      <span class="gr-offline" hidden>{icon('check2')}بدون اینترنت هم در دسترس است</span>
+     <button type="button" class="gr-install-link" data-gr-install hidden>{icon('download')}نصب به‌شکل برنامه</button>
      <a href="{REPO}">کد پروژه</a>
      <span>مجوز <bdi>MIT</bdi></span>
      <span class="gm-mono">v{VERSION}</span>

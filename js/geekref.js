@@ -1,8 +1,8 @@
 /* ============================================================================
-   geekref.js — GeekRef v2.1.0 (was css/gr.js in v1)
+   geekref.js — GeekRef v2.2.0 (was css/gr.js in v1)
    1 Icons   2 Theme (System / Light / Dark)   3 Copy (commands, code, links)
    4 Search (Ctrl/Cmd+K or /)   5 Deep links (#c-…)   6 Table of contents
-   7 Offline (service worker)
+   7 Offline (service worker)   8 Install as an app (first-visit card + footer link)
    Command counts are written by tools/build.py, not at runtime.
    No dependencies. Works from / and /cheatsheets/.
    ========================================================================== */
@@ -22,6 +22,8 @@
     copy:   '<path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>',
     check:  '<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>',
     search: '<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>',
+    download: '<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>',
+    share:  '<path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/><path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>',
     close:  '<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>'
   };
   function icon(name) { return '<svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false">' + ICONS[name] + '</svg>'; }
@@ -266,6 +268,84 @@
     }).catch(function () {});
   }
 
+  /* ── 8. Install as an app ──
+     Chrome, Edge, Android and Samsung Internet fire "beforeinstallprompt": we keep it and offer our own card.
+     Safari on iPhone/iPad has no such event: the card shows the two taps instead (Share, then Add to Home Screen).
+     Other browsers (Firefox desktop, …) cannot install a site: nothing is shown.
+     The card appears once, on the first visit (key "gr-install-seen"); afterwards the footer link stays. */
+  var deferred = null, card = null;
+  var INSTALL_KEY = 'gr-install-seen';
+  var IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var IS_IOS_SAFARI = IS_IOS && /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(navigator.userAgent);
+  function installed() { return window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; }
+  function seen() { try { return localStorage.getItem(INSTALL_KEY) === '1'; } catch (e) { return true; } }
+  function markSeen() { try { localStorage.setItem(INSTALL_KEY, '1'); } catch (e) {} }
+  function canInstall() { return !installed() && (deferred || IS_IOS_SAFARI); }
+  function showFooterLinks() { doc.querySelectorAll('[data-gr-install]').forEach(function (b) { b.hidden = !canInstall(); }); }
+
+  function closeCard() {
+    if (!card) return;
+    var c = card; card = null;
+    c.classList.remove('is-in');
+    setTimeout(function () { c.remove(); }, 250);
+  }
+  function openCard() {
+    if (card || !canInstall()) return;
+    if (dlg && dlg.open) { setTimeout(openCard, 4000); return; }   // never on top of the search
+    markSeen();
+    card = doc.createElement('section');
+    card.className = 'gr-install';
+    card.setAttribute('role', 'dialog');
+    card.setAttribute('aria-labelledby', 'gr-install-t');
+    var ios = !deferred;
+    card.innerHTML =
+      '<img class="gr-install-icon" src="' + BASE + 'assets/brand/geekref-icon.svg" alt="" width="44" height="44">' +
+      '<div class="gr-install-body">' +
+        '<h2 id="gr-install-t">نصب <bdi>GeekRef</bdi></h2>' +
+        (ios
+          ? '<p>در <bdi>Safari</bdi> دکمه‌ی اشتراک‌گذاری ' + icon('share') + ' را بزنید و «<bdi>Add to Home Screen</bdi>» را انتخاب کنید. بعد مثل یک برنامه باز می‌شود و بدون اینترنت هم کار می‌کند.</p>'
+          : '<p>مثل یک برنامه، جدا از مرورگر باز می‌شود و بدون اینترنت هم کار می‌کند.</p>') +
+        '<div class="gr-install-actions">' +
+          (ios
+            ? '<button type="button" class="gm-btn gm-btn--primary" data-install-later>متوجه شدم</button>'
+            : '<button type="button" class="gm-btn gm-btn--primary" data-install-go>' + icon('download') + '<span>نصب</span></button>' +
+              '<button type="button" class="gm-btn gm-btn--secondary" data-install-later>بعداً</button>') +
+        '</div>' +
+      '</div>' +
+      '<button type="button" class="gr-icon-btn gr-install-x" data-install-later aria-label="بستن">' + icon('close') + '</button>';
+    doc.body.appendChild(card);
+    requestAnimationFrame(function () { requestAnimationFrame(function () { if (card) card.classList.add('is-in'); }); });
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('[data-install-go]')) runInstall();
+      else if (e.target.closest('[data-install-later]')) closeCard();
+    });
+    card.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCard(); });
+  }
+  function runInstall() {
+    if (!deferred) { openCard(); return; }           // iPhone/iPad: show the steps
+    var p = deferred; deferred = null;
+    closeCard();
+    p.prompt();
+    p.userChoice.then(function () { showFooterLinks(); }).catch(function () {});
+  }
+  function initInstall() {
+    doc.querySelectorAll('[data-gr-install]').forEach(function (b) {
+      b.addEventListener('click', function () { if (deferred) runInstall(); else { card = null; openCard(); } });
+    });
+    if (installed()) return;
+    window.addEventListener('beforeinstallprompt', function (e) {
+      e.preventDefault();                             // keep it for our own button
+      deferred = e;
+      showFooterLinks();
+      if (!seen()) setTimeout(openCard, 2500);
+    });
+    window.addEventListener('appinstalled', function () {
+      deferred = null; closeCard(); showFooterLinks(); markSeen();
+      announce('GeekRef نصب شد');
+    });
+    if (IS_IOS_SAFARI) { showFooterLinks(); if (!seen()) setTimeout(openCard, 2500); }
+  }
+
   /* ── boot ── */
   function boot() {
     setTheme(readTheme());
@@ -277,6 +357,7 @@
     initToc();
     focusTarget();
     initOffline();
+    initInstall();
   }
   if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', boot); else boot();
 })();

@@ -8,7 +8,7 @@
 <p align="center">Persian quick-reference sheets for developers: common commands, each with a short Persian description.</p>
 
 <p align="center"><a href="https://mani-imani.github.io/GeekRef/"><b>mani-imani.github.io/GeekRef</b></a></p>
-<p align="center"><a href="#فارسی">فارسی</a> · <a href="#english">English</a> · <code>v2.1.0</code></p>
+<p align="center"><a href="#فارسی">فارسی</a> · <a href="#english">English</a> · <code>v2.2.0</code></p>
 
 ---
 
@@ -40,7 +40,7 @@ GeekRef مجموعه‌ای از برگه‌های مرجع است: دستوره
 - نتیجه‌ها مرتب‌اند: دستوری که با واژه‌ی شما شروع می‌شود اول می‌آید و برگه‌ای که در آن هستید جلوتر است؛ رقم فارسی و انگلیسی و نیم‌فاصله فرقی نمی‌کنند
 - هر دستور پیوند اختصاصی دارد؛ دکمه‌ی پیوند کنار هر ردیف آن را کپی می‌کند تا برای کسی بفرستید
 - کپی هر دستور با یک کلیک یا با <kbd>Enter</kbd>، در همه‌ی برگه‌ها از جمله کارت‌های <bdi>Git</bdi>
-- بعد از اولین بازدید، بدون اینترنت هم کار می‌کند و می‌شود آن را مثل یک برنامه نصب کرد
+- بعد از اولین بازدید، بدون اینترنت هم کار می‌کند و می‌شود آن را مثل یک برنامه نصب کرد؛ در اولین بازدید یک کارت کوچک نصب را پیشنهاد می‌دهد (در <bdi>iPhone</bdi> و <bdi>iPad</bdi> دو قدمِ <bdi>Safari</bdi> را نشان می‌دهد) و پیوند «نصب به‌شکل برنامه» همیشه پایین صفحه هست
 - پوسته‌ی روشن و تیره، با پیش‌فرض پیروی از سیستم
 - فهرست هر برگه در کنار صفحه، و روی موبایل به‌شکل فهرست تاشو
 - کار با صفحه‌کلید، کنتراست استاندارد و نسخه‌ی چاپی تمیز
@@ -145,7 +145,7 @@ python3 tools/build.py           # ساخت صفحه‌ها، نمایه‌ی ج
 
 ### نسخه
 
-<code dir="ltr">v2.1.0</code> · تاریخچه در [CHANGELOG.md](CHANGELOG.md).
+<code dir="ltr">v2.2.0</code> · تاریخچه در [CHANGELOG.md](CHANGELOG.md).
 
 </div>
 
@@ -174,7 +174,7 @@ Most references are in English, and a simple command can take several pages to f
 - Results are ranked: commands that start with your query come first, and the sheet you are on comes before others; Persian and English digits and ZWNJ are treated alike
 - Every command has its own link; the link button on each row copies it so you can share it
 - Copy any command with one click or <kbd>Enter</kbd>, on every sheet including the Git cards
-- Works offline after the first visit and can be installed as an app
+- Works offline after the first visit and can be installed as an app; on the first visit a small card offers to install it (on iPhone and iPad it shows the two Safari steps), and an "install as an app" link stays in the footer
 - Light and dark themes, following the system by default
 - Table of contents beside each sheet, and a collapsible one on phones
 - Keyboard friendly, AA contrast and clean print styles
@@ -232,7 +232,7 @@ Write descriptions in plain Persian. The build wraps Latin words in `<bdi>`, tur
 Code under the MIT license (see [LICENSE](LICENSE)). Fonts under SIL OFL; interface icons from Bootstrap Icons (MIT). Each license file sits next to its files.
 
 ### Version
-`v2.1.0` · see [CHANGELOG.md](CHANGELOG.md).
+`v2.2.0` · see [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
