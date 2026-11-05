@@ -1,0 +1,347 @@
+{
+  "order": 3,
+  "file": "python.html",
+  "name": "Python",
+  "subtitle": "دستورات در Ubuntu",
+  "eyebrow": "Python · Ubuntu · CLI",
+  "lede": "نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته",
+  "card": "نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته",
+  "icon": "filetype-py",
+  "layout": "sections",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "نصب Python",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3 --version",
+              "desc": "بررسی Python از پیش نصب‌شده"
+            },
+            {
+              "cmd": "sudo apt update",
+              "desc": "نصب Python 3 (پیش‌فرض)"
+            },
+            {
+              "cmd": "sudo apt install python3.11",
+              "desc": "نصب نسخه خاص Python"
+            },
+            {
+              "cmd": "sudo add-apt-repository ppa:deadsnakes/ppa",
+              "desc": "نصب از PPA (آخرین نسخه‌ها)"
+            },
+            {
+              "cmd": "sudo apt install python3-dev",
+              "desc": "نصب ابزارهای توسعه"
+            },
+            {
+              "cmd": "sudo apt install python-is-python3",
+              "desc": "تنظیم python3 به عنوان python"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "اجرای Python",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3",
+              "desc": "ورود به حالت تعاملی (REPL)"
+            },
+            {
+              "cmd": "python3 myscript.py",
+              "desc": "اجرای فایل .py"
+            },
+            {
+              "cmd": "python3 -c \"print('Hello World')\"",
+              "desc": "اجرای کد مستقیم با -c"
+            },
+            {
+              "cmd": "python3 -m http.server 8080",
+              "desc": "اجرا به عنوان ماژول با -m"
+            },
+            {
+              "cmd": "chmod +x myscript.py",
+              "desc": "اجرای فایل با دسترسی اجرایی"
+            },
+            {
+              "cmd": "echo \"hello\" | python3 -c \"import sys; print(sys.stdin.read().upper())\"",
+              "desc": "خواندن از stdin (لوله)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "مدیریت بسته‌ها با pip",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "sudo apt install python3-pip",
+              "desc": "نصب pip"
+            },
+            {
+              "cmd": "python3 -m pip install --upgrade pip",
+              "desc": "به‌روزرسانی pip"
+            },
+            {
+              "cmd": "pip3 install requests",
+              "desc": "نصب بسته"
+            },
+            {
+              "cmd": "pip3 install -r requirements.txt",
+              "desc": "نصب از requirements.txt"
+            },
+            {
+              "cmd": "pip3 install git+https://github.com/user/repo.git",
+              "desc": "نصب از GitHub / منابع دیگر"
+            },
+            {
+              "cmd": "pip3 list",
+              "desc": "لیست بسته‌های نصب‌شده"
+            },
+            {
+              "cmd": "pip3 show requests",
+              "desc": "اطلاعات یک بسته"
+            },
+            {
+              "cmd": "pip3 index versions requests",
+              "desc": "جستجوی بسته"
+            },
+            {
+              "cmd": "pip3 uninstall requests",
+              "desc": "حذف بسته"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "محیط مجازی (Virtual Environment)",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3 -m venv myenv",
+              "desc": "ساخت محیط مجازی با venv"
+            },
+            {
+              "cmd": "source myenv/bin/activate",
+              "desc": "فعال‌سازی و غیرفعال‌سازی"
+            },
+            {
+              "cmd": "source .venv/bin/activate",
+              "desc": "کار با pip در محیط مجازی"
+            },
+            {
+              "cmd": "pip3 install virtualenv",
+              "desc": "virtualenv — ابزار قدیمی‌تر"
+            },
+            {
+              "cmd": "sudo apt install pipx",
+              "desc": "pipx — نصب ابزارها به صورت ایزوله"
+            },
+            {
+              "cmd": "(myenv) deactivate",
+              "desc": "حذف محیط مجازی"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "اطلاعات و نسخه‌ها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3 --version",
+              "desc": "نسخه Python"
+            },
+            {
+              "cmd": "which python3",
+              "desc": "مسیر نصب Python"
+            },
+            {
+              "cmd": "python3 -c \"import sys; print(sys.path)\"",
+              "desc": "مسیر ماژول‌ها"
+            },
+            {
+              "cmd": "ls /usr/bin/python*",
+              "desc": "همه نسخه‌های Python"
+            },
+            {
+              "cmd": "sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1",
+              "desc": "تنظیم نسخه پیش‌فرض"
+            },
+            {
+              "cmd": "python3 -c \"import platform; print(platform.platform())\"",
+              "desc": "اطلاعات پلتفرم"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "مدیریت فایل‌های Python",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3 -m py_compile script.py",
+              "desc": "کامپایل به bytecode"
+            },
+            {
+              "cmd": "find . -name \"__pycache__\" -exec rm -rf {} +",
+              "desc": "پاک کردن فایل‌های cache"
+            },
+            {
+              "cmd": "python3 -m py_compile script.py && echo \"OK\"",
+              "desc": "بررسی syntax فایل"
+            },
+            {
+              "cmd": "pip3 install black",
+              "desc": "فرمت‌بندی کد با black"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "دیباگ و تست",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3 -m pdb script.py",
+              "desc": "دیباگ با pdb"
+            },
+            {
+              "cmd": "python3 -m cProfile script.py",
+              "desc": "profiling و اندازه‌گیری سرعت"
+            },
+            {
+              "cmd": "python3 -m unittest",
+              "desc": "تست با unittest"
+            },
+            {
+              "cmd": "pip3 install pytest",
+              "desc": "تست با pytest"
+            },
+            {
+              "cmd": "python3 -W all script.py",
+              "desc": "بررسی memory و لاگ"
+            },
+            {
+              "cmd": "pip3 install pylint",
+              "desc": "linting با pylint / ruff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "pyenv — مدیریت نسخه‌ها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "curl https://pyenv.run | bash",
+              "desc": "نصب pyenv"
+            },
+            {
+              "cmd": "pyenv install --list",
+              "desc": "نصب Python با pyenv"
+            },
+            {
+              "cmd": "pyenv global 3.12.0",
+              "desc": "جابجایی بین نسخه‌ها"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "کار با اسکریپت‌ها و ماژول‌ها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "python3 -m http.server",
+              "desc": "سرور HTTP ساده"
+            },
+            {
+              "cmd": "python3 -m json.tool data.json",
+              "desc": "فرمت JSON"
+            },
+            {
+              "cmd": "python3 -m pydoc os",
+              "desc": "مستندات در ترمینال"
+            },
+            {
+              "cmd": "python3 -m zipapp myapp -m \"main:main\"",
+              "desc": "فشرده‌سازی zipapp"
+            },
+            {
+              "cmd": "python3 -m base64 file.txt",
+              "desc": "base64 encoding/decoding"
+            },
+            {
+              "cmd": "python3 -m calendar",
+              "desc": "calendar و تاریخ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "ابزارهای پیشرفته",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "pip3 install poetry",
+              "desc": "Poetry — مدیریت پروژه مدرن"
+            },
+            {
+              "cmd": "pip3 install ipython",
+              "desc": "IPython — REPL پیشرفته"
+            },
+            {
+              "cmd": "pip3 install jupyter",
+              "desc": "Jupyter Notebook"
+            },
+            {
+              "cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+              "desc": "uv — سریع‌ترین ابزار مدرن"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "order": 6,
+  "file": "tree.html",
+  "name": "tree",
+  "subtitle": "ساختار درختی فایل‌ها",
+  "eyebrow": "Linux · Ubuntu",
+  "lede": "نمایش، فیلتر و خروجی ساختار دایرکتوری‌ها — با دستورات ترکیبی کاربردی",
+  "card": "نمایش درختی دایرکتوری‌ها، فیلتر، خروجی JSON/HTML و ترکیب دستورات",
+  "icon": "diagram-3",
+  "layout": "sections",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "دستورات پایه",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "tree",
+              "desc": "نمایش درختی همه فایل‌ها از دایرکتوری فعلی"
+            },
+            {
+              "cmd": "tree /path/to/dir",
+              "desc": "نمایش درختی یک مسیر مشخص"
+            },
+            {
+              "cmd": "tree -a",
+              "desc": "نمایش فایل‌های مخفی (hidden) هم"
+            },
+            {
+              "cmd": "tree -d",
+              "desc": "فقط دایرکتوری‌ها، بدون فایل"
+            },
+            {
+              "cmd": "tree -f",
+              "desc": "نمایش مسیر کامل هر فایل"
+            },
+            {
+              "cmd": "tree -L 2",
+              "desc": "محدود کردن عمق نمایش (اینجا ۲ سطح)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "فیلتر و جستجو",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "tree -P \"*.py\"",
+              "desc": "فقط فایل‌هایی که با پترن مطابقت دارند"
+            },
+            {
+              "cmd": "tree -I \"node_modules\"",
+              "desc": "حذف فایل/فولدر مشخص از نمایش"
+            },
+            {
+              "cmd": "tree --prune",
+              "desc": "حذف دایرکتوری‌های خالی از خروجی"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "نمایش اطلاعات بیشتر",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "tree -s",
+              "desc": "نمایش سایز هر فایل (بایت)"
+            },
+            {
+              "cmd": "tree -h",
+              "desc": "سایز به صورت خوانا (KB, MB, ...)"
+            },
+            {
+              "cmd": "tree -p",
+              "desc": "نمایش permission هر فایل"
+            },
+            {
+              "cmd": "tree -u",
+              "desc": "نمایش owner (مالک) فایل"
+            },
+            {
+              "cmd": "tree -g",
+              "desc": "نمایش group فایل"
+            },
+            {
+              "cmd": "tree -D",
+              "desc": "نمایش تاریخ آخرین تغییر"
+            },
+            {
+              "cmd": "tree --du",
+              "desc": "نمایش حجم کل هر دایرکتوری"
+            },
+            {
+              "cmd": "tree -C",
+              "desc": "خروجی رنگی"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "خروجی گرفتن",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "tree -o output.txt",
+              "desc": "ذخیره خروجی در فایل"
+            },
+            {
+              "cmd": "tree --noreport",
+              "desc": "حذف خط آخر (تعداد فایل/فولدر)"
+            },
+            {
+              "cmd": "tree -J",
+              "desc": "خروجی به فرمت JSON"
+            },
+            {
+              "cmd": "tree -X",
+              "desc": "خروجی به فرمت XML"
+            },
+            {
+              "cmd": "tree -H . -o index.html",
+              "desc": "خروجی HTML"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "ترکیب‌های کاربردی",
+      "blocks": [
+        {
+          "type": "combo",
+          "items": [
+            {
+              "note": "فقط ۲ سطح، رنگی، با سایز",
+              "cmd": "tree -L 2 -C -h"
+            },
+            {
+              "note": "فقط فایل‌های پایتون تا ۳ سطح",
+              "cmd": "tree -L 3 -P \"*.py\" --prune"
+            },
+            {
+              "note": "همه چیز به جز node_modules و .git",
+              "cmd": "tree -I \"node_modules|.git\""
+            },
+            {
+              "note": "ساختار فولدرها با permission و مالک",
+              "cmd": "tree -d -p -u"
+            },
+            {
+              "note": "ذخیره ساختار پروژه در فایل",
+              "cmd": "tree -L 3 --noreport -o structure.txt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

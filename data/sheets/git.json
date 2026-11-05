@@ -1,0 +1,197 @@
+{
+  "order": 5,
+  "file": "git.html",
+  "name": "Git",
+  "subtitle": "دستورات کنترل نسخه",
+  "eyebrow": "Version Control",
+  "lede": "از نصب و تنظیم تا branch، merge، remote و undo — با جستجو و فیلتر",
+  "card": "commit، branch، merge، remote، undo — با جستجو و فیلتر",
+  "icon": "signpost-split",
+  "layout": "cards",
+  "categories": [
+    {
+      "id": "setup",
+      "label": "نصب و تنظیم"
+    },
+    {
+      "id": "local",
+      "label": "کار محلی"
+    },
+    {
+      "id": "branch",
+      "label": "شاخه‌ها"
+    },
+    {
+      "id": "remote",
+      "label": "مخزن راه دور"
+    },
+    {
+      "id": "undo",
+      "label": "بازگردانی"
+    }
+  ],
+  "cards": [
+    {
+      "cat": "setup",
+      "cmd": "sudo apt install git",
+      "desc": "نصب git روی Ubuntu",
+      "keywords": "نصب"
+    },
+    {
+      "cat": "setup",
+      "cmd": "git config --global user.name \"نام\"",
+      "desc": "تنظیم نام کاربری برای همه پروژه‌ها",
+      "keywords": "git config --global user.name نام کاربری"
+    },
+    {
+      "cat": "setup",
+      "cmd": "git config --global user.email \"ایمیل\"",
+      "desc": "تنظیم ایمیل (باید با GitHub یکسان باشد)",
+      "keywords": "git config --global user.email ایمیل"
+    },
+    {
+      "cat": "setup",
+      "cmd": "git config --list",
+      "desc": "نمایش تمام تنظیمات فعلی",
+      "keywords": "نمایش تنظیمات"
+    },
+    {
+      "cat": "local",
+      "cmd": "git init",
+      "desc": "ایجاد مخزن git در پوشه فعلی",
+      "keywords": "ایجاد مخزن"
+    },
+    {
+      "cat": "local",
+      "cmd": "git status",
+      "desc": "وضعیت فایل‌ها — تغییر یافته، staged، untracked",
+      "keywords": "وضعیت فایل‌ها"
+    },
+    {
+      "cat": "local",
+      "cmd": "git add <file>",
+      "desc": "افزودن فایل به staging area برای commit",
+      "keywords": "git add افزودن فایل staging"
+    },
+    {
+      "cat": "local",
+      "cmd": "git add .",
+      "desc": "افزودن همه تغییرات به staging",
+      "keywords": "همه فایل‌ها"
+    },
+    {
+      "cat": "local",
+      "cmd": "git commit -m \"پیام\"",
+      "desc": "ذخیره تغییرات staged با پیام توصیفی",
+      "keywords": "git commit ذخیره تغییرات پیام"
+    },
+    {
+      "cat": "local",
+      "cmd": "git log --oneline",
+      "desc": "مشاهده تاریخچه commit‌ها به صورت فشرده",
+      "keywords": "git log تاریخچه commit"
+    },
+    {
+      "cat": "local",
+      "cmd": "git diff",
+      "desc": "مشاهده تفاوت بین نسخه‌های فایل",
+      "keywords": "تفاوت نسخه فایل"
+    },
+    {
+      "cat": "branch",
+      "cmd": "git branch",
+      "desc": "لیست تمام شاخه‌های محلی",
+      "keywords": "لیست شاخه"
+    },
+    {
+      "cat": "branch",
+      "cmd": "git checkout -b <name>",
+      "desc": "ساخت شاخه جدید و رفتن به آن",
+      "keywords": "git checkout -b ساخت شاخه جدید"
+    },
+    {
+      "cat": "branch",
+      "cmd": "git switch <branch>",
+      "desc": "رفتن به شاخه دیگر (روش مدرن‌تر)",
+      "keywords": "git switch جابجایی شاخه"
+    },
+    {
+      "cat": "branch",
+      "cmd": "git merge <branch>",
+      "desc": "ادغام یک شاخه در شاخه فعلی",
+      "keywords": "git merge ادغام شاخه"
+    },
+    {
+      "cat": "branch",
+      "cmd": "git stash",
+      "desc": "ذخیره موقت تغییرات ناتمام",
+      "keywords": "ذخیره موقت تغییرات"
+    },
+    {
+      "cat": "branch",
+      "cmd": "git branch -d <name>",
+      "desc": "حذف شاخه پس از merge",
+      "keywords": "git branch -d حذف شاخه"
+    },
+    {
+      "cat": "remote",
+      "cmd": "git clone <url>",
+      "desc": "کپی مخزن از GitHub یا سرور ریموت",
+      "keywords": "git clone کپی مخزن دانلود"
+    },
+    {
+      "cat": "remote",
+      "cmd": "git remote add origin <url>",
+      "desc": "اتصال مخزن محلی به ریموت",
+      "keywords": "git remote add origin اتصال"
+    },
+    {
+      "cat": "remote",
+      "cmd": "git push origin <branch>",
+      "desc": "ارسال commit‌های محلی به ریموت",
+      "keywords": "git push ارسال commit آپلود"
+    },
+    {
+      "cat": "remote",
+      "cmd": "git pull",
+      "desc": "دریافت و ادغام تغییرات از ریموت",
+      "keywords": "دریافت ادغام"
+    },
+    {
+      "cat": "remote",
+      "cmd": "git fetch",
+      "desc": "دریافت تغییرات ریموت بدون ادغام",
+      "keywords": "دریافت بدون ادغام"
+    },
+    {
+      "cat": "undo",
+      "cmd": "git restore <file>",
+      "desc": "بازگشت فایل به حالت آخرین commit",
+      "keywords": "git restore بازگشت فایل"
+    },
+    {
+      "cat": "undo",
+      "cmd": "git reset --soft HEAD~1",
+      "desc": "برگشت از آخرین commit با حفظ تغییرات",
+      "keywords": "git reset --soft برگشت commit حفظ تغییرات"
+    },
+    {
+      "cat": "undo",
+      "cmd": "git reset --hard HEAD~1",
+      "desc": "برگشت کامل — تغییرات حذف می‌شوند",
+      "keywords": "git reset --hard برگشت کامل حذف"
+    },
+    {
+      "cat": "undo",
+      "cmd": "git revert <hash>",
+      "desc": "ایجاد commit معکوس — ایمن‌ترین روش",
+      "keywords": "git revert commit معکوس ایمن"
+    },
+    {
+      "cat": "undo",
+      "cmd": "git commit --amend",
+      "desc": "ویرایش آخرین commit — پیام یا محتوا",
+      "keywords": "ویرایش آخرین"
+    }
+  ]
+}

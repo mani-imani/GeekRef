@@ -1,0 +1,222 @@
+{
+  "order": 2,
+  "file": "django.html",
+  "name": "Django",
+  "subtitle": "راهنمای جامع دستورات",
+  "eyebrow": "Python · Django",
+  "lede": "همه دستورات ضروری Django در Ubuntu — از نصب تا Production",
+  "card": "manage.py، migration، ORM، admin، static و deploy با Gunicorn",
+  "icon": "boxes",
+  "layout": "sections",
+  "sections": [
+    {
+      "id": "s1",
+      "title": "نصب و راه‌اندازی محیط مجازی",
+      "desc": "قبل از هر کاری Python، pip و venv را نصب کرده و یک محیط مجازی بسازید تا وابستگی‌های پروژه از هم جدا بمانند.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# نصب Python، pip و venv\nsudo apt update && sudo apt install python3 python3-pip python3-venv -y\n\n# ساخت محیط مجازی\npython3 -m venv venv\n\n# فعال‌سازی\nsource venv/bin/activate\n\n# نصب Django\npip install django\n\n# بررسی نسخه\ndjango-admin --version\n\n# غیرفعال کردن\ndeactivate"
+        },
+        {
+          "type": "tip",
+          "warn": false,
+          "text": "همیشه قبل از کار، محیط مجازی را فعال کنید. وقتی فعال است، **(venv)** در ابتدای ترمینال نمایش داده می‌شود."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "ساخت پروژه و اپلیکیشن",
+      "desc": "با `django-admin` پروژه اصلی ساخته می‌شود و با `startapp` اپ‌های داخل آن.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# ساخت پروژه جدید\ndjango-admin startproject myproject\n\n# ورود به پوشه پروژه\ncd myproject\n\n# ساخت اپلیکیشن جدید\npython manage.py startapp myapp\n\n# مشاهده ساختار فایل‌ها\nfind . -type f -name \"*.py\" | head -20"
+        },
+        {
+          "type": "tip",
+          "warn": false,
+          "text": "بعد از ساخت اپ، آن را به **INSTALLED_APPS** در **settings.py** اضافه کنید."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "مدیریت دیتابیس — Migrations",
+      "desc": "Migration‌ها تغییرات مدل‌های Python را به جدول‌های دیتابیس تبدیل می‌کنند. هر بار که مدل تغییر می‌کند باید migration بسازید.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# ساخت فایل‌های migration\npython manage.py makemigrations\n\n# migration برای یک اپ خاص\npython manage.py makemigrations myapp\n\n# اعمال همه migration‌ها\npython manage.py migrate\n\n# نمایش وضعیت migration‌ها\npython manage.py showmigrations\n\n# بازگشت به migration خاص\npython manage.py migrate myapp 0001\n\n# نمایش SQL یک migration\npython manage.py sqlmigrate myapp 0001\n\n# بررسی مشکلات مدل‌ها\npython manage.py check"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "title": "اجرای سرور توسعه",
+      "desc": "سرور داخلی Django فقط برای توسعه و تست محلی است — هرگز در محیط production از آن استفاده نکنید.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# اجرا روی پورت پیش‌فرض 8000\npython manage.py runserver\n\n# اجرا روی پورت دلخواه\npython manage.py runserver 8080\n\n# دسترسی از شبکه\npython manage.py runserver 0.0.0.0:8000\n\n# بدون reload خودکار\npython manage.py runserver --noreload"
+        },
+        {
+          "type": "tip",
+          "warn": true,
+          "text": "**هشدار:** این سرور تک‌نخی و بدون امنیت است. برای production از **Gunicorn** یا **uWSGI** استفاده کنید."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "title": "مدیریت کاربران و پنل ادمین",
+      "desc": "Django یک پنل ادمین آماده و قدرتمند دارد. برای ورود باید ابتدا superuser بسازید.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# ساخت superuser (ادمین)\npython manage.py createsuperuser\n\n# تغییر رمز عبور کاربر\npython manage.py changepassword username\n\n# آدرس پنل ادمین\nhttp://127.0.0.1:8000/admin"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "title": "Django Shell و دیباگ",
+      "desc": "با shell می‌توانید مستقیم با ORM، مدل‌ها و تنظیمات Django تعامل داشته باشید — عالی برای تست سریع.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash / python",
+          "code": "# باز کردن Django shell\npython manage.py shell\n\n# shell با IPython\npip install ipython\npython manage.py shell -i ipython\n\n# مثال داخل shell\nfrom myapp.models import MyModel\nMyModel.objects.all()\nMyModel.objects.filter(name=\"test\")\nMyModel.objects.create(name=\"new\")\n\n# بررسی کامل پروژه\npython manage.py check\npython manage.py check --deploy"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "title": "فایل‌های استاتیک",
+      "desc": "در production باید همه فایل‌های CSS، JS و تصویر را در یک پوشه جمع‌آوری کنید.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash / python",
+          "code": "# جمع‌آوری فایل‌های استاتیک\npython manage.py collectstatic\npython manage.py collectstatic --noinput\npython manage.py collectstatic --clear\n\n# تنظیمات در settings.py\nSTATIC_URL  = \"/static/\"\nSTATIC_ROOT = BASE_DIR / \"staticfiles\"\nMEDIA_URL   = \"/media/\"\nMEDIA_ROOT  = BASE_DIR / \"media\""
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "title": "تست‌نویسی",
+      "desc": "Django ابزار تست داخلی دارد. تست‌ها را در `tests.py` هر اپ بنویسید.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# اجرای همه تست‌ها\npython manage.py test\n\n# تست یک اپ خاص\npython manage.py test myapp\n\n# تست یک کلاس خاص\npython manage.py test myapp.tests.MyTestCase\n\n# با جزئیات بیشتر\npython manage.py test --verbosity=2\n\n# نگه‌داشتن دیتابیس بعد از تست\npython manage.py test --keepdb"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "title": "مدیریت داده‌ها — Fixtures",
+      "desc": "برای پشتیبان‌گیری، انتقال داده بین محیط‌ها یا پر کردن دیتابیس با داده اولیه استفاده می‌شود.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# خروجی از همه داده‌ها\npython manage.py dumpdata > db.json\n\n# خروجی از یک اپ خاص\npython manage.py dumpdata myapp --indent 2 > myapp.json\n\n# وارد کردن داده\npython manage.py loaddata db.json\n\n# پاک کردن session‌های منقضی\npython manage.py clearsessions"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "پکیج‌های ضروری Django",
+      "desc": "پرکاربردترین پکیج‌های اکوسیستم Django:",
+      "blocks": [
+        {
+          "type": "packages",
+          "items": [
+            {
+              "name": "djangorestframework",
+              "desc": "ساخت REST API قدرتمند"
+            },
+            {
+              "name": "django-cors-headers",
+              "desc": "مدیریت CORS برای API"
+            },
+            {
+              "name": "Pillow",
+              "desc": "پردازش و آپلود تصویر"
+            },
+            {
+              "name": "psycopg2-binary",
+              "desc": "اتصال به PostgreSQL"
+            },
+            {
+              "name": "celery + redis",
+              "desc": "کارهای پس‌زمینه و صف"
+            },
+            {
+              "name": "gunicorn",
+              "desc": "سرور WSGI برای production"
+            },
+            {
+              "name": "python-decouple",
+              "desc": "مدیریت متغیرهای .env"
+            },
+            {
+              "name": "whitenoise",
+              "desc": "سرو فایل‌های استاتیک"
+            },
+            {
+              "name": "django-extensions",
+              "desc": "ابزارهای اضافی توسعه"
+            },
+            {
+              "name": "django-filter",
+              "desc": "فیلتر کردن در API"
+            }
+          ]
+        },
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# ذخیره وابستگی‌ها\npip freeze > requirements.txt\n\n# نصب از روی requirements\npip install -r requirements.txt"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "title": "تنظیمات اساسی — settings.py",
+      "desc": "مهم‌ترین تنظیماتی که در هر پروژه Django باید بدانید:",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "python — settings.py",
+          "code": "# اضافه کردن اپ‌ها\nINSTALLED_APPS = [\n    'myapp',\n    'rest_framework',\n    'corsheaders',\n]\n\n# دیتابیس PostgreSQL\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.postgresql\",\n        \"NAME\": \"mydb\",\n        \"USER\": \"myuser\",\n        \"PASSWORD\": \"mypass\",\n        \"HOST\": \"localhost\",\n        \"PORT\": \"5432\",\n    }\n}\n\n# زبان و منطقه زمانی\nLANGUAGE_CODE = \"fa-ir\"\nTIME_ZONE     = \"Asia/Tehran\"\nUSE_I18N      = True\nUSE_TZ        = True\n\n# ALLOWED_HOSTS در production\nALLOWED_HOSTS = [\"yourdomain.com\", \"www.yourdomain.com\"]"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "title": "استقرار در Production با Gunicorn",
+      "desc": "برای اجرای Django در محیط واقعی از Gunicorn به عنوان سرور WSGI استفاده کنید.",
+      "blocks": [
+        {
+          "type": "code",
+          "lang": "bash",
+          "code": "# نصب gunicorn\npip install gunicorn\n\n# اجرای پایه\ngunicorn myproject.wsgi:application --bind 0.0.0.0:8000\n\n# با worker بیشتر (توصیه: 2×CPU+1)\ngunicorn myproject.wsgi:application --workers 3 --bind 0.0.0.0:8000\n\n# اجرا به عنوان daemon\ngunicorn myproject.wsgi:application --daemon --workers 3 --bind 0.0.0.0:8000\n\n# checklist قبل از production\npython manage.py check --deploy\npython manage.py migrate\npython manage.py collectstatic --noinput"
+        },
+        {
+          "type": "tip",
+          "warn": true,
+          "text": "در production حتماً **DEBUG = False** و **SECRET_KEY** را در متغیر محیطی قرار دهید. هرگز secret key را در کد commit نکنید."
+        }
+      ]
+    }
+  ]
+}

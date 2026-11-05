@@ -1,0 +1,245 @@
+{
+  "order": 4,
+  "file": "python_setup.html",
+  "name": "Python Setup",
+  "subtitle": "محیط توسعه",
+  "eyebrow": "Python · pyenv · venv · pip",
+  "lede": "راه‌اندازی کامل محیط Python — از pyenv و venv تا ساخت پروژه گام به گام",
+  "card": "راه‌اندازی pyenv، venv، pip و ساخت پروژه جدید گام به گام",
+  "icon": "tools",
+  "layout": "sections",
+  "sections": [
+    {
+      "id": "pyenv",
+      "title": "مدیریت نسخه با pyenv",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "pyenv install --list | grep -E \"^\\s+3\\.(12|13)\"",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv install 3.12.7",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv uninstall 3.12.7",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "virtualenv",
+      "title": "محیط مجازی (Virtual Environment)",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "pyenv virtualenv 3.12.7 my-project-env",
+              "desc": ""
+            },
+            {
+              "cmd": "cd ~/Projects/python/my-project",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv local my-project-env",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pip",
+      "title": "مدیریت پکیج با pip",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "pip freeze > requirements.txt",
+              "desc": ""
+            },
+            {
+              "cmd": "pip install -r requirements.txt",
+              "desc": ""
+            },
+            {
+              "cmd": "pip install --upgrade pip",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "project",
+      "title": "ساخت پروژه جدید — گام به گام",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "mkdir ~/Projects/python/my-new-project",
+              "desc": ""
+            },
+            {
+              "cmd": "cd ~/Projects/python/my-new-project",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv virtualenv 3.12.7 my-new-project-env",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv local my-new-project-env",
+              "desc": ""
+            },
+            {
+              "cmd": "pip install --upgrade pip",
+              "desc": ""
+            },
+            {
+              "cmd": "git init",
+              "desc": ""
+            },
+            {
+              "cmd": "code .",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vscode",
+      "title": "VS Code — شورتکات‌های ضروری",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "ruff check .",
+              "desc": ""
+            },
+            {
+              "cmd": "ruff check --fix .",
+              "desc": ""
+            },
+            {
+              "cmd": "black .",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "title": "Git — کنترل نسخه",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "__pycache__/\n*.pyc\n*.pyo\n.env\n.venv\n*.egg-info/\ndist/\nbuild/\n.DS_Store",
+              "desc": ""
+            },
+            {
+              "cmd": "touch .gitignore",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "django",
+      "title": "Django — وقتی آماده شدی",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "mkdir ~/Projects/django/my-app",
+              "desc": ""
+            },
+            {
+              "cmd": "cd ~/Projects/django/my-app",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv virtualenv 3.12.7 my-app-env",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv local my-app-env",
+              "desc": ""
+            },
+            {
+              "cmd": "pip install --upgrade pip",
+              "desc": ""
+            },
+            {
+              "cmd": "pip install django",
+              "desc": ""
+            },
+            {
+              "cmd": "django-admin startproject myproject .",
+              "desc": ""
+            },
+            {
+              "cmd": "python manage.py migrate",
+              "desc": ""
+            },
+            {
+              "cmd": "python manage.py runserver",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tips",
+      "title": "نکات مهم",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "which python",
+              "desc": ""
+            },
+            {
+              "cmd": "python --version",
+              "desc": ""
+            },
+            {
+              "cmd": "pyenv which python",
+              "desc": ""
+            },
+            {
+              "cmd": "cd ~/.pyenv && git pull",
+              "desc": ""
+            },
+            {
+              "cmd": "cd ~/.pyenv/plugins/pyenv-virtualenv && git pull",
+              "desc": ""
+            },
+            {
+              "cmd": "source ~/.bashrc",
+              "desc": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,570 +1,143 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GeekRef — مرجع سریع توسعه‌دهنده</title>
-
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta name="description" content="GeekRef — مرجع سریع دستورات توسعه به فارسی. Django، Python، Git، Ubuntu، tree و بیشتر.">
-<meta name="theme-color" content="#0d1117">
-<meta property="og:title" content="GeekRef — مرجع سریع توسعه‌دهنده">
-<meta property="og:description" content="۲۸۰+ دستور از Django، Python، Git، Ubuntu و بیشتر — فارسی، دقیق، کاربردی">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('gr-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<title>GeekRef · برگه‌های مرجع فارسی برای برنامه‌نویس‌ها</title>
+<meta name="description" content="برگه‌های مرجع فارسی برای برنامه‌نویس‌ها: دستورهای پرکاربرد Ubuntu، Python، Django و Git با توضیح کوتاه فارسی.">
+<meta name="generator" content="GeekRef build 2.1.0 (do not edit; source: data/sheets)">
+<link rel="canonical" href="https://mani-imani.github.io/GeekRef/">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/brand/geekref-icon-32.svg">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="assets/brand/geekref-icon-16.svg">
+<link rel="apple-touch-icon" href="assets/brand/geekref-touch-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="GeekRef">
+<meta name="theme-color" content="#F4F4F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1217" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/og-image.svg">
+<meta property="og:site_name" content="GeekRef">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="GeekRef · برگه‌های مرجع فارسی برای برنامه‌نویس‌ها">
+<meta property="og:description" content="برگه‌های مرجع فارسی برای برنامه‌نویس‌ها: دستورهای پرکاربرد Ubuntu، Python، Django و Git با توضیح کوتاه فارسی.">
+<meta property="og:url" content="https://mani-imani.github.io/GeekRef/">
+<meta property="og:image" content="https://mani-imani.github.io/GeekRef/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GeekRef — مرجع سریع توسعه‌دهنده">
-<meta name="twitter:description" content="۲۸۰+ دستور از Django، Python، Git، Ubuntu — فارسی">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/shared.css">
-<style>
-
-:root {
-  --accent:      #58a6ff;
-  --accent-rgb:  88,166,255;
-}
-
-/* ── HERO ── */
-.hero {
-  padding: 72px 24px 56px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid var(--border);
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% -10%, rgba(88,166,255,0.10), transparent 70%),
-    radial-gradient(ellipse 40% 40% at 90% 90%,  rgba(63,185,80,0.06),  transparent 60%);
-  pointer-events: none;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-border);
-  border-radius: 100px;
-  padding: 4px 16px;
-  letter-spacing: .1em;
-  margin-bottom: 24px;
-}
-.hero-eyebrow::before { content: '$ '; opacity: .5; }
-
-.hero h1 {
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -.03em;
-  margin-bottom: 16px;
-}
-.hero h1 .gr { color: var(--accent); }
-.hero h1 .ref { color: var(--text); }
-
-.hero-sub {
-  font-size: 15px;
-  color: var(--text-dim);
-  line-height: 1.8;
-  max-width: 440px;
-  margin: 0 auto 40px;
-}
-.hero-sub strong { color: var(--text); }
-
-.hero-meta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.hero-stat {
-  text-align: center;
-}
-.hero-stat-num {
-  display: block;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1.2;
-}
-.hero-stat-label {
-  font-size: 11px;
-  color: var(--text-dim);
-  letter-spacing: .04em;
-}
-.hero-divider {
-  width: 1px; height: 32px;
-  background: var(--border);
-}
-
-/* ── CONTAINER ── */
-.container {
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 48px 24px 80px;
-}
-
-/* ── SECTION LABEL ── */
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.section-label span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--text-dimmer);
-  letter-spacing: .1em;
-}
-.section-label::after {
-  content: '';
-  flex: 1; height: 1px;
-  background: var(--border);
-}
-
-/* ── CARDS GRID ── */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-  gap: 12px;
-  margin-bottom: 60px;
-}
-
-.card {
-  display: block;
-  text-decoration: none;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 22px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
-}
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; right: 0;
-  width: 100px; height: 100px;
-  background: radial-gradient(circle at top right, var(--card-glow, rgba(88,166,255,.06)), transparent 70%);
-  pointer-events: none;
-}
-.card:hover {
-  border-color: var(--card-accent, var(--accent));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px var(--shadow-card, rgba(0,0,0,.3));
-}
-.card-icon { font-size: 26px; margin-bottom: 12px; display: block; }
-.card-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
-.card-desc  { font-size: 13px; color: var(--text-dim); line-height: 1.7; }
-.card-tag {
-  display: inline-block;
-  margin-top: 14px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  border-radius: 3px;
-  padding: 3px 9px;
-  letter-spacing: .06em;
-}
-
-/* ADD card */
-.card-add {
-  border-style: dashed;
-  border-color: var(--surface2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 130px;
-  opacity: .45;
-  transition: opacity .2s, border-color .2s;
-  cursor: default;
-}
-.card-add:hover { opacity: .65; border-color: var(--border); transform: none; box-shadow: none; }
-.card-add-icon { font-size: 20px; color: var(--text-dimmer); }
-.card-add-text { font-size: 11px; color: var(--text-dimmer); font-family: 'JetBrains Mono', monospace; }
-
-/* ── ABOUT ── */
-.about {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 32px 28px;
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  position: relative;
-  overflow: hidden;
-  transition: background .25s, border-color .25s;
-}
-.about::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(88,166,255,.04), transparent);
-  pointer-events: none;
-}
-
-.about-avatar {
-  width: 60px; height: 60px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--surface2), var(--bg));
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 26px;
-  flex-shrink: 0;
-}
-
-.about-body { flex: 1; min-width: 0; }
-
-.about-name {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 2px;
-  letter-spacing: -.01em;
-}
-.about-name .accent { color: var(--accent); }
-
-.about-role {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--syn-green);
-  letter-spacing: .1em;
-  margin-bottom: 12px;
-}
-
-.about-bio {
-  font-size: 14px;
-  color: var(--text-dim);
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-.about-bio strong { color: var(--text); }
-
-.about-links { display: flex; flex-wrap: wrap; gap: 7px; }
-
-.about-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-dim);
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px 13px;
-  transition: all .2s;
-}
-.about-link:hover { color: var(--text); border-color: var(--text-dimmer); }
-.about-link svg { width: 13px; height: 13px; }
-
-/* light mode */
-[data-theme="light"] .hero::before {
-  background:
-    radial-gradient(ellipse 70% 60% at 50% -10%, rgba(9,105,218,.07), transparent 70%),
-    radial-gradient(ellipse 40% 40% at 90% 90%,  rgba(26,127,55,.04),  transparent 60%);
-}
-[data-theme="light"] .hero h1 .ref { color: var(--text); }
-[data-theme="light"] .card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.10); }
-[data-theme="light"] .about::before {
-  background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(9,105,218,.03), transparent);
-}
-
-@media (max-width: 600px) {
-  .hero { padding: 52px 20px 40px; }
-  .about { flex-direction: column; gap: 18px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .hero-divider { display: none; }
-}
-</style>
+<link rel="preload" href="fonts/vazirmatn/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/geek.css">
+<link rel="stylesheet" href="css/geekref.css">
+<script src="js/geekref.js" defer></script>
 </head>
 <body>
-
-<!-- ── NAVBAR ── -->
-<nav class="gr-navbar">
-  <div class="gr-navbar-left">
-    <div class="gr-status">
-      <span class="gr-status-dot"></span>
-      <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">v1.0</span>
-    </div>
-  </div>
-  <div class="gr-navbar-mid">
-    <span class="gr-navbar-center">GeekRef</span>
-  </div>
-  <div class="gr-navbar-right">
-    <button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
-  </div>
-</nav>
-
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-eyebrow">GeekRef.dev</div>
-  <h1><span class="gr">Geek</span><span class="ref">Ref</span></h1>
-  <p class="hero-sub">
-    مرجع سریع دستورات و ابزارهای توسعه<br>
-    <strong>فارسی · دقیق · کاربردی</strong>
-  </p>
-  <div class="hero-meta">
-    <div class="hero-stat">
-      <span class="hero-stat-num">۶</span>
-      <span class="hero-stat-label">cheatsheet</span>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">+۲۰۰</span>
-      <span class="hero-stat-label">دستور</span>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">۱۰۰٪</span>
-      <span class="hero-stat-label">فارسی</span>
-    </div>
-  </div>
-
-  <div class="gr-terminal">
-    <div class="gr-terminal-bar">
-      <span class="gr-terminal-dot"></span><span class="gr-terminal-dot"></span><span class="gr-terminal-dot"></span>
-      <span class="gr-terminal-title">geekref — bash</span>
-    </div>
-    <div class="gr-terminal-body" id="gr-terminal-body"><span class="gr-cursor"></span></div>
-  </div>
-</section>
-
-<!-- ── MAIN ── -->
-<main class="container">
-
-  <div class="section-label"><span>// cheatsheets</span></div>
-
-  <div class="cards-grid">
-
-    <a href="cheatsheets/ubuntu.html" class="card"
-       style="--card-accent:#f97316;--card-glow:rgba(249,115,22,.07)">
-      <span class="card-icon">🐧</span>
-      <div class="card-title">Ubuntu — دستورات لینوکس</div>
-      <div class="card-desc">مدیریت فایل، شبکه، پردازش‌ها، پکیج‌ها، SSH و سرویس‌ها</div>
-      <span class="card-tag" style="color:#f97316;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2)">LINUX · BASH</span>
+<a class="gr-skip" href="#main">رفتن به محتوا</a>
+<header class="gr-header">
+  <div class="gm-page gr-header-in">
+   <div class="gr-brand-row">
+    <a class="gr-brand" href="index.html" aria-label="GeekRef، صفحه‌ی اصلی">
+     <img class="gr-wm--light" src="assets/brand/geekref-wordmark-light.svg" alt="" width="92" height="22">
+     <img class="gr-wm--dark" src="assets/brand/geekref-wordmark-dark.svg" alt="" width="92" height="22">
     </a>
-
-    <a href="cheatsheets/django.html" class="card"
-       style="--card-accent:#3fb950;--card-glow:rgba(63,185,80,.07)">
-      <span class="card-icon">🌿</span>
-      <div class="card-title">Django — وب فریم‌ورک</div>
-      <div class="card-desc">manage.py، migration، ORM، admin، static و deploy با Gunicorn</div>
-      <span class="card-tag" style="color:#3fb950;background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.2)">PYTHON · DJANGO</span>
-    </a>
-
-    <a href="cheatsheets/python.html" class="card"
-       style="--card-accent:#f78166;--card-glow:rgba(247,129,102,.07)">
-      <span class="card-icon">🐍</span>
-      <div class="card-title">Python — دستورات در Ubuntu</div>
-      <div class="card-desc">نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته</div>
-      <span class="card-tag" style="color:#f78166;background:rgba(247,129,102,.08);border:1px solid rgba(247,129,102,.2)">PYTHON · CLI</span>
-    </a>
-
-    <a href="cheatsheets/python_setup.html" class="card"
-       style="--card-accent:#39d98a;--card-glow:rgba(57,217,138,.07)">
-      <span class="card-icon">⚙️</span>
-      <div class="card-title">Python Setup — محیط توسعه</div>
-      <div class="card-desc">راه‌اندازی pyenv، venv، pip و ساخت پروژه جدید گام به گام</div>
-      <span class="card-tag" style="color:#39d98a;background:rgba(57,217,138,.08);border:1px solid rgba(57,217,138,.2)">PYTHON · ENV</span>
-    </a>
-
-    <a href="cheatsheets/git.html" class="card"
-       style="--card-accent:#f97316;--card-glow:rgba(249,115,22,.07)">
-      <span class="card-icon">🔀</span>
-      <div class="card-title">Git — کنترل نسخه</div>
-      <div class="card-desc">commit، branch، merge، remote، undo — با جستجو و فیلتر</div>
-      <span class="card-tag" style="color:#f97316;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2)">GIT · VCS</span>
-    </a>
-
-    <a href="cheatsheets/tree.html" class="card"
-       style="--card-accent:#a78bfa;--card-glow:rgba(167,139,250,.07)">
-      <span class="card-icon">🌳</span>
-      <div class="card-title">tree — ساختار فایل‌ها</div>
-      <div class="card-desc">نمایش درختی دایرکتوری‌ها، فیلتر، خروجی JSON/HTML و ترکیب دستورات</div>
-      <span class="card-tag" style="color:#a78bfa;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2)">LINUX · FILES</span>
-    </a>
-
-    <!-- ADD NEW -->
-    <div class="card card-add">
-      <div class="card-add-icon">+</div>
-      <div class="card-add-text">// cheatsheet جدید</div>
+   </div>
+   <div class="gr-actions">
+    <button type="button" class="gr-search-btn" data-gr-search aria-label="جست‌وجو در دستورها" aria-keyshortcuts="Control+K Meta+K /"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg><span>جست‌وجو</span><kbd dir="ltr" data-gr-kbd>Ctrl K</kbd></button>
+    <div class="gm-seg gr-theme" role="group" aria-label="پوسته">
+     <button type="button" data-theme-set="system" aria-pressed="true" title="پیروی از سیستم"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/></svg><span>سیستم</span></button>
+     <button type="button" data-theme-set="light" aria-pressed="false" title="روشن"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg><span>روشن</span></button>
+     <button type="button" data-theme-set="dark" aria-pressed="false" title="تیره"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg><span>تیره</span></button>
     </div>
-
+   </div>
   </div>
+</header>
+<main id="main" class="gm-page">
+ <section class="gr-hero" aria-labelledby="hero-t">
+  <h1 id="hero-t">برگه‌های مرجع فارسی برای برنامه‌نویس‌ها</h1>
+  <p class="gr-hero-lede">دستورهای پرکاربرد <bdi>Ubuntu</bdi>، <bdi>Python</bdi>، <bdi>Django</bdi> و <bdi>Git</bdi>، هر کدام با یک توضیح کوتاه فارسی. پیدا کنید، با یک کلیک کپی کنید و به کارتان برسید.</p>
+  <button type="button" class="gr-hero-search" data-gr-search><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg><span>جست‌وجو در ۲۸۲ دستور</span><kbd dir="ltr" data-gr-kbd>Ctrl K</kbd></button>
+  <div class="gm-term"><span class="gm-prompt">$</span> ls cheatsheets/ | wc -l → 6</div>
+ </section>
 
-  <!-- ── ABOUT ── -->
-  <div class="section-label"><span>// whoami</span></div>
+ <section class="gr-block" aria-labelledby="sheets-t">
+  <h2 class="gr-h2" id="sheets-t">برگه‌ها</h2>
+  <ul class="gr-sheets">
+   <li><a class="gm-card gm-card--lift gr-sheet" href="cheatsheets/ubuntu.html">
+    <span class="gr-sheet-icon"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 9a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3A.5.5 0 0 1 6 9M3.854 4.146a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708z"/><path d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/></svg></span>
+    <h3><bdi>Ubuntu</bdi><small>دستورات لینوکس</small></h3>
+    <p>مدیریت فایل، شبکه، پردازش‌ها، پکیج‌ها، <bdi>SSH</bdi> و سرویس‌ها</p>
+    <span class="gr-sheet-meta"><span>۹۴ دستور</span><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></svg></span>
+   </a></li>
+   <li><a class="gm-card gm-card--lift gr-sheet" href="cheatsheets/django.html">
+    <span class="gr-sheet-icon"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434zM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567zM7.5 9.933l-2.75 1.571v3.134l2.75-1.571zm1 3.134 2.75 1.571v-3.134L8.5 9.933zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567zm2.242-2.433V3.504L8.5 5.076V8.21zM7.5 8.21V5.076L4.75 3.504v3.134zM5.258 2.643 8 4.21l2.742-1.567L8 1.076zM15 9.933l-2.75 1.571v3.134L15 13.067zM3.75 14.638v-3.134L1 9.933v3.134z"/></svg></span>
+    <h3><bdi>Django</bdi><small>راهنمای جامع دستورات</small></h3>
+    <p><bdi>manage.py</bdi>، <bdi>migration</bdi>، <bdi>ORM</bdi>، <bdi>admin</bdi>، <bdi>static</bdi> و <bdi>deploy</bdi> با <bdi>Gunicorn</bdi></p>
+    <span class="gr-sheet-meta"><span>۴۵ دستور</span><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></svg></span>
+   </a></li>
+   <li><a class="gm-card gm-card--lift gr-sheet" href="cheatsheets/python.html">
+    <span class="gr-sheet-icon"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2H7v-1h5a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM0 11.85h1.6q.434 0 .732.179.302.175.46.477t.158.677-.16.677q-.158.299-.464.474a1.45 1.45 0 0 1-.732.173H.79v1.342H0zm2.06 1.714a.8.8 0 0 0 .085-.381q0-.34-.185-.521-.185-.182-.513-.182H.788v1.406h.66a.8.8 0 0 0 .374-.082.57.57 0 0 0 .238-.24m2.963.75v1.535H4.23v-1.52L2.89 11.85h.876l.853 1.696h.032l.856-1.696h.855z"/></svg></span>
+    <h3><bdi>Python</bdi><small>دستورات در <bdi>Ubuntu</bdi></small></h3>
+    <p>نصب، اجرا، <bdi>pip</bdi>، <bdi>venv</bdi>، <bdi>pyenv</bdi>، دیباگ و ابزارهای پیشرفته</p>
+    <span class="gr-sheet-meta"><span>۵۵ دستور</span><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></svg></span>
+   </a></li>
+   <li><a class="gm-card gm-card--lift gr-sheet" href="cheatsheets/python_setup.html">
+    <span class="gr-sheet-icon"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/></svg></span>
+    <h3><bdi>Python Setup</bdi><small>محیط توسعه</small></h3>
+    <p>راه‌اندازی <bdi>pyenv</bdi>، <bdi>venv</bdi>، <bdi>pip</bdi> و ساخت پروژه جدید گام به گام</p>
+    <span class="gr-sheet-meta"><span>۳۴ دستور</span><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></svg></span>
+   </a></li>
+   <li><a class="gm-card gm-card--lift gr-sheet" href="cheatsheets/git.html">
+    <span class="gr-sheet-icon"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7zm1 3V8H2l-.75 1L2 10zm0-5h6l.75-1L14 3H8z"/></svg></span>
+    <h3><bdi>Git</bdi><small>دستورات کنترل نسخه</small></h3>
+    <p><bdi>commit</bdi>، <bdi>branch</bdi>، <bdi>merge</bdi>، <bdi>remote</bdi>، <bdi>undo</bdi> — با جستجو و فیلتر</p>
+    <span class="gr-sheet-meta"><span>۲۷ دستور</span><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></svg></span>
+   </a></li>
+   <li><a class="gm-card gm-card--lift gr-sheet" href="cheatsheets/tree.html">
+    <span class="gr-sheet-icon"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/></svg></span>
+    <h3><bdi>tree</bdi><small>ساختار درختی فایل‌ها</small></h3>
+    <p>نمایش درختی دایرکتوری‌ها، فیلتر، خروجی <bdi>JSON/HTML</bdi> و ترکیب دستورات</p>
+    <span class="gr-sheet-meta"><span>۲۷ دستور</span><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0z"/></svg></span>
+   </a></li>
+  </ul>
+ </section>
 
-  <div class="about">
-    <div class="about-avatar">👾</div>
-    <div class="about-body">
-      <div class="about-name">Geek<span class="accent">Mani</span></div>
-      <div class="about-role">FUTURE_SENIOR_WEB_DEVELOPER · FULLSTACK</div>
-      <p class="about-bio">
-        دارم به یه <strong>Senior Web Developer</strong> تبدیل می‌شم —
-        از <strong>Django</strong> و Python شروع کردم و هر روز یه قدم بیشتر تو دنیای fullstack فرو می‌رم.
-        یه <strong>گیک تمام عیار</strong> که این cheatsheet‌ها رو برای خودش ساخته.
-      </p>
-      <div class="about-links">
-        <a href="https://github.com/mani-imani" class="about-link" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/mani-imani-526a05265/" class="about-link" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://t.me/mani_imani" class="about-link" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          Telegram
-        </a>
-        <a href="mailto:hey.geekmani@gmail.com" class="about-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Email
-        </a>
-      </div>
-    </div>
+ <section class="gr-block" aria-labelledby="about-t">
+  <h2 class="gr-h2" id="about-t">سازنده</h2>
+  <div class="gm-card gr-about">
+   <h3>مانی ایمانی‌سنجر <span>| گیک‌مانی</span></h3>
+   <p>دانشجوی مهندسی کامپیوتر در کرمانشاه. ابزارهای ساده می‌سازم و طراحی می‌کنم؛ با نام گیک‌مانی.</p>
+   <p>این برگه‌ها را اول برای کار خودم نوشتم و حالا برای هر کسی است که دستورها را فارسی و سریع می‌خواهد.</p>
+   <div class="gr-links">
+    <a class="gm-btn gm-btn--secondary" href="https://github.com/mani-imani"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg><bdi>GitHub</bdi></a>
+    <a class="gm-btn gm-btn--secondary" href="https://www.linkedin.com/in/mani-imani"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg><bdi>LinkedIn</bdi></a>
+    <a class="gm-btn gm-btn--secondary" href="https://t.me/mani_imani"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/></svg><bdi>Telegram</bdi></a>
+    <a class="gm-btn gm-btn--secondary" href="mailto:imanisanjar@gmail.com"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>ایمیل</a>
+   </div>
   </div>
-
+ </section>
 </main>
-
-<footer class="gr-footer-rich">
-  <div class="gr-footer-grid">
-
-    <div class="gr-footer-brand">
-      <div class="gr-footer-logo">
-        <span>👾</span>
-        <span><span class="gr">Geek</span><span class="ref">Ref</span></span>
-      </div>
-      <div class="gr-footer-tagline">
-        <span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br>
-        <span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br>
-        <span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
-      </div>
-      <div class="gr-status">
-        <span class="gr-status-dot"></span>
-        <span>online · 280+ commands</span>
-      </div>
+<footer class="gr-footer">
+  <div class="gm-page gr-footer-in">
+   <nav class="gr-footer-nav" aria-label="برگه‌ها">
+    <ul>
+     <li><a href="index.html">صفحه‌ی اصلی</a></li>
+     <li><a href="cheatsheets/ubuntu.html"><bdi>Ubuntu</bdi></a></li>
+     <li><a href="cheatsheets/django.html"><bdi>Django</bdi></a></li>
+     <li><a href="cheatsheets/python.html"><bdi>Python</bdi></a></li>
+     <li><a href="cheatsheets/python_setup.html"><bdi>Python Setup</bdi></a></li>
+     <li><a href="cheatsheets/git.html"><bdi>Git</bdi></a></li>
+     <li><a href="cheatsheets/tree.html"><bdi>tree</bdi></a></li>
+    </ul>
+   </nav>
+   <div class="gr-footer-meta">
+    <a class="gm-sign" href="https://github.com/mani-imani">از گیک‌مانی<i class="gm-cursor"></i></a>
+    <div class="gr-footer-small">
+     <span class="gr-offline" hidden><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>بدون اینترنت هم در دسترس است</span>
+     <a href="https://github.com/mani-imani/GeekRef">کد پروژه</a>
+     <span>مجوز <bdi>MIT</bdi></span>
+     <span class="gm-mono">v2.1.0</span>
     </div>
-
-    <div>
-      <div class="gr-footer-links-title">// cheatsheets</div>
-      <div class="gr-footer-links">
-        <a href="cheatsheets/ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
-        <a href="cheatsheets/django.html"><span class="lnk-icon">🌿</span>Django</a>
-        <a href="cheatsheets/python.html"><span class="lnk-icon">🐍</span>Python</a>
-        <a href="cheatsheets/python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
-        <a href="cheatsheets/git.html"><span class="lnk-icon">🔀</span>Git</a>
-        <a href="cheatsheets/tree.html"><span class="lnk-icon">🌳</span>tree</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="gr-footer-links-title">// connect</div>
-      <div class="gr-footer-links">
-        <a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
-        <a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
-        <a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
-        <a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
-      </div>
-    </div>
-
-  </div>
-  <div class="gr-footer-bottom">
-    <div class="gr-footer-copy">
-      <span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
-    </div>
-    <div class="gr-footer-stats">
-      <span class="gr-footer-stat"><strong>280+</strong> commands</span>
-      <span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
-      <span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
-    </div>
+   </div>
   </div>
 </footer>
-
-<script src="css/gr.js"></script>
-<script>
-(function() {
-  var lines = [
-    { type: 'cmd',  text: 'whoami' },
-    { type: 'out',  text: 'GeekMani — Future Senior Web Dev 👾' },
-    { type: 'cmd',  text: 'ls cheatsheets/' },
-    { type: 'out',  text: 'ubuntu  django  python  git  tree  +more' },
-    { type: 'cmd',  text: 'grep -r "یادگیری" . | wc -l' },
-    { type: 'out',  text: '∞' },
-    { type: 'cmd',  text: '' },
-  ];
-
-  var el = document.getElementById('gr-terminal-body');
-  if (!el) return;
-  el.innerHTML = '';
-
-  var i = 0, charIdx = 0, phase = 'typing';
-  var SPEED_TYPE = 55, SPEED_PAUSE = 700, SPEED_OUT = 18;
-
-  function tick() {
-    if (i >= lines.length) {
-      // show blinking cursor on last prompt
-      el.innerHTML += '<span class="gr-tl-prompt">$ </span><span class="gr-cursor"></span>';
-      return;
-    }
-    var line = lines[i];
-
-    if (line.type === 'cmd') {
-      if (charIdx === 0) {
-        // create new line element
-        var span = document.createElement('span');
-        span.innerHTML = '<span class="gr-tl-prompt">$ </span><span class="gr-tl-cmd" id="gr-cur-cmd"></span><span class="gr-cursor"></span>';
-        el.appendChild(span);
-      }
-      var cmdEl = document.getElementById('gr-cur-cmd');
-      if (charIdx < line.text.length) {
-        cmdEl.textContent += line.text[charIdx];
-        charIdx++;
-        setTimeout(tick, SPEED_TYPE);
-      } else {
-        // remove cursor from this line
-        var cur = el.querySelector('.gr-cursor');
-        if (cur) cur.remove();
-        i++; charIdx = 0;
-        setTimeout(tick, SPEED_PAUSE);
-      }
-    } else {
-      // output line — type fast
-      if (charIdx === 0) {
-        var out = document.createElement('span');
-        out.className = 'gr-tl-out';
-        out.id = 'gr-cur-out';
-        el.appendChild(out);
-      }
-      var outEl = document.getElementById('gr-cur-out');
-      if (charIdx < line.text.length) {
-        outEl.textContent += line.text[charIdx];
-        charIdx++;
-        setTimeout(tick, SPEED_OUT);
-      } else {
-        i++; charIdx = 0;
-        setTimeout(tick, 200);
-      }
-    }
-  }
-
-  setTimeout(tick, 600);
-})();
-</script>
-
 </body>
 </html>

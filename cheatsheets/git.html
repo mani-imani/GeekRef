@@ -1,362 +1,232 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Git — کنترل نسخه | GeekRef</title>
-<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<meta content="#0d1117" name="theme-color"/>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/shared.css" rel="stylesheet"/>
-<style>
-:root { --accent: #f97316; --accent-rgb: 249,115,22; }
-
-/* search */
-.gr-search-wrap { position: relative; margin-bottom: 20px; }
-.gr-search {
-  width: 100%;
-  padding: 10px 16px 10px 44px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-family: 'Vazirmatn', sans-serif;
-  font-size: 14px;
-  outline: none;
-  direction: rtl;
-  transition: border-color .2s, background .25s;
-}
-.gr-search:focus { border-color: var(--accent); }
-.gr-search::placeholder { color: var(--text-dimmer); }
-.gr-search-icon {
-  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-  color: var(--text-dimmer); font-size: 16px; pointer-events: none;
-}
-[data-theme="light"] .gr-search { background: var(--surface); }
-
-/* filter tabs */
-.gr-filters { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 20px; }
-.gr-filter {
-  padding: 5px 16px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-dim);
-  font-family: 'Vazirmatn', sans-serif;
-  font-size: 13px;
-  cursor: pointer;
-  transition: all .2s;
-}
-.gr-filter:hover { border-color: var(--accent); color: var(--text); }
-.gr-filter.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
-
-/* git card grid */
-.git-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
-.git-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px 15px;
-  cursor: pointer;
-  transition: border-color .2s, background .15s;
-  position: relative;
-}
-.git-card:hover { border-color: var(--accent-border); background: var(--surface2); }
-.git-card.hidden { display: none; }
-.git-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
-.git-cmd {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-border);
-  padding: 4px 9px;
-  border-radius: 5px;
-  word-break: break-all;
-  flex: 1;
-  line-height: 1.5;
-  direction: ltr;
-  text-align: left;
-}
-.git-cat {
-  font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
-  white-space: nowrap; flex-shrink: 0; letter-spacing: .04em;
-}
-.git-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
-.git-empty { display: none; text-align: center; padding: 40px; color: var(--text-dimmer); font-size: 14px; }
-
-/* cat colors */
-.cat-setup  { background: rgba(88,166,255,.12); color: #58a6ff; }
-.cat-local  { background: rgba(63,185,80,.12);  color: #3fb950; }
-.cat-branch { background: rgba(188,140,255,.12); color: #bc8cff; }
-.cat-remote { background: rgba(249,115,22,.12);  color: #f97316; }
-.cat-undo   { background: rgba(255,123,114,.12); color: #ff7b72; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('gr-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<title>Git · دستورات کنترل نسخه | GeekRef</title>
+<meta name="description" content="از نصب و تنظیم تا branch، merge، remote و undo — با جستجو و فیلتر">
+<meta name="generator" content="GeekRef build 2.1.0 (do not edit; source: data/sheets)">
+<link rel="canonical" href="https://mani-imani.github.io/GeekRef/cheatsheets/git.html">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="../assets/brand/geekref-icon-32.svg">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="../assets/brand/geekref-icon-16.svg">
+<link rel="apple-touch-icon" href="../assets/brand/geekref-touch-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="GeekRef">
+<meta name="theme-color" content="#F4F4F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1217" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GeekRef">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="Git · دستورات کنترل نسخه | GeekRef">
+<meta property="og:description" content="از نصب و تنظیم تا branch، merge، remote و undo — با جستجو و فیلتر">
+<meta property="og:url" content="https://mani-imani.github.io/GeekRef/cheatsheets/git.html">
+<meta property="og:image" content="https://mani-imani.github.io/GeekRef/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/vazirmatn/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/geek.css">
+<link rel="stylesheet" href="../css/geekref.css">
+<script src="../js/geekref.js" defer></script>
 </head>
 <body>
-<nav class="gr-navbar">
-<div class="gr-navbar-left">
-<a class="gr-navbar-back" href="../index.html">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</a>
-<div class="gr-breadcrumb">
-<a href="../index.html">GeekRef</a>
-<span class="gr-breadcrumb-sep">/</span>
-<span class="gr-breadcrumb-cur">Git</span>
-</div>
-</div>
-<div class="gr-navbar-mid">
-<div class="gr-status">
-<span class="gr-status-dot"></span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
-</div>
-</div>
-<div class="gr-navbar-right">
-<span class="gr-badge">🔀 Git</span>
-<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
-</div>
-</nav>
-<div class="gr-hero">
-<div class="gr-hero-eyebrow">Version Control</div>
-<h1><em>Git</em> — دستورات کنترل نسخه</h1>
-<p>از نصب و تنظیم تا branch، merge، remote و undo — با جستجو و فیلتر</p>
-<div class="gr-hero-stats">
-<div class="gr-stat"><span class="gr-stat-num">۵</span><span class="gr-stat-label">دسته‌بندی</span></div>
-<div class="gr-stat"><span class="gr-stat-num">۲۵</span><span class="gr-stat-label">دستور</span></div>
-<div class="gr-stat"><span class="gr-stat-num">🔍</span><span class="gr-stat-label">قابل جستجو</span></div>
-</div>
-</div>
-<div class="gr-container" style="max-width:1160px">
-<div class="gr-layout">
-
-<div class="gr-main-content">
-<div class="gr-search-wrap">
-<input class="gr-search" id="gitSearch" oninput="gitFilter()" placeholder="جستجو در دستورات..." type="text"/>
-<span class="gr-search-icon">🔍</span>
-</div>
-<div class="gr-filters">
-<button class="gr-filter active" onclick="gitCat('all',this)">همه</button>
-<button class="gr-filter" onclick="gitCat('setup',this)">⚙️ نصب و تنظیم</button>
-<button class="gr-filter" onclick="gitCat('local',this)">📁 کار محلی</button>
-<button class="gr-filter" onclick="gitCat('branch',this)">🌿 Branch</button>
-<button class="gr-filter" onclick="gitCat('remote',this)">🌐 Remote</button>
-<button class="gr-filter" onclick="gitCat('undo',this)">↩️ Undo</button>
-</div>
-<div class="git-grid" id="gitGrid">
-<!-- setup -->
-<div class="git-card" data-cat="setup" data-text="sudo apt install git نصب">
-<div class="git-card-top"><code class="git-cmd">sudo apt install git</code><span class="git-cat cat-setup">SETUP</span></div>
-<div class="git-desc">نصب git روی Ubuntu</div>
-</div>
-<div class="git-card" data-cat="setup" data-text="git config --global user.name نام کاربری">
-<div class="git-card-top"><code class="git-cmd">git config --global user.name "نام"</code><span class="git-cat cat-setup">SETUP</span></div>
-<div class="git-desc">تنظیم نام کاربری برای همه پروژه‌ها</div>
-</div>
-<div class="git-card" data-cat="setup" data-text="git config --global user.email ایمیل">
-<div class="git-card-top"><code class="git-cmd">git config --global user.email "ایمیل"</code><span class="git-cat cat-setup">SETUP</span></div>
-<div class="git-desc">تنظیم ایمیل (باید با GitHub یکسان باشد)</div>
-</div>
-<div class="git-card" data-cat="setup" data-text="git config --list نمایش تنظیمات">
-<div class="git-card-top"><code class="git-cmd">git config --list</code><span class="git-cat cat-setup">SETUP</span></div>
-<div class="git-desc">نمایش تمام تنظیمات فعلی</div>
-</div>
-<!-- local -->
-<div class="git-card" data-cat="local" data-text="git init ایجاد مخزن">
-<div class="git-card-top"><code class="git-cmd">git init</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">ایجاد مخزن git در پوشه فعلی</div>
-</div>
-<div class="git-card" data-cat="local" data-text="git status وضعیت فایل‌ها">
-<div class="git-card-top"><code class="git-cmd">git status</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">وضعیت فایل‌ها — تغییر یافته، staged، untracked</div>
-</div>
-<div class="git-card" data-cat="local" data-text="git add افزودن فایل staging">
-<div class="git-card-top"><code class="git-cmd">git add &lt;file&gt;</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">افزودن فایل به staging area برای commit</div>
-</div>
-<div class="git-card" data-cat="local" data-text="git add . همه فایل‌ها">
-<div class="git-card-top"><code class="git-cmd">git add .</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">افزودن همه تغییرات به staging</div>
-</div>
-<div class="git-card" data-cat="local" data-text="git commit ذخیره تغییرات پیام">
-<div class="git-card-top"><code class="git-cmd">git commit -m "پیام"</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">ذخیره تغییرات staged با پیام توصیفی</div>
-</div>
-<div class="git-card" data-cat="local" data-text="git log تاریخچه commit">
-<div class="git-card-top"><code class="git-cmd">git log --oneline</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">مشاهده تاریخچه commit‌ها به صورت فشرده</div>
-</div>
-<div class="git-card" data-cat="local" data-text="git diff تفاوت نسخه فایل">
-<div class="git-card-top"><code class="git-cmd">git diff</code><span class="git-cat cat-local">LOCAL</span></div>
-<div class="git-desc">مشاهده تفاوت بین نسخه‌های فایل</div>
-</div>
-<!-- branch -->
-<div class="git-card" data-cat="branch" data-text="git branch لیست شاخه">
-<div class="git-card-top"><code class="git-cmd">git branch</code><span class="git-cat cat-branch">BRANCH</span></div>
-<div class="git-desc">لیست تمام شاخه‌های محلی</div>
-</div>
-<div class="git-card" data-cat="branch" data-text="git checkout -b ساخت شاخه جدید">
-<div class="git-card-top"><code class="git-cmd">git checkout -b &lt;name&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
-<div class="git-desc">ساخت شاخه جدید و رفتن به آن</div>
-</div>
-<div class="git-card" data-cat="branch" data-text="git switch جابجایی شاخه">
-<div class="git-card-top"><code class="git-cmd">git switch &lt;branch&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
-<div class="git-desc">رفتن به شاخه دیگر (روش مدرن‌تر)</div>
-</div>
-<div class="git-card" data-cat="branch" data-text="git merge ادغام شاخه">
-<div class="git-card-top"><code class="git-cmd">git merge &lt;branch&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
-<div class="git-desc">ادغام یک شاخه در شاخه فعلی</div>
-</div>
-<div class="git-card" data-cat="branch" data-text="git stash ذخیره موقت تغییرات">
-<div class="git-card-top"><code class="git-cmd">git stash</code><span class="git-cat cat-branch">BRANCH</span></div>
-<div class="git-desc">ذخیره موقت تغییرات ناتمام</div>
-</div>
-<div class="git-card" data-cat="branch" data-text="git branch -d حذف شاخه">
-<div class="git-card-top"><code class="git-cmd">git branch -d &lt;name&gt;</code><span class="git-cat cat-branch">BRANCH</span></div>
-<div class="git-desc">حذف شاخه پس از merge</div>
-</div>
-<!-- remote -->
-<div class="git-card" data-cat="remote" data-text="git clone کپی مخزن دانلود">
-<div class="git-card-top"><code class="git-cmd">git clone &lt;url&gt;</code><span class="git-cat cat-remote">REMOTE</span></div>
-<div class="git-desc">کپی مخزن از GitHub یا سرور ریموت</div>
-</div>
-<div class="git-card" data-cat="remote" data-text="git remote add origin اتصال">
-<div class="git-card-top"><code class="git-cmd">git remote add origin &lt;url&gt;</code><span class="git-cat cat-remote">REMOTE</span></div>
-<div class="git-desc">اتصال مخزن محلی به ریموت</div>
-</div>
-<div class="git-card" data-cat="remote" data-text="git push ارسال commit آپلود">
-<div class="git-card-top"><code class="git-cmd">git push origin &lt;branch&gt;</code><span class="git-cat cat-remote">REMOTE</span></div>
-<div class="git-desc">ارسال commit‌های محلی به ریموت</div>
-</div>
-<div class="git-card" data-cat="remote" data-text="git pull دریافت ادغام">
-<div class="git-card-top"><code class="git-cmd">git pull</code><span class="git-cat cat-remote">REMOTE</span></div>
-<div class="git-desc">دریافت و ادغام تغییرات از ریموت</div>
-</div>
-<div class="git-card" data-cat="remote" data-text="git fetch دریافت بدون ادغام">
-<div class="git-card-top"><code class="git-cmd">git fetch</code><span class="git-cat cat-remote">REMOTE</span></div>
-<div class="git-desc">دریافت تغییرات ریموت بدون ادغام</div>
-</div>
-<!-- undo -->
-<div class="git-card" data-cat="undo" data-text="git restore بازگشت فایل">
-<div class="git-card-top"><code class="git-cmd">git restore &lt;file&gt;</code><span class="git-cat cat-undo">UNDO</span></div>
-<div class="git-desc">بازگشت فایل به حالت آخرین commit</div>
-</div>
-<div class="git-card" data-cat="undo" data-text="git reset --soft برگشت commit حفظ تغییرات">
-<div class="git-card-top"><code class="git-cmd">git reset --soft HEAD~1</code><span class="git-cat cat-undo">UNDO</span></div>
-<div class="git-desc">برگشت از آخرین commit با حفظ تغییرات</div>
-</div>
-<div class="git-card" data-cat="undo" data-text="git reset --hard برگشت کامل حذف">
-<div class="git-card-top"><code class="git-cmd">git reset --hard HEAD~1</code><span class="git-cat cat-undo">UNDO</span></div>
-<div class="git-desc">برگشت کامل — تغییرات حذف می‌شوند</div>
-</div>
-<div class="git-card" data-cat="undo" data-text="git revert commit معکوس ایمن">
-<div class="git-card-top"><code class="git-cmd">git revert &lt;hash&gt;</code><span class="git-cat cat-undo">UNDO</span></div>
-<div class="git-desc">ایجاد commit معکوس — ایمن‌ترین روش</div>
-</div>
-<div class="git-card" data-cat="undo" data-text="git commit --amend ویرایش آخرین">
-<div class="git-card-top"><code class="git-cmd">git commit --amend</code><span class="git-cat cat-undo">UNDO</span></div>
-<div class="git-desc">ویرایش آخرین commit — پیام یا محتوا</div>
-</div>
-</div>
-<div class="git-empty" id="gitEmpty">نتیجه‌ای یافت نشد 🔍</div>
-</div><aside class="gr-sidebar">
-<div class="gr-sidebar-title">// دسته‌بندی</div>
-<div class="gr-sidebar-items">
-<a class="gr-sidebar-item" href="#" onclick="gitCat('all',this);return false;"><span class="gr-sidebar-num">all</span>همه دستورات</a>
-<a class="gr-sidebar-item" href="#" onclick="gitCat('setup',this);return false;"><span class="gr-sidebar-num">⚙️</span>نصب و تنظیم</a>
-<a class="gr-sidebar-item" href="#" onclick="gitCat('local',this);return false;"><span class="gr-sidebar-num">📁</span>کار محلی</a>
-<a class="gr-sidebar-item" href="#" onclick="gitCat('branch',this);return false;"><span class="gr-sidebar-num">🌿</span>Branch</a>
-<a class="gr-sidebar-item" href="#" onclick="gitCat('remote',this);return false;"><span class="gr-sidebar-num">🌐</span>Remote</a>
-<a class="gr-sidebar-item" href="#" onclick="gitCat('undo',this);return false;"><span class="gr-sidebar-num">↩️</span>Undo</a>
-</div>
-</aside>
-</div><!-- /gr-main-content -->
-</div><!-- /gr-layout -->
-<!-- /gr-container -->
-<footer class="gr-footer-rich">
-<div class="gr-footer-grid">
-<div class="gr-footer-brand">
-<div class="gr-footer-logo">
-<span>👾</span>
-<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
-</div>
-<div class="gr-footer-tagline">
-<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
-<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
-<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
-</div>
-<div class="gr-status">
-<span class="gr-status-dot"></span>
-<span>online · 280+ commands</span>
-</div>
-</div>
-<div>
-<div class="gr-footer-links-title">// cheatsheets</div>
-<div class="gr-footer-links">
-<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
-<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
-<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
-<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
-<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
-<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
-</div>
-</div>
-<div>
-<div class="gr-footer-links-title">// connect</div>
-<div class="gr-footer-links">
-<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
-<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
-<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
-<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
-</div>
-</div>
-</div>
-<div class="gr-footer-bottom">
-<div class="gr-footer-copy">
-<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+<a class="gr-skip" href="#main">رفتن به محتوا</a>
+<header class="gr-header">
+  <div class="gm-page gr-header-in">
+   <div class="gr-brand-row">
+    <a class="gr-brand" href="../index.html" aria-label="GeekRef، صفحه‌ی اصلی">
+     <img class="gr-wm--light" src="../assets/brand/geekref-wordmark-light.svg" alt="" width="92" height="22">
+     <img class="gr-wm--dark" src="../assets/brand/geekref-wordmark-dark.svg" alt="" width="92" height="22">
+    </a>
+    <nav class="gr-crumb" aria-label="مسیر"><span aria-hidden="true">/</span><span aria-current="page"><bdi>Git</bdi></span></nav>
+   </div>
+   <div class="gr-actions">
+    <button type="button" class="gr-search-btn" data-gr-search aria-label="جست‌وجو در دستورها" aria-keyshortcuts="Control+K Meta+K /"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg><span>جست‌وجو</span><kbd dir="ltr" data-gr-kbd>Ctrl K</kbd></button>
+    <div class="gm-seg gr-theme" role="group" aria-label="پوسته">
+     <button type="button" data-theme-set="system" aria-pressed="true" title="پیروی از سیستم"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/></svg><span>سیستم</span></button>
+     <button type="button" data-theme-set="light" aria-pressed="false" title="روشن"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg><span>روشن</span></button>
+     <button type="button" data-theme-set="dark" aria-pressed="false" title="تیره"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg><span>تیره</span></button>
     </div>
-<div class="gr-footer-stats">
-<span class="gr-footer-stat"><strong>280+</strong> commands</span>
-<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
-<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
-</div>
-</div>
-</footer>
-<script src="../css/gr.js"></script>
+   </div>
+  </div>
+</header>
+<main id="main" class="gm-page">
+ <header class="gr-head">
+  <p class="gr-eyebrow"><span class="gm-mono">Version Control</span></p>
+  <h1><bdi>Git</bdi><span class="gr-h1-sub">دستورات کنترل نسخه</span></h1>
+  <p class="gr-lede">از نصب و تنظیم تا <bdi>branch</bdi>، <bdi>merge</bdi>، <bdi>remote</bdi> و <bdi>undo</bdi> — با جستجو و فیلتر</p>
+  <p class="gr-meta"><b>۲۷</b> دستور · <b>۵</b> دسته</p>
+ </header>
+ <div class="gr-filterbar">
+   <div class="gr-field"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>
+    <label class="gr-vh" for="gitSearch">جست‌وجو در دستورهای این برگه</label>
+    <input class="gr-input" id="gitSearch" type="search" oninput="gitFilter()" placeholder="جست‌وجو در دستورهای این برگه" autocomplete="off" spellcheck="false">
+   </div>
+   <div class="gr-pills" role="group" aria-label="دسته‌بندی">
+    <button type="button" aria-pressed="true" data-cat="all" onclick="gitCat('all',this)">همه</button>
+    <button type="button" aria-pressed="false" data-cat="setup" onclick="gitCat('setup',this)">نصب و تنظیم</button>
+    <button type="button" aria-pressed="false" data-cat="local" onclick="gitCat('local',this)">کار محلی</button>
+    <button type="button" aria-pressed="false" data-cat="branch" onclick="gitCat('branch',this)">شاخه‌ها</button>
+    <button type="button" aria-pressed="false" data-cat="remote" onclick="gitCat('remote',this)">مخزن راه دور</button>
+    <button type="button" aria-pressed="false" data-cat="undo" onclick="gitCat('undo',this)">بازگردانی</button>
+   </div>
+  </div>
+  <div class="git-grid" id="gitGrid">
+   <article class="gm-card git-card" id="c-sudo-apt-install-git" data-cat="setup" data-text="sudo apt install git نصب">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="sudo apt install git" aria-label="کپی دستور sudo apt install git"><code dir="ltr">sudo apt install git</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">setup</span></div>
+    <div class="git-card-foot"><p class="git-desc">نصب <bdi>git</bdi> روی <bdi>Ubuntu</bdi></p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-install-git" aria-label="کپی پیوند دستور sudo apt install git" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-config-global-user-name" data-cat="setup" data-text="git config --global user.name &quot;نام&quot; git config --global user.name نام کاربری">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git config --global user.name &quot;نام&quot;" aria-label="کپی دستور git config --global user.name &quot;نام&quot;"><code dir="ltr">git config --global user.name "نام"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">setup</span></div>
+    <div class="git-card-foot"><p class="git-desc">تنظیم نام کاربری برای همه پروژه‌ها</p><button type="button" class="gr-link-btn" data-link="c-git-config-global-user-name" aria-label="کپی پیوند دستور git config --global user.name &quot;نام&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-config-global-user-email" data-cat="setup" data-text="git config --global user.email &quot;ایمیل&quot; git config --global user.email ایمیل">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git config --global user.email &quot;ایمیل&quot;" aria-label="کپی دستور git config --global user.email &quot;ایمیل&quot;"><code dir="ltr">git config --global user.email "ایمیل"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">setup</span></div>
+    <div class="git-card-foot"><p class="git-desc">تنظیم ایمیل (باید با <bdi>GitHub</bdi> یکسان باشد)</p><button type="button" class="gr-link-btn" data-link="c-git-config-global-user-email" aria-label="کپی پیوند دستور git config --global user.email &quot;ایمیل&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-config-list" data-cat="setup" data-text="git config --list نمایش تنظیمات">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git config --list" aria-label="کپی دستور git config --list"><code dir="ltr">git config --list</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">setup</span></div>
+    <div class="git-card-foot"><p class="git-desc">نمایش تمام تنظیمات فعلی</p><button type="button" class="gr-link-btn" data-link="c-git-config-list" aria-label="کپی پیوند دستور git config --list" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-init" data-cat="local" data-text="git init ایجاد مخزن">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git init" aria-label="کپی دستور git init"><code dir="ltr">git init</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">ایجاد مخزن <bdi>git</bdi> در پوشه فعلی</p><button type="button" class="gr-link-btn" data-link="c-git-init" aria-label="کپی پیوند دستور git init" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-status" data-cat="local" data-text="git status وضعیت فایل‌ها">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git status" aria-label="کپی دستور git status"><code dir="ltr">git status</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">وضعیت فایل‌ها — تغییر یافته، <bdi>staged</bdi>، <bdi>untracked</bdi></p><button type="button" class="gr-link-btn" data-link="c-git-status" aria-label="کپی پیوند دستور git status" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-add-file" data-cat="local" data-text="git add &lt;file&gt; git add افزودن فایل staging">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git add &lt;file&gt;" aria-label="کپی دستور git add &lt;file&gt;"><code dir="ltr">git add &lt;file&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">افزودن فایل به <bdi>staging area</bdi> برای <bdi>commit</bdi></p><button type="button" class="gr-link-btn" data-link="c-git-add-file" aria-label="کپی پیوند دستور git add &lt;file&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-add" data-cat="local" data-text="git add . همه فایل‌ها">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git add ." aria-label="کپی دستور git add ."><code dir="ltr">git add .</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">افزودن همه تغییرات به <bdi>staging</bdi></p><button type="button" class="gr-link-btn" data-link="c-git-add" aria-label="کپی پیوند دستور git add ." title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-commit-m" data-cat="local" data-text="git commit -m &quot;پیام&quot; git commit ذخیره تغییرات پیام">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git commit -m &quot;پیام&quot;" aria-label="کپی دستور git commit -m &quot;پیام&quot;"><code dir="ltr">git commit -m "پیام"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">ذخیره تغییرات <bdi>staged</bdi> با پیام توصیفی</p><button type="button" class="gr-link-btn" data-link="c-git-commit-m" aria-label="کپی پیوند دستور git commit -m &quot;پیام&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-log-oneline" data-cat="local" data-text="git log --oneline git log تاریخچه commit">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git log --oneline" aria-label="کپی دستور git log --oneline"><code dir="ltr">git log --oneline</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">مشاهده تاریخچه <bdi>commit</bdi>‌ها به صورت فشرده</p><button type="button" class="gr-link-btn" data-link="c-git-log-oneline" aria-label="کپی پیوند دستور git log --oneline" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-diff" data-cat="local" data-text="git diff تفاوت نسخه فایل">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git diff" aria-label="کپی دستور git diff"><code dir="ltr">git diff</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">local</span></div>
+    <div class="git-card-foot"><p class="git-desc">مشاهده تفاوت بین نسخه‌های فایل</p><button type="button" class="gr-link-btn" data-link="c-git-diff" aria-label="کپی پیوند دستور git diff" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-branch" data-cat="branch" data-text="git branch لیست شاخه">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git branch" aria-label="کپی دستور git branch"><code dir="ltr">git branch</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">branch</span></div>
+    <div class="git-card-foot"><p class="git-desc">لیست تمام شاخه‌های محلی</p><button type="button" class="gr-link-btn" data-link="c-git-branch" aria-label="کپی پیوند دستور git branch" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-checkout-b-name" data-cat="branch" data-text="git checkout -b &lt;name&gt; git checkout -b ساخت شاخه جدید">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git checkout -b &lt;name&gt;" aria-label="کپی دستور git checkout -b &lt;name&gt;"><code dir="ltr">git checkout -b &lt;name&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">branch</span></div>
+    <div class="git-card-foot"><p class="git-desc">ساخت شاخه جدید و رفتن به آن</p><button type="button" class="gr-link-btn" data-link="c-git-checkout-b-name" aria-label="کپی پیوند دستور git checkout -b &lt;name&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-switch-branch" data-cat="branch" data-text="git switch &lt;branch&gt; git switch جابجایی شاخه">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git switch &lt;branch&gt;" aria-label="کپی دستور git switch &lt;branch&gt;"><code dir="ltr">git switch &lt;branch&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">branch</span></div>
+    <div class="git-card-foot"><p class="git-desc">رفتن به شاخه دیگر (روش مدرن‌تر)</p><button type="button" class="gr-link-btn" data-link="c-git-switch-branch" aria-label="کپی پیوند دستور git switch &lt;branch&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-merge-branch" data-cat="branch" data-text="git merge &lt;branch&gt; git merge ادغام شاخه">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git merge &lt;branch&gt;" aria-label="کپی دستور git merge &lt;branch&gt;"><code dir="ltr">git merge &lt;branch&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">branch</span></div>
+    <div class="git-card-foot"><p class="git-desc">ادغام یک شاخه در شاخه فعلی</p><button type="button" class="gr-link-btn" data-link="c-git-merge-branch" aria-label="کپی پیوند دستور git merge &lt;branch&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-stash" data-cat="branch" data-text="git stash ذخیره موقت تغییرات">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git stash" aria-label="کپی دستور git stash"><code dir="ltr">git stash</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">branch</span></div>
+    <div class="git-card-foot"><p class="git-desc">ذخیره موقت تغییرات ناتمام</p><button type="button" class="gr-link-btn" data-link="c-git-stash" aria-label="کپی پیوند دستور git stash" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-branch-d-name" data-cat="branch" data-text="git branch -d &lt;name&gt; git branch -d حذف شاخه">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git branch -d &lt;name&gt;" aria-label="کپی دستور git branch -d &lt;name&gt;"><code dir="ltr">git branch -d &lt;name&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">branch</span></div>
+    <div class="git-card-foot"><p class="git-desc">حذف شاخه پس از <bdi>merge</bdi></p><button type="button" class="gr-link-btn" data-link="c-git-branch-d-name" aria-label="کپی پیوند دستور git branch -d &lt;name&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-clone-url" data-cat="remote" data-text="git clone &lt;url&gt; git clone کپی مخزن دانلود">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git clone &lt;url&gt;" aria-label="کپی دستور git clone &lt;url&gt;"><code dir="ltr">git clone &lt;url&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">remote</span></div>
+    <div class="git-card-foot"><p class="git-desc">کپی مخزن از <bdi>GitHub</bdi> یا سرور ریموت</p><button type="button" class="gr-link-btn" data-link="c-git-clone-url" aria-label="کپی پیوند دستور git clone &lt;url&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-remote-add-origin-url" data-cat="remote" data-text="git remote add origin &lt;url&gt; git remote add origin اتصال">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git remote add origin &lt;url&gt;" aria-label="کپی دستور git remote add origin &lt;url&gt;"><code dir="ltr">git remote add origin &lt;url&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">remote</span></div>
+    <div class="git-card-foot"><p class="git-desc">اتصال مخزن محلی به ریموت</p><button type="button" class="gr-link-btn" data-link="c-git-remote-add-origin-url" aria-label="کپی پیوند دستور git remote add origin &lt;url&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-push-origin-branch" data-cat="remote" data-text="git push origin &lt;branch&gt; git push ارسال commit آپلود">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git push origin &lt;branch&gt;" aria-label="کپی دستور git push origin &lt;branch&gt;"><code dir="ltr">git push origin &lt;branch&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">remote</span></div>
+    <div class="git-card-foot"><p class="git-desc">ارسال <bdi>commit</bdi>‌های محلی به ریموت</p><button type="button" class="gr-link-btn" data-link="c-git-push-origin-branch" aria-label="کپی پیوند دستور git push origin &lt;branch&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-pull" data-cat="remote" data-text="git pull دریافت ادغام">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git pull" aria-label="کپی دستور git pull"><code dir="ltr">git pull</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">remote</span></div>
+    <div class="git-card-foot"><p class="git-desc">دریافت و ادغام تغییرات از ریموت</p><button type="button" class="gr-link-btn" data-link="c-git-pull" aria-label="کپی پیوند دستور git pull" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-fetch" data-cat="remote" data-text="git fetch دریافت بدون ادغام">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git fetch" aria-label="کپی دستور git fetch"><code dir="ltr">git fetch</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">remote</span></div>
+    <div class="git-card-foot"><p class="git-desc">دریافت تغییرات ریموت بدون ادغام</p><button type="button" class="gr-link-btn" data-link="c-git-fetch" aria-label="کپی پیوند دستور git fetch" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-restore-file" data-cat="undo" data-text="git restore &lt;file&gt; git restore بازگشت فایل">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git restore &lt;file&gt;" aria-label="کپی دستور git restore &lt;file&gt;"><code dir="ltr">git restore &lt;file&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">undo</span></div>
+    <div class="git-card-foot"><p class="git-desc">بازگشت فایل به حالت آخرین <bdi>commit</bdi></p><button type="button" class="gr-link-btn" data-link="c-git-restore-file" aria-label="کپی پیوند دستور git restore &lt;file&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-reset-soft-head-1" data-cat="undo" data-text="git reset --soft HEAD~1 git reset --soft برگشت commit حفظ تغییرات">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git reset --soft HEAD~1" aria-label="کپی دستور git reset --soft HEAD~1"><code dir="ltr">git reset --soft HEAD~1</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">undo</span></div>
+    <div class="git-card-foot"><p class="git-desc">برگشت از آخرین <bdi>commit</bdi> با حفظ تغییرات</p><button type="button" class="gr-link-btn" data-link="c-git-reset-soft-head-1" aria-label="کپی پیوند دستور git reset --soft HEAD~1" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-reset-hard-head-1" data-cat="undo" data-text="git reset --hard HEAD~1 git reset --hard برگشت کامل حذف">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git reset --hard HEAD~1" aria-label="کپی دستور git reset --hard HEAD~1"><code dir="ltr">git reset --hard HEAD~1</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">undo</span></div>
+    <div class="git-card-foot"><p class="git-desc">برگشت کامل — تغییرات حذف می‌شوند</p><button type="button" class="gr-link-btn" data-link="c-git-reset-hard-head-1" aria-label="کپی پیوند دستور git reset --hard HEAD~1" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-revert-hash" data-cat="undo" data-text="git revert &lt;hash&gt; git revert commit معکوس ایمن">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git revert &lt;hash&gt;" aria-label="کپی دستور git revert &lt;hash&gt;"><code dir="ltr">git revert &lt;hash&gt;</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">undo</span></div>
+    <div class="git-card-foot"><p class="git-desc">ایجاد <bdi>commit</bdi> معکوس — ایمن‌ترین روش</p><button type="button" class="gr-link-btn" data-link="c-git-revert-hash" aria-label="کپی پیوند دستور git revert &lt;hash&gt;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+   <article class="gm-card git-card" id="c-git-commit-amend" data-cat="undo" data-text="git commit --amend ویرایش آخرین">
+    <div class="git-card-top"><button type="button" class="gr-cmd" data-copy="git commit --amend" aria-label="کپی دستور git commit --amend"><code dir="ltr">git commit --amend</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><span class="gm-chip">undo</span></div>
+    <div class="git-card-foot"><p class="git-desc">ویرایش آخرین <bdi>commit</bdi> — پیام یا محتوا</p><button type="button" class="gr-link-btn" data-link="c-git-commit-amend" aria-label="کپی پیوند دستور git commit --amend" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   </article>
+  </div>
+  <p class="git-empty" id="gitEmpty" role="status">دستوری با این مشخصات پیدا نشد.</p>
+</main>
 <script>
+/* category + text filter (v1 logic, now with aria-pressed) */
 var activeCat = 'all';
-
 function gitCat(cat, btn) {
   activeCat = cat;
-  document.querySelectorAll('.gr-filter').forEach(function(b) { b.classList.remove('active'); });
-  if (btn.classList.contains('gr-filter')) btn.classList.add('active');
-  // sync sidebar
-  document.querySelectorAll('.gr-sidebar-item').forEach(function(b) { b.classList.remove('active'); });
-  var sideMap = {'all':'همه','setup':'نصب','local':'محلی','branch':'Branch','remote':'Remote','undo':'Undo'};
-  document.querySelectorAll('.gr-sidebar-item').forEach(function(b) {
-    if (b.textContent.trim().includes(sideMap[cat] || cat)) b.classList.add('active');
-    if (cat === 'all' && b.textContent.includes('همه')) b.classList.add('active');
-  });
+  document.querySelectorAll('.gr-pills button').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
   gitFilter();
 }
-
 function gitFilter() {
   var q = document.getElementById('gitSearch').value.toLowerCase().trim();
-  var cards = document.querySelectorAll('.git-card');
   var visible = 0;
-  cards.forEach(function(card) {
-    var catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
-    var textMatch = !q || (card.dataset.text + ' ' + card.textContent).toLowerCase().includes(q);
-    if (catMatch && textMatch) {
-      card.classList.remove('hidden');
-      visible++;
-    } else {
-      card.classList.add('hidden');
-    }
+  document.querySelectorAll('.git-card').forEach(function (card) {
+    var ok = (activeCat === 'all' || card.dataset.cat === activeCat) &&
+             (!q || (card.dataset.text + ' ' + card.textContent).toLowerCase().indexOf(q) > -1);
+    card.classList.toggle('hidden', !ok);
+    if (ok) visible++;
   });
   document.getElementById('gitEmpty').style.display = visible === 0 ? 'block' : 'none';
 }
 </script>
+<footer class="gr-footer">
+  <div class="gm-page gr-footer-in">
+   <nav class="gr-footer-nav" aria-label="برگه‌ها">
+    <ul>
+     <li><a href="../index.html">صفحه‌ی اصلی</a></li>
+     <li><a href="ubuntu.html"><bdi>Ubuntu</bdi></a></li>
+     <li><a href="django.html"><bdi>Django</bdi></a></li>
+     <li><a href="python.html"><bdi>Python</bdi></a></li>
+     <li><a href="python_setup.html"><bdi>Python Setup</bdi></a></li>
+     <li><a href="git.html"><bdi>Git</bdi></a></li>
+     <li><a href="tree.html"><bdi>tree</bdi></a></li>
+    </ul>
+   </nav>
+   <div class="gr-footer-meta">
+    <a class="gm-sign" href="https://github.com/mani-imani">از گیک‌مانی<i class="gm-cursor"></i></a>
+    <div class="gr-footer-small">
+     <span class="gr-offline" hidden><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>بدون اینترنت هم در دسترس است</span>
+     <a href="https://github.com/mani-imani/GeekRef">کد پروژه</a>
+     <span>مجوز <bdi>MIT</bdi></span>
+     <span class="gm-mono">v2.1.0</span>
+    </div>
+   </div>
+  </div>
+</footer>
 </body>
 </html>

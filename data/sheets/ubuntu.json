@@ -1,0 +1,557 @@
+{
+  "order": 1,
+  "file": "ubuntu.html",
+  "name": "Ubuntu",
+  "subtitle": "دستورات لینوکس",
+  "eyebrow": "Linux · Bash · Ubuntu",
+  "lede": "مدیریت فایل، شبکه، پردازش‌ها، پکیج‌ها و سیستم — راهنمای جامع فارسی",
+  "card": "مدیریت فایل، شبکه، پردازش‌ها، پکیج‌ها، SSH و سرویس‌ها",
+  "icon": "terminal",
+  "layout": "sections",
+  "sections": [
+    {
+      "id": "nav",
+      "title": "ناوبری و مکان‌یابی",
+      "desc": "حرکت در بین دایرکتوری‌ها و پیدا کردن مسیر",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "pwd",
+              "desc": "نمایش مسیر کامل دایرکتوری فعلی — Print Working Directory"
+            },
+            {
+              "cmd": "ls",
+              "desc": "نمایش لیست فایل‌ها و دایرکتوری‌ها"
+            },
+            {
+              "cmd": "cd [path]",
+              "desc": "تغییر دایرکتوری فعلی"
+            },
+            {
+              "cmd": "find [path] [options]",
+              "desc": "جستجوی فایل در سیستم"
+            },
+            {
+              "cmd": "locate [name]",
+              "desc": "جستجوی سریع فایل از دیتابیس ایندکس — برای آپدیت دیتابیس: sudo updatedb"
+            },
+            {
+              "cmd": "which / whereis",
+              "desc": "پیدا کردن مسیر یک دستور یا برنامه"
+            },
+            {
+              "cmd": "tree",
+              "desc": "نمایش درختی ساختار پوشه‌ها — نصب: sudo apt install tree"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "file",
+      "title": "مدیریت فایل و دایرکتوری",
+      "desc": "ایجاد، کپی، جابجایی، حذف فایل‌ها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "touch [file]",
+              "desc": "ایجاد فایل خالی یا آپدیت زمان تغییر"
+            },
+            {
+              "cmd": "mkdir [dir]",
+              "desc": "ایجاد دایرکتوری جدید"
+            },
+            {
+              "cmd": "cp [src] [dest]",
+              "desc": "کپی فایل یا دایرکتوری"
+            },
+            {
+              "cmd": "mv [src] [dest]",
+              "desc": "جابجایی یا تغییر نام فایل"
+            },
+            {
+              "cmd": "rm [file]",
+              "desc": "حذف فایل یا دایرکتوری"
+            },
+            {
+              "cmd": "rmdir [dir]",
+              "desc": "حذف دایرکتوری خالی"
+            },
+            {
+              "cmd": "ln -s [target] [link]",
+              "desc": "ایجاد لینک سمبلیک (Symbolic Link) — مثل shortcut ویندوز"
+            },
+            {
+              "cmd": "cat / less / more / head / tail",
+              "desc": "نمایش محتوای فایل"
+            },
+            {
+              "cmd": "rsync [options] src dest",
+              "desc": "همگام‌سازی هوشمند فایل‌ها (بهتر از cp)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "perm",
+      "title": "مجوزها و مالکیت",
+      "desc": "chmod، chown و مدیریت دسترسی",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "chmod [mode] [file]",
+              "desc": "تغییر مجوزهای فایل"
+            },
+            {
+              "cmd": "chown [user]:[group] [file]",
+              "desc": "تغییر مالک فایل یا دایرکتوری"
+            },
+            {
+              "cmd": "chgrp [group] [file]",
+              "desc": "تغییر گروه فایل"
+            },
+            {
+              "cmd": "umask",
+              "desc": "تنظیم مجوز پیش‌فرض فایل‌های جدید"
+            },
+            {
+              "cmd": "sudo [command]",
+              "desc": "اجرای دستور با سطح دسترسی root"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proc",
+      "title": "مدیریت پردازش‌ها",
+      "desc": "مشاهده، کنترل و خاتمه دادن به پردازش‌ها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "ps [options]",
+              "desc": "نمایش لیست پردازش‌های در حال اجرا"
+            },
+            {
+              "cmd": "top / htop",
+              "desc": "نمایش زنده پردازش‌ها و مصرف منابع — htop نیاز به نصب دارد: sudo apt install htop"
+            },
+            {
+              "cmd": "kill [signal] [PID]",
+              "desc": "ارسال سیگنال به پردازش"
+            },
+            {
+              "cmd": "jobs / bg / fg / nohup",
+              "desc": "مدیریت کارهای پس‌زمینه"
+            },
+            {
+              "cmd": "nice / renice",
+              "desc": "تنظیم اولویت پردازش (-20 تا 19)"
+            },
+            {
+              "cmd": "systemctl [cmd] [service]",
+              "desc": "مدیریت سرویس‌های سیستم (systemd)"
+            },
+            {
+              "cmd": "journalctl",
+              "desc": "خواندن لاگ‌های systemd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "net",
+      "title": "شبکه",
+      "desc": "بررسی اتصال، دانلود و عیب‌یابی شبکه",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "ip addr / ifconfig",
+              "desc": "نمایش اطلاعات کارت‌های شبکه"
+            },
+            {
+              "cmd": "ping [host]",
+              "desc": "بررسی اتصال به هاست"
+            },
+            {
+              "cmd": "curl [url]",
+              "desc": "ارسال درخواست HTTP و دانلود"
+            },
+            {
+              "cmd": "wget [url]",
+              "desc": "دانلود فایل از اینترنت"
+            },
+            {
+              "cmd": "netstat / ss",
+              "desc": "نمایش اتصالات شبکه و پورت‌ها"
+            },
+            {
+              "cmd": "nmap [host]",
+              "desc": "اسکن پورت‌ها و سرویس‌ها — نصب: sudo apt install nmap"
+            },
+            {
+              "cmd": "traceroute / mtr",
+              "desc": "ردیابی مسیر بسته‌ها به مقصد"
+            },
+            {
+              "cmd": "dig / nslookup / host",
+              "desc": "جستجوی DNS"
+            },
+            {
+              "cmd": "ufw [command]",
+              "desc": "فایروال Ubuntu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pkg",
+      "title": "مدیریت پکیج‌ها",
+      "desc": "نصب، حذف و آپدیت نرم‌افزارها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "apt update",
+              "desc": "آپدیت لیست پکیج‌های موجود (همیشه اول این)"
+            },
+            {
+              "cmd": "apt upgrade",
+              "desc": "آپگرید همه پکیج‌های نصب‌شده"
+            },
+            {
+              "cmd": "apt install [package]",
+              "desc": "نصب پکیج"
+            },
+            {
+              "cmd": "apt remove / purge",
+              "desc": "حذف پکیج — purge فایل‌های config را هم حذف می‌کند"
+            },
+            {
+              "cmd": "apt autoremove",
+              "desc": "حذف پکیج‌های غیرضروری"
+            },
+            {
+              "cmd": "apt search / show",
+              "desc": "جستجو و نمایش اطلاعات پکیج"
+            },
+            {
+              "cmd": "dpkg [options]",
+              "desc": "مدیریت پکیج‌های .deb"
+            },
+            {
+              "cmd": "snap [command]",
+              "desc": "مدیریت پکیج‌های Snap"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disk",
+      "title": "دیسک و فضای ذخیره‌سازی",
+      "desc": "بررسی فضا، mount و مدیریت پارتیشن",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "df -h",
+              "desc": "نمایش فضای دیسک تمام partition‌ها"
+            },
+            {
+              "cmd": "du [options] [path]",
+              "desc": "اندازه دایرکتوری‌ها"
+            },
+            {
+              "cmd": "lsblk",
+              "desc": "نمایش لیست block devices و دیسک‌ها"
+            },
+            {
+              "cmd": "mount / umount",
+              "desc": "mount و unmount کردن دیسک"
+            },
+            {
+              "cmd": "fdisk / parted",
+              "desc": "مدیریت partition‌ها"
+            },
+            {
+              "cmd": "mkfs.[type] /dev/sdX",
+              "desc": "فرمت کردن partition"
+            },
+            {
+              "cmd": "iostat / iotop",
+              "desc": "مانیتورینگ I/O دیسک"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "user",
+      "title": "مدیریت کاربران و گروه‌ها",
+      "desc": "ایجاد، تغییر و حذف کاربران",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "useradd / adduser",
+              "desc": "ایجاد کاربر جدید — adduser تعاملی‌تر و friendlier است"
+            },
+            {
+              "cmd": "passwd [user]",
+              "desc": "تنظیم یا تغییر رمز عبور"
+            },
+            {
+              "cmd": "usermod [options] [user]",
+              "desc": "ویرایش اطلاعات کاربر"
+            },
+            {
+              "cmd": "userdel / deluser",
+              "desc": "حذف کاربر"
+            },
+            {
+              "cmd": "groupadd / groupdel / groups",
+              "desc": "مدیریت گروه‌ها"
+            },
+            {
+              "cmd": "su - [user]",
+              "desc": "تغییر کاربر فعلی"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sys",
+      "title": "اطلاعات و مدیریت سیستم",
+      "desc": "مانیتورینگ، reboot و اطلاعات سخت‌افزار",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "uname -a",
+              "desc": "اطلاعات کامل سیستم و کرنل"
+            },
+            {
+              "cmd": "lscpu / lshw / lspci",
+              "desc": "اطلاعات سخت‌افزار"
+            },
+            {
+              "cmd": "free -h",
+              "desc": "نمایش مصرف RAM و Swap"
+            },
+            {
+              "cmd": "uptime",
+              "desc": "مدت روشن بودن سیستم و بار پردازنده"
+            },
+            {
+              "cmd": "date / timedatectl",
+              "desc": "تاریخ، ساعت و timezone"
+            },
+            {
+              "cmd": "shutdown / reboot / halt",
+              "desc": "خاموش و راه‌اندازی مجدد"
+            },
+            {
+              "cmd": "env / printenv / export",
+              "desc": "متغیرهای محیطی"
+            },
+            {
+              "cmd": "history",
+              "desc": "تاریخچه دستورات وارد شده"
+            },
+            {
+              "cmd": "alias",
+              "desc": "ایجاد نام مستعار برای دستورات"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "title": "پردازش متن",
+      "desc": "grep، sed، awk و ابزارهای متن",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "grep [pattern] [file]",
+              "desc": "جستجوی متن در فایل‌ها"
+            },
+            {
+              "cmd": "sed 's/old/new/g' file",
+              "desc": "جستجو و جایگزینی در متن"
+            },
+            {
+              "cmd": "awk '{print $2}' file",
+              "desc": "پردازش متن بر اساس ستون"
+            },
+            {
+              "cmd": "sort / uniq / wc",
+              "desc": "مرتب‌سازی، حذف تکرار، شمارش"
+            },
+            {
+              "cmd": "cut / tr / paste",
+              "desc": "بریدن ستون، جایگزینی کاراکتر"
+            },
+            {
+              "cmd": "diff / patch",
+              "desc": "مقایسه فایل‌ها"
+            },
+            {
+              "cmd": "echo / printf / tee",
+              "desc": "چاپ متن و redirect"
+            },
+            {
+              "cmd": "xargs",
+              "desc": "تبدیل stdin به آرگومان"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arch",
+      "title": "آرشیو و فشرده‌سازی",
+      "desc": "tar، zip، gzip و سایر فرمت‌ها",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "tar [options] [file]",
+              "desc": "آرشیو و فشرده‌سازی"
+            },
+            {
+              "cmd": "zip / unzip",
+              "desc": "فشرده‌سازی فرمت zip"
+            },
+            {
+              "cmd": "gzip / gunzip / bzip2",
+              "desc": "فشرده‌سازی یک فایل"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssh",
+      "title": "SSH و اتصال از راه دور",
+      "desc": "اتصال، انتقال فایل و تونل SSH",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "ssh [user@host]",
+              "desc": "اتصال به سرور از راه دور"
+            },
+            {
+              "cmd": "ssh-keygen",
+              "desc": "ایجاد کلید SSH"
+            },
+            {
+              "cmd": "ssh-copy-id user@host",
+              "desc": "کپی کلید عمومی به سرور"
+            },
+            {
+              "cmd": "scp [src] [dest]",
+              "desc": "انتقال امن فایل از طریق SSH"
+            },
+            {
+              "cmd": "~/.ssh/config",
+              "desc": "پیکربندی پروفایل‌های SSH"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cron",
+      "title": "زمان‌بندی کارها (Cron)",
+      "desc": "اجرای خودکار دستورات در زمان‌های مشخص",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "crontab -e",
+              "desc": "ویرایش crontab کاربر فعلی"
+            },
+            {
+              "cmd": "crontab -l / -r",
+              "desc": "نمایش یا حذف crontab"
+            },
+            {
+              "cmd": "at [time]",
+              "desc": "اجرای یک‌بار در زمان مشخص"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shortcut",
+      "title": "میانبرهای ترمینال و Redirect",
+      "desc": "کلیدهای ضروری و عملگرهای bash",
+      "blocks": [
+        {
+          "type": "rows",
+          "items": [
+            {
+              "cmd": "cmd1 && cmd2",
+              "desc": "اجرای cmd2 فقط اگر cmd1 موفق باشد"
+            },
+            {
+              "cmd": "cmd1 || cmd2",
+              "desc": "اجرای cmd2 فقط اگر cmd1 ناموفق باشد"
+            },
+            {
+              "cmd": "cmd1 | cmd2",
+              "desc": "انتقال خروجی cmd1 به ورودی cmd2"
+            },
+            {
+              "cmd": "cmd > file",
+              "desc": "redirect خروجی به فایل (بازنویسی)"
+            },
+            {
+              "cmd": "cmd >> file",
+              "desc": "redirect خروجی به فایل (الحاق)"
+            },
+            {
+              "cmd": "cmd 2>&1",
+              "desc": "ترکیب خروجی error با خروجی عادی"
+            },
+            {
+              "cmd": "$(command)",
+              "desc": "Command substitution: استفاده از خروجی دستور"
+            },
+            {
+              "cmd": "cmd1; cmd2; cmd3",
+              "desc": "اجرای دستورات پشت سر هم (بدون توجه به موفقیت)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

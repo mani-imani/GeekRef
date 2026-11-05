@@ -1,242 +1,165 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>tree — ساختار فایل‌ها | GeekRef</title>
-<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<meta content="#0d1117" name="theme-color"/>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/shared.css" rel="stylesheet"/>
-<style>
-:root { --accent: #a78bfa; --accent-rgb: 167,139,250; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('gr-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<title>tree · ساختار درختی فایل‌ها | GeekRef</title>
+<meta name="description" content="نمایش، فیلتر و خروجی ساختار دایرکتوری‌ها — با دستورات ترکیبی کاربردی">
+<meta name="generator" content="GeekRef build 2.1.0 (do not edit; source: data/sheets)">
+<link rel="canonical" href="https://mani-imani.github.io/GeekRef/cheatsheets/tree.html">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="../assets/brand/geekref-icon-32.svg">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="../assets/brand/geekref-icon-16.svg">
+<link rel="apple-touch-icon" href="../assets/brand/geekref-touch-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="GeekRef">
+<meta name="theme-color" content="#F4F4F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1217" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GeekRef">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="tree · ساختار درختی فایل‌ها | GeekRef">
+<meta property="og:description" content="نمایش، فیلتر و خروجی ساختار دایرکتوری‌ها — با دستورات ترکیبی کاربردی">
+<meta property="og:url" content="https://mani-imani.github.io/GeekRef/cheatsheets/tree.html">
+<meta property="og:image" content="https://mani-imani.github.io/GeekRef/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/vazirmatn/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/geek.css">
+<link rel="stylesheet" href="../css/geekref.css">
+<script src="../js/geekref.js" defer></script>
 </head>
 <body>
-<nav class="gr-navbar">
-<div class="gr-navbar-left">
-<a class="gr-navbar-back" href="../index.html">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</a>
-<div class="gr-breadcrumb">
-<a href="../index.html">GeekRef</a>
-<span class="gr-breadcrumb-sep">/</span>
-<span class="gr-breadcrumb-cur">tree</span>
-</div>
-</div>
-<div class="gr-navbar-mid">
-<div class="gr-status">
-<span class="gr-status-dot"></span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
-</div>
-</div>
-<div class="gr-navbar-right">
-<span class="gr-badge">🌳 tree</span>
-<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
-</div>
-</nav>
-<div class="gr-hero">
-<div class="gr-hero-eyebrow">Linux · Ubuntu</div>
-<h1><em>tree</em> — ساختار درختی فایل‌ها</h1>
-<p>نمایش، فیلتر و خروجی ساختار دایرکتوری‌ها — با دستورات ترکیبی کاربردی</p>
-<div class="gr-hero-stats">
-<div class="gr-stat"><span class="gr-stat-num">۴</span><span class="gr-stat-label">دسته‌بندی</span></div>
-<div class="gr-stat"><span class="gr-stat-num">۲۲</span><span class="gr-stat-label">دستور</span></div>
-<div class="gr-stat"><span class="gr-stat-num">۵</span><span class="gr-stat-label">ترکیب کاربردی</span></div>
-</div>
-</div>
-<div class="gr-container" style="max-width:1160px">
-<div class="gr-layout">
-
-<div class="gr-main-content">
-<!-- install -->
-
-<!-- 1. basic -->
-<div class="gr-section" id="s1">
-<div class="gr-section-header">
-<div class="gr-section-icon">🌱</div>
-<div class="gr-section-title">دستورات پایه</div>
-<span class="gr-section-num">۱</span>
-</div>
-<div class="gr-table" id="basic"></div>
-</div>
-<!-- 2. filter -->
-<div class="gr-section" id="s2">
-<div class="gr-section-header">
-<div class="gr-section-icon">🔍</div>
-<div class="gr-section-title">فیلتر و جستجو</div>
-<span class="gr-section-num">۲</span>
-</div>
-<div class="gr-table" id="filter"></div>
-</div>
-<!-- 3. info -->
-<div class="gr-section" id="s3">
-<div class="gr-section-header">
-<div class="gr-section-icon">ℹ️</div>
-<div class="gr-section-title">نمایش اطلاعات بیشتر</div>
-<span class="gr-section-num">۳</span>
-</div>
-<div class="gr-table" id="info"></div>
-</div>
-<!-- 4. output -->
-<div class="gr-section" id="s4">
-<div class="gr-section-header">
-<div class="gr-section-icon">📤</div>
-<div class="gr-section-title">خروجی گرفتن</div>
-<span class="gr-section-num">۴</span>
-</div>
-<div class="gr-table" id="output"></div>
-</div>
-<!-- 5. combos -->
-<div class="gr-section" id="s5">
-<div class="gr-section-header">
-<div class="gr-section-icon">⚡</div>
-<div class="gr-section-title">ترکیب‌های کاربردی</div>
-<span class="gr-section-num">۵</span>
-</div>
-<div class="gr-combo" id="combo"></div>
-</div>
-</div><aside class="gr-sidebar">
-<div class="gr-sidebar-title">// محتوا</div>
-<div class="gr-sidebar-items">
-<a class="gr-sidebar-item" href="#s1"><span class="gr-sidebar-num">۱</span>دستورات پایه</a>
-<a class="gr-sidebar-item" href="#s2"><span class="gr-sidebar-num">۲</span>فیلتر و جستجو</a>
-<a class="gr-sidebar-item" href="#s3"><span class="gr-sidebar-num">۳</span>نمایش اطلاعات بیشتر</a>
-<a class="gr-sidebar-item" href="#s4"><span class="gr-sidebar-num">۴</span>خروجی گرفتن</a>
-<a class="gr-sidebar-item" href="#s5"><span class="gr-sidebar-num">۵</span>ترکیب‌های کاربردی</a>
-</div>
-</aside>
-</div><!-- /gr-main-content -->
-</div><!-- /gr-layout -->
-<!-- /gr-container -->
-<footer class="gr-footer-rich">
-<div class="gr-footer-grid">
-<div class="gr-footer-brand">
-<div class="gr-footer-logo">
-<span>👾</span>
-<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
-</div>
-<div class="gr-footer-tagline">
-<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
-<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
-<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
-</div>
-<div class="gr-status">
-<span class="gr-status-dot"></span>
-<span>online · 280+ commands</span>
-</div>
-</div>
-<div>
-<div class="gr-footer-links-title">// cheatsheets</div>
-<div class="gr-footer-links">
-<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
-<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
-<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
-<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
-<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
-<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
-</div>
-</div>
-<div>
-<div class="gr-footer-links-title">// connect</div>
-<div class="gr-footer-links">
-<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
-<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
-<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
-<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
-</div>
-</div>
-</div>
-<div class="gr-footer-bottom">
-<div class="gr-footer-copy">
-<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+<a class="gr-skip" href="#main">رفتن به محتوا</a>
+<header class="gr-header">
+  <div class="gm-page gr-header-in">
+   <div class="gr-brand-row">
+    <a class="gr-brand" href="../index.html" aria-label="GeekRef، صفحه‌ی اصلی">
+     <img class="gr-wm--light" src="../assets/brand/geekref-wordmark-light.svg" alt="" width="92" height="22">
+     <img class="gr-wm--dark" src="../assets/brand/geekref-wordmark-dark.svg" alt="" width="92" height="22">
+    </a>
+    <nav class="gr-crumb" aria-label="مسیر"><span aria-hidden="true">/</span><span aria-current="page"><bdi>tree</bdi></span></nav>
+   </div>
+   <div class="gr-actions">
+    <button type="button" class="gr-search-btn" data-gr-search aria-label="جست‌وجو در دستورها" aria-keyshortcuts="Control+K Meta+K /"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg><span>جست‌وجو</span><kbd dir="ltr" data-gr-kbd>Ctrl K</kbd></button>
+    <div class="gm-seg gr-theme" role="group" aria-label="پوسته">
+     <button type="button" data-theme-set="system" aria-pressed="true" title="پیروی از سیستم"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/></svg><span>سیستم</span></button>
+     <button type="button" data-theme-set="light" aria-pressed="false" title="روشن"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg><span>روشن</span></button>
+     <button type="button" data-theme-set="dark" aria-pressed="false" title="تیره"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg><span>تیره</span></button>
     </div>
-<div class="gr-footer-stats">
-<span class="gr-footer-stat"><strong>280+</strong> commands</span>
-<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
-<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
-</div>
-</div>
+   </div>
+  </div>
+</header>
+<main id="main" class="gm-page">
+ <header class="gr-head">
+  <p class="gr-eyebrow"><span class="gm-mono">Linux · Ubuntu</span></p>
+  <h1><bdi>tree</bdi><span class="gr-h1-sub">ساختار درختی فایل‌ها</span></h1>
+  <p class="gr-lede">نمایش، فیلتر و خروجی ساختار دایرکتوری‌ها — با دستورات ترکیبی کاربردی</p>
+  <p class="gr-meta"><b>۲۷</b> دستور · <b>۵</b> بخش</p>
+ </header>
+ <div class="gr-layout">
+  <div class="gr-content">
+  <details class="gr-toc-m">
+   <summary>فهرست این برگه<svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/></svg></summary>
+   <nav aria-label="فهرست این برگه (موبایل)">
+    <ol>
+     <li><a href="#s1"><span class="gr-toc-num">۰۱</span><span>دستورات پایه</span></a></li>
+     <li><a href="#s2"><span class="gr-toc-num">۰۲</span><span>فیلتر و جستجو</span></a></li>
+     <li><a href="#s3"><span class="gr-toc-num">۰۳</span><span>نمایش اطلاعات بیشتر</span></a></li>
+     <li><a href="#s4"><span class="gr-toc-num">۰۴</span><span>خروجی گرفتن</span></a></li>
+     <li><a href="#s5"><span class="gr-toc-num">۰۵</span><span>ترکیب‌های کاربردی</span></a></li>
+    </ol>
+   </nav>
+  </details>
+<section class="gr-section" id="s1" aria-labelledby="s1-t">
+  <h2 id="s1-t"><span class="gr-section-num" aria-hidden="true">۰۱</span><span>دستورات پایه</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-tree"><button type="button" class="gr-cmd" data-copy="tree" aria-label="کپی دستور tree"><code dir="ltr">tree</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش درختی همه فایل‌ها از دایرکتوری فعلی</p><button type="button" class="gr-link-btn" data-link="c-tree" aria-label="کپی پیوند دستور tree" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-path-to-dir"><button type="button" class="gr-cmd" data-copy="tree /path/to/dir" aria-label="کپی دستور tree /path/to/dir"><code dir="ltr">tree /path/to/dir</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش درختی یک مسیر مشخص</p><button type="button" class="gr-link-btn" data-link="c-tree-path-to-dir" aria-label="کپی پیوند دستور tree /path/to/dir" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-a"><button type="button" class="gr-cmd" data-copy="tree -a" aria-label="کپی دستور tree -a"><code dir="ltr">tree -a</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش فایل‌های مخفی <bdi>(hidden)</bdi> هم</p><button type="button" class="gr-link-btn" data-link="c-tree-a" aria-label="کپی پیوند دستور tree -a" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-d"><button type="button" class="gr-cmd" data-copy="tree -d" aria-label="کپی دستور tree -d"><code dir="ltr">tree -d</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">فقط دایرکتوری‌ها، بدون فایل</p><button type="button" class="gr-link-btn" data-link="c-tree-d" aria-label="کپی پیوند دستور tree -d" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-f"><button type="button" class="gr-cmd" data-copy="tree -f" aria-label="کپی دستور tree -f"><code dir="ltr">tree -f</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش مسیر کامل هر فایل</p><button type="button" class="gr-link-btn" data-link="c-tree-f" aria-label="کپی پیوند دستور tree -f" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-l-2"><button type="button" class="gr-cmd" data-copy="tree -L 2" aria-label="کپی دستور tree -L 2"><code dir="ltr">tree -L 2</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">محدود کردن عمق نمایش (اینجا ۲ سطح)</p><button type="button" class="gr-link-btn" data-link="c-tree-l-2" aria-label="کپی پیوند دستور tree -L 2" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s2" aria-labelledby="s2-t">
+  <h2 id="s2-t"><span class="gr-section-num" aria-hidden="true">۰۲</span><span>فیلتر و جستجو</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-tree-p-py"><button type="button" class="gr-cmd" data-copy="tree -P &quot;*.py&quot;" aria-label="کپی دستور tree -P &quot;*.py&quot;"><code dir="ltr">tree -P "*.py"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">فقط فایل‌هایی که با پترن مطابقت دارند</p><button type="button" class="gr-link-btn" data-link="c-tree-p-py" aria-label="کپی پیوند دستور tree -P &quot;*.py&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-i-node-modules"><button type="button" class="gr-cmd" data-copy="tree -I &quot;node_modules&quot;" aria-label="کپی دستور tree -I &quot;node_modules&quot;"><code dir="ltr">tree -I "node_modules"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">حذف فایل/فولدر مشخص از نمایش</p><button type="button" class="gr-link-btn" data-link="c-tree-i-node-modules" aria-label="کپی پیوند دستور tree -I &quot;node_modules&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-prune"><button type="button" class="gr-cmd" data-copy="tree --prune" aria-label="کپی دستور tree --prune"><code dir="ltr">tree --prune</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">حذف دایرکتوری‌های خالی از خروجی</p><button type="button" class="gr-link-btn" data-link="c-tree-prune" aria-label="کپی پیوند دستور tree --prune" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s3" aria-labelledby="s3-t">
+  <h2 id="s3-t"><span class="gr-section-num" aria-hidden="true">۰۳</span><span>نمایش اطلاعات بیشتر</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-tree-s"><button type="button" class="gr-cmd" data-copy="tree -s" aria-label="کپی دستور tree -s"><code dir="ltr">tree -s</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش سایز هر فایل (بایت)</p><button type="button" class="gr-link-btn" data-link="c-tree-s" aria-label="کپی پیوند دستور tree -s" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-h"><button type="button" class="gr-cmd" data-copy="tree -h" aria-label="کپی دستور tree -h"><code dir="ltr">tree -h</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">سایز به صورت خوانا (<bdi>KB</bdi>, <bdi>MB</bdi>, ...)</p><button type="button" class="gr-link-btn" data-link="c-tree-h" aria-label="کپی پیوند دستور tree -h" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-p"><button type="button" class="gr-cmd" data-copy="tree -p" aria-label="کپی دستور tree -p"><code dir="ltr">tree -p</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش <bdi>permission</bdi> هر فایل</p><button type="button" class="gr-link-btn" data-link="c-tree-p" aria-label="کپی پیوند دستور tree -p" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-u"><button type="button" class="gr-cmd" data-copy="tree -u" aria-label="کپی دستور tree -u"><code dir="ltr">tree -u</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش <bdi>owner</bdi> (مالک) فایل</p><button type="button" class="gr-link-btn" data-link="c-tree-u" aria-label="کپی پیوند دستور tree -u" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-g"><button type="button" class="gr-cmd" data-copy="tree -g" aria-label="کپی دستور tree -g"><code dir="ltr">tree -g</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش <bdi>group</bdi> فایل</p><button type="button" class="gr-link-btn" data-link="c-tree-g" aria-label="کپی پیوند دستور tree -g" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-d-2"><button type="button" class="gr-cmd" data-copy="tree -D" aria-label="کپی دستور tree -D"><code dir="ltr">tree -D</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش تاریخ آخرین تغییر</p><button type="button" class="gr-link-btn" data-link="c-tree-d-2" aria-label="کپی پیوند دستور tree -D" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-du"><button type="button" class="gr-cmd" data-copy="tree --du" aria-label="کپی دستور tree --du"><code dir="ltr">tree --du</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نمایش حجم کل هر دایرکتوری</p><button type="button" class="gr-link-btn" data-link="c-tree-du" aria-label="کپی پیوند دستور tree --du" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-c"><button type="button" class="gr-cmd" data-copy="tree -C" aria-label="کپی دستور tree -C"><code dir="ltr">tree -C</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">خروجی رنگی</p><button type="button" class="gr-link-btn" data-link="c-tree-c" aria-label="کپی پیوند دستور tree -C" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s4" aria-labelledby="s4-t">
+  <h2 id="s4-t"><span class="gr-section-num" aria-hidden="true">۰۴</span><span>خروجی گرفتن</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-tree-o-output-txt"><button type="button" class="gr-cmd" data-copy="tree -o output.txt" aria-label="کپی دستور tree -o output.txt"><code dir="ltr">tree -o output.txt</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">ذخیره خروجی در فایل</p><button type="button" class="gr-link-btn" data-link="c-tree-o-output-txt" aria-label="کپی پیوند دستور tree -o output.txt" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-noreport"><button type="button" class="gr-cmd" data-copy="tree --noreport" aria-label="کپی دستور tree --noreport"><code dir="ltr">tree --noreport</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">حذف خط آخر (تعداد فایل/فولدر)</p><button type="button" class="gr-link-btn" data-link="c-tree-noreport" aria-label="کپی پیوند دستور tree --noreport" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-j"><button type="button" class="gr-cmd" data-copy="tree -J" aria-label="کپی دستور tree -J"><code dir="ltr">tree -J</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">خروجی به فرمت <bdi>JSON</bdi></p><button type="button" class="gr-link-btn" data-link="c-tree-j" aria-label="کپی پیوند دستور tree -J" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-x"><button type="button" class="gr-cmd" data-copy="tree -X" aria-label="کپی دستور tree -X"><code dir="ltr">tree -X</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">خروجی به فرمت <bdi>XML</bdi></p><button type="button" class="gr-link-btn" data-link="c-tree-x" aria-label="کپی پیوند دستور tree -X" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-tree-h-o-index-html"><button type="button" class="gr-cmd" data-copy="tree -H . -o index.html" aria-label="کپی دستور tree -H . -o index.html"><code dir="ltr">tree -H . -o index.html</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">خروجی <bdi>HTML</bdi></p><button type="button" class="gr-link-btn" data-link="c-tree-h-o-index-html" aria-label="کپی پیوند دستور tree -H . -o index.html" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s5" aria-labelledby="s5-t">
+  <h2 id="s5-t"><span class="gr-section-num" aria-hidden="true">۰۵</span><span>ترکیب‌های کاربردی</span></h2>
+  <div class="gr-table gr-combo">
+   <div class="gr-combo-item" id="c-tree-l-2-c-h"><button type="button" class="gr-cmd" data-copy="tree -L 2 -C -h" aria-label="کپی دستور tree -L 2 -C -h"><span class="gr-combo-note">فقط ۲ سطح، رنگی، با سایز</span><span class="gr-combo-line"><code dir="ltr">tree -L 2 -C -h</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></span></button><button type="button" class="gr-link-btn" data-link="c-tree-l-2-c-h" aria-label="کپی پیوند دستور tree -L 2 -C -h" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-combo-item" id="c-tree-l-3-p-py-prune"><button type="button" class="gr-cmd" data-copy="tree -L 3 -P &quot;*.py&quot; --prune" aria-label="کپی دستور tree -L 3 -P &quot;*.py&quot; --prune"><span class="gr-combo-note">فقط فایل‌های پایتون تا ۳ سطح</span><span class="gr-combo-line"><code dir="ltr">tree -L 3 -P "*.py" --prune</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></span></button><button type="button" class="gr-link-btn" data-link="c-tree-l-3-p-py-prune" aria-label="کپی پیوند دستور tree -L 3 -P &quot;*.py&quot; --prune" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-combo-item" id="c-tree-i-node-modules-git"><button type="button" class="gr-cmd" data-copy="tree -I &quot;node_modules|.git&quot;" aria-label="کپی دستور tree -I &quot;node_modules|.git&quot;"><span class="gr-combo-note">همه چیز به جز <bdi>node_modules</bdi> و .<bdi>git</bdi></span><span class="gr-combo-line"><code dir="ltr">tree -I "node_modules|.git"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></span></button><button type="button" class="gr-link-btn" data-link="c-tree-i-node-modules-git" aria-label="کپی پیوند دستور tree -I &quot;node_modules|.git&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-combo-item" id="c-tree-d-p-u"><button type="button" class="gr-cmd" data-copy="tree -d -p -u" aria-label="کپی دستور tree -d -p -u"><span class="gr-combo-note">ساختار فولدرها با <bdi>permission</bdi> و مالک</span><span class="gr-combo-line"><code dir="ltr">tree -d -p -u</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></span></button><button type="button" class="gr-link-btn" data-link="c-tree-d-p-u" aria-label="کپی پیوند دستور tree -d -p -u" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-combo-item" id="c-tree-l-3-noreport-o-structure-txt"><button type="button" class="gr-cmd" data-copy="tree -L 3 --noreport -o structure.txt" aria-label="کپی دستور tree -L 3 --noreport -o structure.txt"><span class="gr-combo-note">ذخیره ساختار پروژه در فایل</span><span class="gr-combo-line"><code dir="ltr">tree -L 3 --noreport -o structure.txt</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></span></button><button type="button" class="gr-link-btn" data-link="c-tree-l-3-noreport-o-structure-txt" aria-label="کپی پیوند دستور tree -L 3 --noreport -o structure.txt" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+  </div>
+  <nav class="gr-toc" aria-label="فهرست این برگه">
+   <p class="gr-toc-title">در این برگه</p>
+   <ol>
+     <li><a href="#s1"><span class="gr-toc-num">۰۱</span><span>دستورات پایه</span></a></li>
+     <li><a href="#s2"><span class="gr-toc-num">۰۲</span><span>فیلتر و جستجو</span></a></li>
+     <li><a href="#s3"><span class="gr-toc-num">۰۳</span><span>نمایش اطلاعات بیشتر</span></a></li>
+     <li><a href="#s4"><span class="gr-toc-num">۰۴</span><span>خروجی گرفتن</span></a></li>
+     <li><a href="#s5"><span class="gr-toc-num">۰۵</span><span>ترکیب‌های کاربردی</span></a></li>
+   </ol>
+  </nav>
+ </div>
+</main>
+<footer class="gr-footer">
+  <div class="gm-page gr-footer-in">
+   <nav class="gr-footer-nav" aria-label="برگه‌ها">
+    <ul>
+     <li><a href="../index.html">صفحه‌ی اصلی</a></li>
+     <li><a href="ubuntu.html"><bdi>Ubuntu</bdi></a></li>
+     <li><a href="django.html"><bdi>Django</bdi></a></li>
+     <li><a href="python.html"><bdi>Python</bdi></a></li>
+     <li><a href="python_setup.html"><bdi>Python Setup</bdi></a></li>
+     <li><a href="git.html"><bdi>Git</bdi></a></li>
+     <li><a href="tree.html"><bdi>tree</bdi></a></li>
+    </ul>
+   </nav>
+   <div class="gr-footer-meta">
+    <a class="gm-sign" href="https://github.com/mani-imani">از گیک‌مانی<i class="gm-cursor"></i></a>
+    <div class="gr-footer-small">
+     <span class="gr-offline" hidden><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>بدون اینترنت هم در دسترس است</span>
+     <a href="https://github.com/mani-imani/GeekRef">کد پروژه</a>
+     <span>مجوز <bdi>MIT</bdi></span>
+     <span class="gm-mono">v2.1.0</span>
+    </div>
+   </div>
+  </div>
 </footer>
-<script src="../css/gr.js"></script>
-<script>
-var COPY_SVG = '<svg class="gr-cmd-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-
-var data = {
-  basic: [
-    ["tree", "نمایش درختی همه فایل‌ها از دایرکتوری فعلی"],
-    ["tree /path/to/dir", "نمایش درختی یک مسیر مشخص"],
-    ["tree -a", "نمایش فایل‌های مخفی (hidden) هم"],
-    ["tree -d", "فقط دایرکتوری‌ها، بدون فایل"],
-    ["tree -f", "نمایش مسیر کامل هر فایل"],
-    ["tree -L 2", "محدود کردن عمق نمایش (اینجا ۲ سطح)"],
-  ],
-  filter: [
-    ['tree -P "*.py"', "فقط فایل‌هایی که با پترن مطابقت دارند"],
-    ['tree -I "node_modules"', "حذف فایل/فولدر مشخص از نمایش"],
-    ["tree --prune", "حذف دایرکتوری‌های خالی از خروجی"],
-  ],
-  info: [
-    ["tree -s", "نمایش سایز هر فایل (بایت)"],
-    ["tree -h", "سایز به صورت خوانا (KB, MB, ...)"],
-    ["tree -p", "نمایش permission هر فایل"],
-    ["tree -u", "نمایش owner (مالک) فایل"],
-    ["tree -g", "نمایش group فایل"],
-    ["tree -D", "نمایش تاریخ آخرین تغییر"],
-    ["tree --du", "نمایش حجم کل هر دایرکتوری"],
-    ["tree -C", "خروجی رنگی"],
-  ],
-  output: [
-    ["tree -o output.txt", "ذخیره خروجی در فایل"],
-    ["tree --noreport", "حذف خط آخر (تعداد فایل/فولدر)"],
-    ["tree -J", "خروجی به فرمت JSON"],
-    ["tree -X", "خروجی به فرمت XML"],
-    ["tree -H . -o index.html", "خروجی HTML"],
-  ],
-};
-
-var combos = [
-  ["فقط ۲ سطح، رنگی، با سایز", "tree -L 2 -C -h"],
-  ["فقط فایل‌های پایتون تا ۳ سطح", 'tree -L 3 -P "*.py" --prune'],
-  ["همه چیز به جز node_modules و .git", 'tree -I "node_modules|.git"'],
-  ["ساختار فولدرها با permission و مالک", "tree -d -p -u"],
-  ["ذخیره ساختار پروژه در فایل", "tree -L 3 --noreport -o structure.txt"],
-];
-
-function buildRows(id, items) {
-  document.getElementById(id).innerHTML = items.map(function(item) {
-    var cmd = item[0], desc = item[1];
-    var safe = cmd.replace(/'/g, "\\'");
-    return '<div class="gr-row">' +
-      '<div class="gr-cmd" onclick="grCopyCmd(\'' + safe + '\', this)">' +
-        '<code>' + cmd + '</code>' + COPY_SVG +
-        '<span class="gr-copied-tag">کپی شد ✓</span>' +
-      '</div>' +
-      '<div class="gr-cmd-desc">' + desc + '</div>' +
-    '</div>';
-  }).join('');
-}
-
-function buildCombos(id, items) {
-  document.getElementById(id).innerHTML = items.map(function(item) {
-    var comment = item[0], cmd = item[1];
-    var safe = cmd.replace(/'/g, "\\'");
-    return '<div class="gr-combo-item" onclick="grCopyCmd(\'' + safe + '\', this)">' +
-      '<div class="gr-combo-comment">' + comment + '</div>' +
-      '<div class="gr-combo-line"><code>' + cmd + '</code>' + COPY_SVG +
-        '<span class="gr-copied-tag">کپی شد ✓</span>' +
-      '</div>' +
-    '</div>';
-  }).join('');
-}
-
-buildRows('basic', data.basic);
-buildRows('filter', data.filter);
-buildRows('info', data.info);
-buildRows('output', data.output);
-buildCombos('combo', combos);
-</script>
 </body>
 </html>

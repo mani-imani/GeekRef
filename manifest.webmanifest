@@ -1,0 +1,38 @@
+{
+  "name": "GeekRef · برگه‌های مرجع فارسی برای برنامه‌نویس‌ها",
+  "short_name": "GeekRef",
+  "description": "دستورهای پرکاربرد با توضیح کوتاه فارسی؛ بدون اینترنت هم کار می‌کند.",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F4F0",
+  "theme_color": "#F4F4F0",
+  "icons": [
+    {
+      "src": "assets/brand/geekref-pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/brand/geekref-pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/brand/geekref-pwa-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/brand/geekref-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

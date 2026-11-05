@@ -1,596 +1,229 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<script>(function(){var t=localStorage.getItem('gr-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();</script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Python — دستورات در Ubuntu | GeekRef</title>
-<link href="../assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-<meta content="#0d1117" name="theme-color"/>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="../css/shared.css" rel="stylesheet"/>
-<style>
-:root { --accent: #f78166; --accent-rgb: 247,129,102; }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('gr-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<title>Python · دستورات در Ubuntu | GeekRef</title>
+<meta name="description" content="نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته">
+<meta name="generator" content="GeekRef build 2.1.0 (do not edit; source: data/sheets)">
+<link rel="canonical" href="https://mani-imani.github.io/GeekRef/cheatsheets/python.html">
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="../assets/brand/geekref-icon-32.svg">
+<link rel="icon" type="image/svg+xml" sizes="16x16" href="../assets/brand/geekref-icon-16.svg">
+<link rel="apple-touch-icon" href="../assets/brand/geekref-touch-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="GeekRef">
+<meta name="theme-color" content="#F4F4F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1217" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GeekRef">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="Python · دستورات در Ubuntu | GeekRef">
+<meta property="og:description" content="نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته">
+<meta property="og:url" content="https://mani-imani.github.io/GeekRef/cheatsheets/python.html">
+<meta property="og:image" content="https://mani-imani.github.io/GeekRef/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/vazirmatn/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/geek.css">
+<link rel="stylesheet" href="../css/geekref.css">
+<script src="../js/geekref.js" defer></script>
 </head>
 <body>
-<nav class="gr-navbar">
-<div class="gr-navbar-left">
-<a class="gr-navbar-back" href="../index.html">
-<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</a>
-<div class="gr-breadcrumb">
-<a href="../index.html">GeekRef</a>
-<span class="gr-breadcrumb-sep">/</span>
-<span class="gr-breadcrumb-cur">Python</span>
-</div>
-</div>
-<div class="gr-navbar-mid">
-<div class="gr-status">
-<span class="gr-status-dot"></span>
-<span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dimmer)">online</span>
-</div>
-</div>
-<div class="gr-navbar-right">
-<span class="gr-badge">🐍 Python</span>
-<button class="gr-toggle" onclick="grToggleTheme()" title="تغییر تم">☀️</button>
-</div>
-</nav>
-<div class="gr-hero">
-<div class="gr-hero-eyebrow">Python · Ubuntu · CLI</div>
-<h1><em>Python</em> — دستورات در Ubuntu</h1>
-<p>نصب، اجرا، pip، venv، pyenv، دیباگ و ابزارهای پیشرفته</p>
-<div class="gr-hero-stats">
-<div class="gr-stat"><span class="gr-stat-num">10</span><span class="gr-stat-label">بخش</span></div>
-<div class="gr-stat"><span class="gr-stat-num">56+</span><span class="gr-stat-label">دستور</span></div>
-<div class="gr-stat"><span class="gr-stat-num">۱۰۰٪</span><span class="gr-stat-label">فارسی</span></div>
-</div>
-</div>
-<div class="gr-container" style="max-width:1160px">
-<div class="gr-layout">
-
-<div class="gr-main-content">
-
-<div class="gr-section" id="s1">
-<div class="gr-section-header">
-<div class="gr-section-icon">🐍</div>
-<div class="gr-section-title">۱. نصب Python</div>
-<span class="gr-section-num">1</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 --version',this)">
-<code>python3 --version</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">بررسی Python از پیش نصب‌شده</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo apt update',this)">
-<code>sudo apt update</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب Python 3 (پیش‌فرض)</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python3.11',this)">
-<code>sudo apt install python3.11</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب نسخه خاص Python</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo add-apt-repository ppa:deadsnakes/ppa',this)">
-<code>sudo add-apt-repository ppa:deadsnakes/ppa</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب از PPA (آخرین نسخه‌ها)</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python3-dev',this)">
-<code>sudo apt install python3-dev</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب ابزارهای توسعه</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python-is-python3',this)">
-<code>sudo apt install python-is-python3</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">تنظیم python3 به عنوان python</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s2">
-<div class="gr-section-header">
-<div class="gr-section-icon">▶️</div>
-<div class="gr-section-title">۲. اجرای Python</div>
-<span class="gr-section-num">2</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3',this)">
-<code>python3</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">ورود به حالت تعاملی (REPL)</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 myscript.py',this)">
-<code>python3 myscript.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">اجرای فایل .py</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -c &quot;print(\'Hello World\')&quot;',this)">
-<code>python3 -c "print('Hello World')"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">اجرای کد مستقیم با -c</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m http.server 8080',this)">
-<code>python3 -m http.server 8080</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">اجرا به عنوان ماژول با -m</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('chmod +x myscript.py',this)">
-<code>chmod +x myscript.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">اجرای فایل با دسترسی اجرایی</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('echo &quot;hello&quot; | python3 -c &quot;import sys; print(sys.stdin.read().upper())&quot;',this)">
-<code>echo "hello" | python3 -c "import sys; print(sys.stdin.read().upper())"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">خواندن از stdin (لوله)</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s3">
-<div class="gr-section-header">
-<div class="gr-section-icon">📦</div>
-<div class="gr-section-title">۳. مدیریت بسته‌ها با pip</div>
-<span class="gr-section-num">3</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo apt install python3-pip',this)">
-<code>sudo apt install python3-pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب pip</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m pip install --upgrade pip',this)">
-<code>python3 -m pip install --upgrade pip</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">به‌روزرسانی pip</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install requests',this)">
-<code>pip3 install requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب بسته</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install -r requirements.txt',this)">
-<code>pip3 install -r requirements.txt</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب از requirements.txt</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install git+https://github.com/user/repo.git',this)">
-<code>pip3 install git+https://github.com/user/repo.git</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب از GitHub / منابع دیگر</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 list',this)">
-<code>pip3 list</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">لیست بسته‌های نصب‌شده</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 show requests',this)">
-<code>pip3 show requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">اطلاعات یک بسته</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 index versions requests',this)">
-<code>pip3 index versions requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">جستجوی بسته</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 uninstall requests',this)">
-<code>pip3 uninstall requests</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">حذف بسته</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s4">
-<div class="gr-section-header">
-<div class="gr-section-icon">🌐</div>
-<div class="gr-section-title">۴. محیط مجازی (Virtual Environment)</div>
-<span class="gr-section-num">4</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m venv myenv',this)">
-<code>python3 -m venv myenv</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">ساخت محیط مجازی با venv</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('source myenv/bin/activate',this)">
-<code>source myenv/bin/activate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">فعال‌سازی و غیرفعال‌سازی</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('source .venv/bin/activate',this)">
-<code>source .venv/bin/activate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">کار با pip در محیط مجازی</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install virtualenv',this)">
-<code>pip3 install virtualenv</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">virtualenv — ابزار قدیمی‌تر</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo apt install pipx',this)">
-<code>sudo apt install pipx</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">pipx — نصب ابزارها به صورت ایزوله</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('(myenv) deactivate',this)">
-<code>(myenv) deactivate</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">حذف محیط مجازی</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s5">
-<div class="gr-section-header">
-<div class="gr-section-icon">ℹ️</div>
-<div class="gr-section-title">۵. اطلاعات و نسخه‌ها</div>
-<span class="gr-section-num">5</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 --version',this)">
-<code>python3 --version</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نسخه Python</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('which python3',this)">
-<code>which python3</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">مسیر نصب Python</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -c &quot;import sys; print(sys.path)&quot;',this)">
-<code>python3 -c "import sys; print(sys.path)"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">مسیر ماژول‌ها</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('ls /usr/bin/python*',this)">
-<code>ls /usr/bin/python*</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">همه نسخه‌های Python</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1',this)">
-<code>sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">تنظیم نسخه پیش‌فرض</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -c &quot;import platform; print(platform.platform())&quot;',this)">
-<code>python3 -c "import platform; print(platform.platform())"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">اطلاعات پلتفرم</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s6">
-<div class="gr-section-header">
-<div class="gr-section-icon">📁</div>
-<div class="gr-section-title">۶. مدیریت فایل‌های Python</div>
-<span class="gr-section-num">6</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m py_compile script.py',this)">
-<code>python3 -m py_compile script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">کامپایل به bytecode</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('find . -name &quot;__pycache__&quot; -exec rm -rf {} +',this)">
-<code>find . -name "__pycache__" -exec rm -rf {} +</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">پاک کردن فایل‌های cache</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m py_compile script.py &amp;&amp; echo &quot;OK&quot;',this)">
-<code>python3 -m py_compile script.py &amp;&amp; echo "OK"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">بررسی syntax فایل</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install black',this)">
-<code>pip3 install black</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">فرمت‌بندی کد با black</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s7">
-<div class="gr-section-header">
-<div class="gr-section-icon">🐛</div>
-<div class="gr-section-title">۷. دیباگ و تست</div>
-<span class="gr-section-num">7</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m pdb script.py',this)">
-<code>python3 -m pdb script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">دیباگ با pdb</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m cProfile script.py',this)">
-<code>python3 -m cProfile script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">profiling و اندازه‌گیری سرعت</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m unittest',this)">
-<code>python3 -m unittest</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">تست با unittest</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install pytest',this)">
-<code>pip3 install pytest</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">تست با pytest</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -W all script.py',this)">
-<code>python3 -W all script.py</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">بررسی memory و لاگ</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install pylint',this)">
-<code>pip3 install pylint</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">linting با pylint / ruff</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s8">
-<div class="gr-section-header">
-<div class="gr-section-icon">⚡</div>
-<div class="gr-section-title">۸. pyenv — مدیریت نسخه‌ها</div>
-<span class="gr-section-num">8</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('curl https://pyenv.run | bash',this)">
-<code>curl https://pyenv.run | bash</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب pyenv</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pyenv install --list',this)">
-<code>pyenv install --list</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">نصب Python با pyenv</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pyenv global 3.12.0',this)">
-<code>pyenv global 3.12.0</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">جابجایی بین نسخه‌ها</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s9">
-<div class="gr-section-header">
-<div class="gr-section-icon">🔧</div>
-<div class="gr-section-title">۹. کار با اسکریپت‌ها و ماژول‌ها</div>
-<span class="gr-section-num">9</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m http.server',this)">
-<code>python3 -m http.server</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">سرور HTTP ساده</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m json.tool data.json',this)">
-<code>python3 -m json.tool data.json</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">فرمت JSON</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m pydoc os',this)">
-<code>python3 -m pydoc os</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">مستندات در ترمینال</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m zipapp myapp -m &quot;main:main&quot;',this)">
-<code>python3 -m zipapp myapp -m "main:main"</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">فشرده‌سازی zipapp</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m base64 file.txt',this)">
-<code>python3 -m base64 file.txt</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">base64 encoding/decoding</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('python3 -m calendar',this)">
-<code>python3 -m calendar</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">calendar و تاریخ</div>
-</div>
-</div>
-</div>
-<div class="gr-section" id="s10">
-<div class="gr-section-header">
-<div class="gr-section-icon">📋</div>
-<div class="gr-section-title">۱۰. ابزارهای پیشرفته</div>
-<span class="gr-section-num">10</span>
-</div>
-<div class="gr-table"><div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install poetry',this)">
-<code>pip3 install poetry</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">Poetry — مدیریت پروژه مدرن</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install ipython',this)">
-<code>pip3 install ipython</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">IPython — REPL پیشرفته</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('pip3 install jupyter',this)">
-<code>pip3 install jupyter</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">Jupyter Notebook</div>
-</div>
-<div class="gr-row">
-<div class="gr-cmd" onclick="grCopyCmd('curl -LsSf https://astral.sh/uv/install.sh | sh',this)">
-<code>curl -LsSf https://astral.sh/uv/install.sh | sh</code><svg class="gr-cmd-copy" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="13" rx="2" width="13" x="9" y="9"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-<span class="gr-copied-tag">کپی شد ✓</span>
-</div>
-<div class="gr-cmd-desc">uv — سریع‌ترین ابزار مدرن</div>
-</div>
-</div>
-</div>
-</div><aside class="gr-sidebar">
-<div class="gr-sidebar-title">// محتوا</div>
-<div class="gr-sidebar-items">
-<a class="gr-sidebar-item" href="#s1"><span class="gr-sidebar-num">1</span>۱. نصب Python</a>
-<a class="gr-sidebar-item" href="#s2"><span class="gr-sidebar-num">2</span>۲. اجرای Python</a>
-<a class="gr-sidebar-item" href="#s3"><span class="gr-sidebar-num">3</span>۳. مدیریت بسته‌ها با pip</a>
-<a class="gr-sidebar-item" href="#s4"><span class="gr-sidebar-num">4</span>۴. محیط مجازی (Virtual Environment)</a>
-<a class="gr-sidebar-item" href="#s5"><span class="gr-sidebar-num">5</span>۵. اطلاعات و نسخه‌ها</a>
-<a class="gr-sidebar-item" href="#s6"><span class="gr-sidebar-num">6</span>۶. مدیریت فایل‌های Python</a>
-<a class="gr-sidebar-item" href="#s7"><span class="gr-sidebar-num">7</span>۷. دیباگ و تست</a>
-<a class="gr-sidebar-item" href="#s8"><span class="gr-sidebar-num">8</span>۸. pyenv — مدیریت نسخه‌ها</a>
-<a class="gr-sidebar-item" href="#s9"><span class="gr-sidebar-num">9</span>۹. کار با اسکریپت‌ها و ماژول‌ها</a>
-<a class="gr-sidebar-item" href="#s10"><span class="gr-sidebar-num">10</span>۱۰. ابزارهای پیشرفته</a>
-</div>
-</aside>
-</div><!-- /gr-main-content -->
-</div><!-- /gr-layout -->
-<!-- /gr-container -->
-<footer class="gr-footer-rich">
-<div class="gr-footer-grid">
-<div class="gr-footer-brand">
-<div class="gr-footer-logo">
-<span>👾</span>
-<span><span class="gr">Geek</span><span class="ref">Ref</span></span>
-</div>
-<div class="gr-footer-tagline">
-<span class="prompt">$</span> echo <span class="str">"مرجع سریع توسعه‌دهنده"</span><br/>
-<span class="prompt">$</span> echo <span class="str">"فارسی · دقیق · کاربردی"</span><br/>
-<span class="prompt">$</span> echo <span class="str">"by GeekMani"</span>
-</div>
-<div class="gr-status">
-<span class="gr-status-dot"></span>
-<span>online · 280+ commands</span>
-</div>
-</div>
-<div>
-<div class="gr-footer-links-title">// cheatsheets</div>
-<div class="gr-footer-links">
-<a href="./ubuntu.html"><span class="lnk-icon">🐧</span>Ubuntu</a>
-<a href="./django.html"><span class="lnk-icon">🌿</span>Django</a>
-<a href="./python.html"><span class="lnk-icon">🐍</span>Python</a>
-<a href="./python_setup.html"><span class="lnk-icon">⚙️</span>Python Setup</a>
-<a href="./git.html"><span class="lnk-icon">🔀</span>Git</a>
-<a href="./tree.html"><span class="lnk-icon">🌳</span>tree</a>
-</div>
-</div>
-<div>
-<div class="gr-footer-links-title">// connect</div>
-<div class="gr-footer-links">
-<a href="https://github.com/mani-imani" target="_blank"><span class="lnk-icon">🐙</span>GitHub</a>
-<a href="https://www.linkedin.com/in/mani-imani-526a05265/" target="_blank"><span class="lnk-icon">💼</span>LinkedIn</a>
-<a href="https://t.me/mani_imani" target="_blank"><span class="lnk-icon">✈️</span>Telegram</a>
-<a href="mailto:hey.geekmani@gmail.com"><span class="lnk-icon">📧</span>Email</a>
-</div>
-</div>
-</div>
-<div class="gr-footer-bottom">
-<div class="gr-footer-copy">
-<span class="hl">GeekRef</span> · built by <span class="hl">GeekMani</span> · MIT License
+<a class="gr-skip" href="#main">رفتن به محتوا</a>
+<header class="gr-header">
+  <div class="gm-page gr-header-in">
+   <div class="gr-brand-row">
+    <a class="gr-brand" href="../index.html" aria-label="GeekRef، صفحه‌ی اصلی">
+     <img class="gr-wm--light" src="../assets/brand/geekref-wordmark-light.svg" alt="" width="92" height="22">
+     <img class="gr-wm--dark" src="../assets/brand/geekref-wordmark-dark.svg" alt="" width="92" height="22">
+    </a>
+    <nav class="gr-crumb" aria-label="مسیر"><span aria-hidden="true">/</span><span aria-current="page"><bdi>Python</bdi></span></nav>
+   </div>
+   <div class="gr-actions">
+    <button type="button" class="gr-search-btn" data-gr-search aria-label="جست‌وجو در دستورها" aria-keyshortcuts="Control+K Meta+K /"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg><span>جست‌وجو</span><kbd dir="ltr" data-gr-kbd>Ctrl K</kbd></button>
+    <div class="gm-seg gr-theme" role="group" aria-label="پوسته">
+     <button type="button" data-theme-set="system" aria-pressed="true" title="پیروی از سیستم"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"/></svg><span>سیستم</span></button>
+     <button type="button" data-theme-set="light" aria-pressed="false" title="روشن"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg><span>روشن</span></button>
+     <button type="button" data-theme-set="dark" aria-pressed="false" title="تیره"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/></svg><span>تیره</span></button>
     </div>
-<div class="gr-footer-stats">
-<span class="gr-footer-stat"><strong>280+</strong> commands</span>
-<span class="gr-footer-stat"><strong>6</strong> cheatsheets</span>
-<span class="gr-footer-stat"><strong>100%</strong> فارسی</span>
-</div>
-</div>
+   </div>
+  </div>
+</header>
+<main id="main" class="gm-page">
+ <header class="gr-head">
+  <p class="gr-eyebrow"><span class="gm-mono">Python · Ubuntu · CLI</span></p>
+  <h1><bdi>Python</bdi><span class="gr-h1-sub">دستورات در <bdi>Ubuntu</bdi></span></h1>
+  <p class="gr-lede">نصب، اجرا، <bdi>pip</bdi>، <bdi>venv</bdi>، <bdi>pyenv</bdi>، دیباگ و ابزارهای پیشرفته</p>
+  <p class="gr-meta"><b>۵۵</b> دستور · <b>۱۰</b> بخش</p>
+ </header>
+ <div class="gr-layout">
+  <div class="gr-content">
+  <details class="gr-toc-m">
+   <summary>فهرست این برگه<svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/></svg></summary>
+   <nav aria-label="فهرست این برگه (موبایل)">
+    <ol>
+     <li><a href="#s1"><span class="gr-toc-num">۰۱</span><span>نصب <bdi>Python</bdi></span></a></li>
+     <li><a href="#s2"><span class="gr-toc-num">۰۲</span><span>اجرای <bdi>Python</bdi></span></a></li>
+     <li><a href="#s3"><span class="gr-toc-num">۰۳</span><span>مدیریت بسته‌ها با <bdi>pip</bdi></span></a></li>
+     <li><a href="#s4"><span class="gr-toc-num">۰۴</span><span>محیط مجازی <bdi>(Virtual Environment)</bdi></span></a></li>
+     <li><a href="#s5"><span class="gr-toc-num">۰۵</span><span>اطلاعات و نسخه‌ها</span></a></li>
+     <li><a href="#s6"><span class="gr-toc-num">۰۶</span><span>مدیریت فایل‌های <bdi>Python</bdi></span></a></li>
+     <li><a href="#s7"><span class="gr-toc-num">۰۷</span><span>دیباگ و تست</span></a></li>
+     <li><a href="#s8"><span class="gr-toc-num">۰۸</span><span><bdi>pyenv</bdi> — مدیریت نسخه‌ها</span></a></li>
+     <li><a href="#s9"><span class="gr-toc-num">۰۹</span><span>کار با اسکریپت‌ها و ماژول‌ها</span></a></li>
+     <li><a href="#s10"><span class="gr-toc-num">۱۰</span><span>ابزارهای پیشرفته</span></a></li>
+    </ol>
+   </nav>
+  </details>
+<section class="gr-section" id="s1" aria-labelledby="s1-t">
+  <h2 id="s1-t"><span class="gr-section-num" aria-hidden="true">۰۱</span><span>نصب <bdi>Python</bdi></span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3-version"><button type="button" class="gr-cmd" data-copy="python3 --version" aria-label="کپی دستور python3 --version"><code dir="ltr">python3 --version</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">بررسی <bdi>Python</bdi> از پیش نصب‌شده</p><button type="button" class="gr-link-btn" data-link="c-python3-version" aria-label="کپی پیوند دستور python3 --version" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-apt-update"><button type="button" class="gr-cmd" data-copy="sudo apt update" aria-label="کپی دستور sudo apt update"><code dir="ltr">sudo apt update</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب <bdi>Python 3</bdi> (پیش‌فرض)</p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-update" aria-label="کپی پیوند دستور sudo apt update" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-apt-install-python3-11"><button type="button" class="gr-cmd" data-copy="sudo apt install python3.11" aria-label="کپی دستور sudo apt install python3.11"><code dir="ltr">sudo apt install python3.11</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب نسخه خاص <bdi>Python</bdi></p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-install-python3-11" aria-label="کپی پیوند دستور sudo apt install python3.11" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-add-apt-repository-ppa-deadsnakes-ppa"><button type="button" class="gr-cmd" data-copy="sudo add-apt-repository ppa:deadsnakes/ppa" aria-label="کپی دستور sudo add-apt-repository ppa:deadsnakes/ppa"><code dir="ltr">sudo add-apt-repository ppa:deadsnakes/ppa</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب از <bdi>PPA</bdi> (آخرین نسخه‌ها)</p><button type="button" class="gr-link-btn" data-link="c-sudo-add-apt-repository-ppa-deadsnakes-ppa" aria-label="کپی پیوند دستور sudo add-apt-repository ppa:deadsnakes/ppa" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-apt-install-python3-dev"><button type="button" class="gr-cmd" data-copy="sudo apt install python3-dev" aria-label="کپی دستور sudo apt install python3-dev"><code dir="ltr">sudo apt install python3-dev</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب ابزارهای توسعه</p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-install-python3-dev" aria-label="کپی پیوند دستور sudo apt install python3-dev" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-apt-install-python-is-python3"><button type="button" class="gr-cmd" data-copy="sudo apt install python-is-python3" aria-label="کپی دستور sudo apt install python-is-python3"><code dir="ltr">sudo apt install python-is-python3</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">تنظیم <bdi>python3</bdi> به عنوان <bdi>python</bdi></p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-install-python-is-python3" aria-label="کپی پیوند دستور sudo apt install python-is-python3" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s2" aria-labelledby="s2-t">
+  <h2 id="s2-t"><span class="gr-section-num" aria-hidden="true">۰۲</span><span>اجرای <bdi>Python</bdi></span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3"><button type="button" class="gr-cmd" data-copy="python3" aria-label="کپی دستور python3"><code dir="ltr">python3</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">ورود به حالت تعاملی <bdi>(REPL)</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3" aria-label="کپی پیوند دستور python3" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-myscript-py"><button type="button" class="gr-cmd" data-copy="python3 myscript.py" aria-label="کپی دستور python3 myscript.py"><code dir="ltr">python3 myscript.py</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">اجرای فایل .<bdi>py</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-myscript-py" aria-label="کپی پیوند دستور python3 myscript.py" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-c-print-hello-world"><button type="button" class="gr-cmd" data-copy="python3 -c &quot;print(&#x27;Hello World&#x27;)&quot;" aria-label="کپی دستور python3 -c &quot;print(&#x27;Hello World&#x27;)&quot;"><code dir="ltr">python3 -c "print('Hello World')"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">اجرای کد مستقیم با <bdi>-c</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-c-print-hello-world" aria-label="کپی پیوند دستور python3 -c &quot;print(&#x27;Hello World&#x27;)&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-http-server-8080"><button type="button" class="gr-cmd" data-copy="python3 -m http.server 8080" aria-label="کپی دستور python3 -m http.server 8080"><code dir="ltr">python3 -m http.server 8080</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">اجرا به عنوان ماژول با <bdi>-m</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-http-server-8080" aria-label="کپی پیوند دستور python3 -m http.server 8080" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-chmod-x-myscript-py"><button type="button" class="gr-cmd" data-copy="chmod +x myscript.py" aria-label="کپی دستور chmod +x myscript.py"><code dir="ltr">chmod +x myscript.py</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">اجرای فایل با دسترسی اجرایی</p><button type="button" class="gr-link-btn" data-link="c-chmod-x-myscript-py" aria-label="کپی پیوند دستور chmod +x myscript.py" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-echo-hello-python3-c-import-sys-print-sys-stdin"><button type="button" class="gr-cmd" data-copy="echo &quot;hello&quot; | python3 -c &quot;import sys; print(sys.stdin.read().upper())&quot;" aria-label="کپی دستور echo &quot;hello&quot; | python3 -c &quot;import sys; print(sys.stdin.read().upper())&quot;"><code dir="ltr">echo "hello" | python3 -c "import sys; print(sys.stdin.read().upper())"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">خواندن از <bdi>stdin</bdi> (لوله)</p><button type="button" class="gr-link-btn" data-link="c-echo-hello-python3-c-import-sys-print-sys-stdin" aria-label="کپی پیوند دستور echo &quot;hello&quot; | python3 -c &quot;import sys; print(sys.stdin.read().upper())&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s3" aria-labelledby="s3-t">
+  <h2 id="s3-t"><span class="gr-section-num" aria-hidden="true">۰۳</span><span>مدیریت بسته‌ها با <bdi>pip</bdi></span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-sudo-apt-install-python3-pip"><button type="button" class="gr-cmd" data-copy="sudo apt install python3-pip" aria-label="کپی دستور sudo apt install python3-pip"><code dir="ltr">sudo apt install python3-pip</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب <bdi>pip</bdi></p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-install-python3-pip" aria-label="کپی پیوند دستور sudo apt install python3-pip" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-pip-install-upgrade-pip"><button type="button" class="gr-cmd" data-copy="python3 -m pip install --upgrade pip" aria-label="کپی دستور python3 -m pip install --upgrade pip"><code dir="ltr">python3 -m pip install --upgrade pip</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">به‌روزرسانی <bdi>pip</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-pip-install-upgrade-pip" aria-label="کپی پیوند دستور python3 -m pip install --upgrade pip" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-requests"><button type="button" class="gr-cmd" data-copy="pip3 install requests" aria-label="کپی دستور pip3 install requests"><code dir="ltr">pip3 install requests</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب بسته</p><button type="button" class="gr-link-btn" data-link="c-pip3-install-requests" aria-label="کپی پیوند دستور pip3 install requests" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-r-requirements-txt"><button type="button" class="gr-cmd" data-copy="pip3 install -r requirements.txt" aria-label="کپی دستور pip3 install -r requirements.txt"><code dir="ltr">pip3 install -r requirements.txt</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب از <bdi>requirements.txt</bdi></p><button type="button" class="gr-link-btn" data-link="c-pip3-install-r-requirements-txt" aria-label="کپی پیوند دستور pip3 install -r requirements.txt" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-git-https-github-com-user-repo-git"><button type="button" class="gr-cmd" data-copy="pip3 install git+https://github.com/user/repo.git" aria-label="کپی دستور pip3 install git+https://github.com/user/repo.git"><code dir="ltr">pip3 install git+https://github.com/user/repo.git</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب از <bdi>GitHub /</bdi> منابع دیگر</p><button type="button" class="gr-link-btn" data-link="c-pip3-install-git-https-github-com-user-repo-git" aria-label="کپی پیوند دستور pip3 install git+https://github.com/user/repo.git" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-list"><button type="button" class="gr-cmd" data-copy="pip3 list" aria-label="کپی دستور pip3 list"><code dir="ltr">pip3 list</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">لیست بسته‌های نصب‌شده</p><button type="button" class="gr-link-btn" data-link="c-pip3-list" aria-label="کپی پیوند دستور pip3 list" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-show-requests"><button type="button" class="gr-cmd" data-copy="pip3 show requests" aria-label="کپی دستور pip3 show requests"><code dir="ltr">pip3 show requests</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">اطلاعات یک بسته</p><button type="button" class="gr-link-btn" data-link="c-pip3-show-requests" aria-label="کپی پیوند دستور pip3 show requests" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-index-versions-requests"><button type="button" class="gr-cmd" data-copy="pip3 index versions requests" aria-label="کپی دستور pip3 index versions requests"><code dir="ltr">pip3 index versions requests</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">جستجوی بسته</p><button type="button" class="gr-link-btn" data-link="c-pip3-index-versions-requests" aria-label="کپی پیوند دستور pip3 index versions requests" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-uninstall-requests"><button type="button" class="gr-cmd" data-copy="pip3 uninstall requests" aria-label="کپی دستور pip3 uninstall requests"><code dir="ltr">pip3 uninstall requests</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">حذف بسته</p><button type="button" class="gr-link-btn" data-link="c-pip3-uninstall-requests" aria-label="کپی پیوند دستور pip3 uninstall requests" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s4" aria-labelledby="s4-t">
+  <h2 id="s4-t"><span class="gr-section-num" aria-hidden="true">۰۴</span><span>محیط مجازی <bdi>(Virtual Environment)</bdi></span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3-m-venv-myenv"><button type="button" class="gr-cmd" data-copy="python3 -m venv myenv" aria-label="کپی دستور python3 -m venv myenv"><code dir="ltr">python3 -m venv myenv</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">ساخت محیط مجازی با <bdi>venv</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-venv-myenv" aria-label="کپی پیوند دستور python3 -m venv myenv" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-source-myenv-bin-activate"><button type="button" class="gr-cmd" data-copy="source myenv/bin/activate" aria-label="کپی دستور source myenv/bin/activate"><code dir="ltr">source myenv/bin/activate</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">فعال‌سازی و غیرفعال‌سازی</p><button type="button" class="gr-link-btn" data-link="c-source-myenv-bin-activate" aria-label="کپی پیوند دستور source myenv/bin/activate" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-source-venv-bin-activate"><button type="button" class="gr-cmd" data-copy="source .venv/bin/activate" aria-label="کپی دستور source .venv/bin/activate"><code dir="ltr">source .venv/bin/activate</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">کار با <bdi>pip</bdi> در محیط مجازی</p><button type="button" class="gr-link-btn" data-link="c-source-venv-bin-activate" aria-label="کپی پیوند دستور source .venv/bin/activate" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-virtualenv"><button type="button" class="gr-cmd" data-copy="pip3 install virtualenv" aria-label="کپی دستور pip3 install virtualenv"><code dir="ltr">pip3 install virtualenv</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>virtualenv</bdi> — ابزار قدیمی‌تر</p><button type="button" class="gr-link-btn" data-link="c-pip3-install-virtualenv" aria-label="کپی پیوند دستور pip3 install virtualenv" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-apt-install-pipx"><button type="button" class="gr-cmd" data-copy="sudo apt install pipx" aria-label="کپی دستور sudo apt install pipx"><code dir="ltr">sudo apt install pipx</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>pipx</bdi> — نصب ابزارها به صورت ایزوله</p><button type="button" class="gr-link-btn" data-link="c-sudo-apt-install-pipx" aria-label="کپی پیوند دستور sudo apt install pipx" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-myenv-deactivate"><button type="button" class="gr-cmd" data-copy="(myenv) deactivate" aria-label="کپی دستور (myenv) deactivate"><code dir="ltr">(myenv) deactivate</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">حذف محیط مجازی</p><button type="button" class="gr-link-btn" data-link="c-myenv-deactivate" aria-label="کپی پیوند دستور (myenv) deactivate" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s5" aria-labelledby="s5-t">
+  <h2 id="s5-t"><span class="gr-section-num" aria-hidden="true">۰۵</span><span>اطلاعات و نسخه‌ها</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3-version-2"><button type="button" class="gr-cmd" data-copy="python3 --version" aria-label="کپی دستور python3 --version"><code dir="ltr">python3 --version</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نسخه <bdi>Python</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-version-2" aria-label="کپی پیوند دستور python3 --version" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-which-python3"><button type="button" class="gr-cmd" data-copy="which python3" aria-label="کپی دستور which python3"><code dir="ltr">which python3</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">مسیر نصب <bdi>Python</bdi></p><button type="button" class="gr-link-btn" data-link="c-which-python3" aria-label="کپی پیوند دستور which python3" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-c-import-sys-print-sys-path"><button type="button" class="gr-cmd" data-copy="python3 -c &quot;import sys; print(sys.path)&quot;" aria-label="کپی دستور python3 -c &quot;import sys; print(sys.path)&quot;"><code dir="ltr">python3 -c "import sys; print(sys.path)"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">مسیر ماژول‌ها</p><button type="button" class="gr-link-btn" data-link="c-python3-c-import-sys-print-sys-path" aria-label="کپی پیوند دستور python3 -c &quot;import sys; print(sys.path)&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-ls-usr-bin-python"><button type="button" class="gr-cmd" data-copy="ls /usr/bin/python*" aria-label="کپی دستور ls /usr/bin/python*"><code dir="ltr">ls /usr/bin/python*</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">همه نسخه‌های <bdi>Python</bdi></p><button type="button" class="gr-link-btn" data-link="c-ls-usr-bin-python" aria-label="کپی پیوند دستور ls /usr/bin/python*" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-sudo-update-alternatives-install-usr-bin-python3"><button type="button" class="gr-cmd" data-copy="sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1" aria-label="کپی دستور sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1"><code dir="ltr">sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">تنظیم نسخه پیش‌فرض</p><button type="button" class="gr-link-btn" data-link="c-sudo-update-alternatives-install-usr-bin-python3" aria-label="کپی پیوند دستور sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-c-import-platform-print-platform-platfor"><button type="button" class="gr-cmd" data-copy="python3 -c &quot;import platform; print(platform.platform())&quot;" aria-label="کپی دستور python3 -c &quot;import platform; print(platform.platform())&quot;"><code dir="ltr">python3 -c "import platform; print(platform.platform())"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">اطلاعات پلتفرم</p><button type="button" class="gr-link-btn" data-link="c-python3-c-import-platform-print-platform-platfor" aria-label="کپی پیوند دستور python3 -c &quot;import platform; print(platform.platform())&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s6" aria-labelledby="s6-t">
+  <h2 id="s6-t"><span class="gr-section-num" aria-hidden="true">۰۶</span><span>مدیریت فایل‌های <bdi>Python</bdi></span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3-m-py-compile-script-py"><button type="button" class="gr-cmd" data-copy="python3 -m py_compile script.py" aria-label="کپی دستور python3 -m py_compile script.py"><code dir="ltr">python3 -m py_compile script.py</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">کامپایل به <bdi>bytecode</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-py-compile-script-py" aria-label="کپی پیوند دستور python3 -m py_compile script.py" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-find-name-pycache-exec-rm-rf"><button type="button" class="gr-cmd" data-copy="find . -name &quot;__pycache__&quot; -exec rm -rf {} +" aria-label="کپی دستور find . -name &quot;__pycache__&quot; -exec rm -rf {} +"><code dir="ltr">find . -name "__pycache__" -exec rm -rf {} +</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">پاک کردن فایل‌های <bdi>cache</bdi></p><button type="button" class="gr-link-btn" data-link="c-find-name-pycache-exec-rm-rf" aria-label="کپی پیوند دستور find . -name &quot;__pycache__&quot; -exec rm -rf {} +" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-py-compile-script-py-echo-ok"><button type="button" class="gr-cmd" data-copy="python3 -m py_compile script.py &amp;&amp; echo &quot;OK&quot;" aria-label="کپی دستور python3 -m py_compile script.py &amp;&amp; echo &quot;OK&quot;"><code dir="ltr">python3 -m py_compile script.py &amp;&amp; echo "OK"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">بررسی <bdi>syntax</bdi> فایل</p><button type="button" class="gr-link-btn" data-link="c-python3-m-py-compile-script-py-echo-ok" aria-label="کپی پیوند دستور python3 -m py_compile script.py &amp;&amp; echo &quot;OK&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-black"><button type="button" class="gr-cmd" data-copy="pip3 install black" aria-label="کپی دستور pip3 install black"><code dir="ltr">pip3 install black</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">فرمت‌بندی کد با <bdi>black</bdi></p><button type="button" class="gr-link-btn" data-link="c-pip3-install-black" aria-label="کپی پیوند دستور pip3 install black" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s7" aria-labelledby="s7-t">
+  <h2 id="s7-t"><span class="gr-section-num" aria-hidden="true">۰۷</span><span>دیباگ و تست</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3-m-pdb-script-py"><button type="button" class="gr-cmd" data-copy="python3 -m pdb script.py" aria-label="کپی دستور python3 -m pdb script.py"><code dir="ltr">python3 -m pdb script.py</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">دیباگ با <bdi>pdb</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-pdb-script-py" aria-label="کپی پیوند دستور python3 -m pdb script.py" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-cprofile-script-py"><button type="button" class="gr-cmd" data-copy="python3 -m cProfile script.py" aria-label="کپی دستور python3 -m cProfile script.py"><code dir="ltr">python3 -m cProfile script.py</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>profiling</bdi> و اندازه‌گیری سرعت</p><button type="button" class="gr-link-btn" data-link="c-python3-m-cprofile-script-py" aria-label="کپی پیوند دستور python3 -m cProfile script.py" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-unittest"><button type="button" class="gr-cmd" data-copy="python3 -m unittest" aria-label="کپی دستور python3 -m unittest"><code dir="ltr">python3 -m unittest</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">تست با <bdi>unittest</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-unittest" aria-label="کپی پیوند دستور python3 -m unittest" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-pytest"><button type="button" class="gr-cmd" data-copy="pip3 install pytest" aria-label="کپی دستور pip3 install pytest"><code dir="ltr">pip3 install pytest</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">تست با <bdi>pytest</bdi></p><button type="button" class="gr-link-btn" data-link="c-pip3-install-pytest" aria-label="کپی پیوند دستور pip3 install pytest" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-w-all-script-py"><button type="button" class="gr-cmd" data-copy="python3 -W all script.py" aria-label="کپی دستور python3 -W all script.py"><code dir="ltr">python3 -W all script.py</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">بررسی <bdi>memory</bdi> و لاگ</p><button type="button" class="gr-link-btn" data-link="c-python3-w-all-script-py" aria-label="کپی پیوند دستور python3 -W all script.py" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-pylint"><button type="button" class="gr-cmd" data-copy="pip3 install pylint" aria-label="کپی دستور pip3 install pylint"><code dir="ltr">pip3 install pylint</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>linting</bdi> با <bdi>pylint / ruff</bdi></p><button type="button" class="gr-link-btn" data-link="c-pip3-install-pylint" aria-label="کپی پیوند دستور pip3 install pylint" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s8" aria-labelledby="s8-t">
+  <h2 id="s8-t"><span class="gr-section-num" aria-hidden="true">۰۸</span><span><bdi>pyenv</bdi> — مدیریت نسخه‌ها</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-curl-https-pyenv-run-bash"><button type="button" class="gr-cmd" data-copy="curl https://pyenv.run | bash" aria-label="کپی دستور curl https://pyenv.run | bash"><code dir="ltr">curl https://pyenv.run | bash</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب <bdi>pyenv</bdi></p><button type="button" class="gr-link-btn" data-link="c-curl-https-pyenv-run-bash" aria-label="کپی پیوند دستور curl https://pyenv.run | bash" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pyenv-install-list"><button type="button" class="gr-cmd" data-copy="pyenv install --list" aria-label="کپی دستور pyenv install --list"><code dir="ltr">pyenv install --list</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">نصب <bdi>Python</bdi> با <bdi>pyenv</bdi></p><button type="button" class="gr-link-btn" data-link="c-pyenv-install-list" aria-label="کپی پیوند دستور pyenv install --list" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pyenv-global-3-12-0"><button type="button" class="gr-cmd" data-copy="pyenv global 3.12.0" aria-label="کپی دستور pyenv global 3.12.0"><code dir="ltr">pyenv global 3.12.0</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">جابجایی بین نسخه‌ها</p><button type="button" class="gr-link-btn" data-link="c-pyenv-global-3-12-0" aria-label="کپی پیوند دستور pyenv global 3.12.0" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s9" aria-labelledby="s9-t">
+  <h2 id="s9-t"><span class="gr-section-num" aria-hidden="true">۰۹</span><span>کار با اسکریپت‌ها و ماژول‌ها</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-python3-m-http-server"><button type="button" class="gr-cmd" data-copy="python3 -m http.server" aria-label="کپی دستور python3 -m http.server"><code dir="ltr">python3 -m http.server</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">سرور <bdi>HTTP</bdi> ساده</p><button type="button" class="gr-link-btn" data-link="c-python3-m-http-server" aria-label="کپی پیوند دستور python3 -m http.server" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-json-tool-data-json"><button type="button" class="gr-cmd" data-copy="python3 -m json.tool data.json" aria-label="کپی دستور python3 -m json.tool data.json"><code dir="ltr">python3 -m json.tool data.json</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">فرمت <bdi>JSON</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-json-tool-data-json" aria-label="کپی پیوند دستور python3 -m json.tool data.json" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-pydoc-os"><button type="button" class="gr-cmd" data-copy="python3 -m pydoc os" aria-label="کپی دستور python3 -m pydoc os"><code dir="ltr">python3 -m pydoc os</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">مستندات در ترمینال</p><button type="button" class="gr-link-btn" data-link="c-python3-m-pydoc-os" aria-label="کپی پیوند دستور python3 -m pydoc os" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-zipapp-myapp-m-main-main"><button type="button" class="gr-cmd" data-copy="python3 -m zipapp myapp -m &quot;main:main&quot;" aria-label="کپی دستور python3 -m zipapp myapp -m &quot;main:main&quot;"><code dir="ltr">python3 -m zipapp myapp -m "main:main"</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc">فشرده‌سازی <bdi>zipapp</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-zipapp-myapp-m-main-main" aria-label="کپی پیوند دستور python3 -m zipapp myapp -m &quot;main:main&quot;" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-base64-file-txt"><button type="button" class="gr-cmd" data-copy="python3 -m base64 file.txt" aria-label="کپی دستور python3 -m base64 file.txt"><code dir="ltr">python3 -m base64 file.txt</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>base64 encoding/decoding</bdi></p><button type="button" class="gr-link-btn" data-link="c-python3-m-base64-file-txt" aria-label="کپی پیوند دستور python3 -m base64 file.txt" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-python3-m-calendar"><button type="button" class="gr-cmd" data-copy="python3 -m calendar" aria-label="کپی دستور python3 -m calendar"><code dir="ltr">python3 -m calendar</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>calendar</bdi> و تاریخ</p><button type="button" class="gr-link-btn" data-link="c-python3-m-calendar" aria-label="کپی پیوند دستور python3 -m calendar" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+<section class="gr-section" id="s10" aria-labelledby="s10-t">
+  <h2 id="s10-t"><span class="gr-section-num" aria-hidden="true">۱۰</span><span>ابزارهای پیشرفته</span></h2>
+  <div class="gr-table">
+   <div class="gr-row" id="c-pip3-install-poetry"><button type="button" class="gr-cmd" data-copy="pip3 install poetry" aria-label="کپی دستور pip3 install poetry"><code dir="ltr">pip3 install poetry</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>Poetry</bdi> — مدیریت پروژه مدرن</p><button type="button" class="gr-link-btn" data-link="c-pip3-install-poetry" aria-label="کپی پیوند دستور pip3 install poetry" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-ipython"><button type="button" class="gr-cmd" data-copy="pip3 install ipython" aria-label="کپی دستور pip3 install ipython"><code dir="ltr">pip3 install ipython</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>IPython</bdi> — <bdi>REPL</bdi> پیشرفته</p><button type="button" class="gr-link-btn" data-link="c-pip3-install-ipython" aria-label="کپی پیوند دستور pip3 install ipython" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-pip3-install-jupyter"><button type="button" class="gr-cmd" data-copy="pip3 install jupyter" aria-label="کپی دستور pip3 install jupyter"><code dir="ltr">pip3 install jupyter</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>Jupyter Notebook</bdi></p><button type="button" class="gr-link-btn" data-link="c-pip3-install-jupyter" aria-label="کپی پیوند دستور pip3 install jupyter" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+   <div class="gr-row" id="c-curl-lssf-https-astral-sh-uv-install-sh-sh"><button type="button" class="gr-cmd" data-copy="curl -LsSf https://astral.sh/uv/install.sh | sh" aria-label="کپی دستور curl -LsSf https://astral.sh/uv/install.sh | sh"><code dir="ltr">curl -LsSf https://astral.sh/uv/install.sh | sh</code><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg></button><p class="gr-cmd-desc"><bdi>uv</bdi> — سریع‌ترین ابزار مدرن</p><button type="button" class="gr-link-btn" data-link="c-curl-lssf-https-astral-sh-uv-install-sh-sh" aria-label="کپی پیوند دستور curl -LsSf https://astral.sh/uv/install.sh | sh" title="کپی پیوند"><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/><path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg></button></div>
+  </div>
+</section>
+  </div>
+  <nav class="gr-toc" aria-label="فهرست این برگه">
+   <p class="gr-toc-title">در این برگه</p>
+   <ol>
+     <li><a href="#s1"><span class="gr-toc-num">۰۱</span><span>نصب <bdi>Python</bdi></span></a></li>
+     <li><a href="#s2"><span class="gr-toc-num">۰۲</span><span>اجرای <bdi>Python</bdi></span></a></li>
+     <li><a href="#s3"><span class="gr-toc-num">۰۳</span><span>مدیریت بسته‌ها با <bdi>pip</bdi></span></a></li>
+     <li><a href="#s4"><span class="gr-toc-num">۰۴</span><span>محیط مجازی <bdi>(Virtual Environment)</bdi></span></a></li>
+     <li><a href="#s5"><span class="gr-toc-num">۰۵</span><span>اطلاعات و نسخه‌ها</span></a></li>
+     <li><a href="#s6"><span class="gr-toc-num">۰۶</span><span>مدیریت فایل‌های <bdi>Python</bdi></span></a></li>
+     <li><a href="#s7"><span class="gr-toc-num">۰۷</span><span>دیباگ و تست</span></a></li>
+     <li><a href="#s8"><span class="gr-toc-num">۰۸</span><span><bdi>pyenv</bdi> — مدیریت نسخه‌ها</span></a></li>
+     <li><a href="#s9"><span class="gr-toc-num">۰۹</span><span>کار با اسکریپت‌ها و ماژول‌ها</span></a></li>
+     <li><a href="#s10"><span class="gr-toc-num">۱۰</span><span>ابزارهای پیشرفته</span></a></li>
+   </ol>
+  </nav>
+ </div>
+</main>
+<footer class="gr-footer">
+  <div class="gm-page gr-footer-in">
+   <nav class="gr-footer-nav" aria-label="برگه‌ها">
+    <ul>
+     <li><a href="../index.html">صفحه‌ی اصلی</a></li>
+     <li><a href="ubuntu.html"><bdi>Ubuntu</bdi></a></li>
+     <li><a href="django.html"><bdi>Django</bdi></a></li>
+     <li><a href="python.html"><bdi>Python</bdi></a></li>
+     <li><a href="python_setup.html"><bdi>Python Setup</bdi></a></li>
+     <li><a href="git.html"><bdi>Git</bdi></a></li>
+     <li><a href="tree.html"><bdi>tree</bdi></a></li>
+    </ul>
+   </nav>
+   <div class="gr-footer-meta">
+    <a class="gm-sign" href="https://github.com/mani-imani">از گیک‌مانی<i class="gm-cursor"></i></a>
+    <div class="gr-footer-small">
+     <span class="gr-offline" hidden><svg class="gr-ic" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>بدون اینترنت هم در دسترس است</span>
+     <a href="https://github.com/mani-imani/GeekRef">کد پروژه</a>
+     <span>مجوز <bdi>MIT</bdi></span>
+     <span class="gm-mono">v2.1.0</span>
+    </div>
+   </div>
+  </div>
 </footer>
-<script src="../css/gr.js"></script>
 </body>
 </html>
